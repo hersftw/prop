@@ -1,5 +1,7 @@
 package prop;
 
 public class CtrlPresentacio {
-	System.out.println("hola");
+	void hola() {
+		System.out.println("hola");
+	}
 }
