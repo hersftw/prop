@@ -5,4 +5,5 @@ public class CtrlPresentacio {
 		System.out.println("adeu");
 		System.out.println("hola");
 	}
+	
 }
