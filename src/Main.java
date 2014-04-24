@@ -1,4 +1,4 @@
-import prop.domini.*;
+import prop.ctrldomini.*;
 
 
 public class Main {
