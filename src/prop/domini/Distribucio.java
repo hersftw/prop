@@ -1,17 +1,16 @@
 package prop.domini;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Distribucio {
 	private int num;
-	private int[][] distribucio;
+	private Llibre[][] distribucio;
 	
 	/**Constructora por defecto**/
 	
 	public Distribucio(int num, int n, int np) {
-		this.num = num;
-		this.distribucio = new int[n/np][np];
+		this.setNum(num);
+		this.distribucio = new Llibre[n/np][np];
 		
 	}
 	
@@ -37,7 +36,7 @@ public class Distribucio {
 	    * 
 	    */
 	
-	public int[][] consultarDistribucio() {
+	public Llibre[][] consultarDistribucio() {
 			return distribucio;
 		
 	}
@@ -50,6 +49,14 @@ public class Distribucio {
 	    */
 	public void editarAssignacions(Assignacio as1, Assignacio as2)  {
 		
+	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
 	}
 	
 }
