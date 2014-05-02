@@ -1,8 +1,8 @@
 package prop.domini;
 
 public class Nodo {
-	private int x;
-	private int y;
+	protected int x;
+	protected int y;
 	
 	/**Constructora por defecto
     *
