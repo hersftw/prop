@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConjuntoNodos {
-	private List<Nodo> c;
+	protected List<Nodo> c;
 
 	/**Constructora por defecto**/
 	public ConjuntoNodos() {
@@ -16,8 +16,8 @@ public class ConjuntoNodos {
     * @param n nodo a añadir
     */
 	public void addNodo(Nodo n) {
-		if (c.contains(n)) c.add(n);
-		else System.out.println("Error:Nodo no valido");
+		if (c.contains(n)) System.out.println("Error:El nodo esta en la lista");
+		else c.add(n);
 	}
 	
 	/**Obtener nodo
