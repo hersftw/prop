@@ -1,3 +1,4 @@
+package prop.domini;
 
 public class Nodo {
 	private int x;
