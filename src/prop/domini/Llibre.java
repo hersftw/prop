@@ -1,4 +1,5 @@
 package prop.domini;
+import prop.domini.Categoria;
 
 public class Llibre extends Elemento {
 	
@@ -6,15 +7,17 @@ public class Llibre extends Elemento {
 	private String autor;
 	private String editorial;
 	private int any;
+	private Categoria categoria;
 	
 	
 	public Llibre(int id, String autor, String titol, String editorial,
-			int any) {
+			int any, Categoria categoria) {
 		super(id);
 		this.autor = autor;
 		this.titol = titol;
 		this.editorial = editorial;
 		this.any = any;
+		this.categoria = categoria; 
 	}
 
 
@@ -66,6 +69,17 @@ public class Llibre extends Elemento {
 	public void setAny(int any) {
 		this.any = any;
 	}
+
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	
 	
 	
 }
