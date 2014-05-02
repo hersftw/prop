@@ -4,8 +4,8 @@ public class Nodo {
 	private int x;
 	private int y;
 	
+	//Constructora Nodo
 	public Nodo(int x, int y) {
-		super();
 		this.x = x;
 		this.y = y;
 	}
