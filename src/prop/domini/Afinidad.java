@@ -49,7 +49,4 @@ public class Afinidad {
     public double consultar_afinidad(int i,int j) {
         return afinidades[i][j];
     }
-}   
-    
-    
-
+}
