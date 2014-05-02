@@ -24,7 +24,7 @@ public class Distribucio {
     * 
     */
 	
-	public void mostrarDistribució() {
+	public void mostrarDistribucio() {
 		for(int i = 0; i < distribucio.length; ++i) {
 			for(int j = 0; j < distribucio[0].length; ++j){
 				System.out.println(distribucio[i][j]+" "+i+" "+j);
@@ -37,10 +37,9 @@ public class Distribucio {
 	    * 
 	    */
 	
-	public int consultarDistribucio() {
-		for(int i = 0; i < distribucio.length; ++i) {
-			return distribucio[i][j];
-		}
+	public int[][] consultarDistribucio() {
+			return distribucio;
+		
 	}
 	
 	
@@ -49,7 +48,7 @@ public class Distribucio {
 	    * 
 	    * 
 	    */
-	public void editAssignacions(Assignacio as1, Assignacio as2)  {
+	public void editarAssignacions(Assignacio as1, Assignacio as2)  {
 		
 	}
 	
