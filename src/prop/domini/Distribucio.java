@@ -5,27 +5,50 @@ import java.util.List;
 
 public class Distribucio {
 	private int num;
-	private List<Assignacio> a;
+	private int[][] distribucio;
 	
-	public Distribucio(int num) {
+	/**Constructora por defecto**/
+	
+	public Distribucio(int num, int n, int np) {
 		this.num = num;
-		this.a = new ArrayList<Assignacio>();
+		this.distribucio = new int[n/np][np];
 		
 	}
 	
-	public List<Assignacio> consultarDistribucio() {
-		for(int i = 0; i < a.size(); ++i) {
-			return a;
+	public void AfegirAssignacio(Assignacio as){
+		
+	}
+	
+	/**Mostrar una Distribució d'assignacions
+    * 
+    * 
+    */
+	
+	public void mostrarDistribucio() {
+		for(int i = 0; i < distribucio.length; ++i) {
+			for(int j = 0; j < distribucio[0].length; ++j){
+				System.out.println(distribucio[i][j]+" "+i+" "+j);
+			}
 		}
 	}
 	
+	/**Consultar una Distribució d'assignacions
+	    * 
+	    * 
+	    */
 	
-	public void deleteAssignacio(Assignacio as) {
-		a.remove(a.indexOf(as));
+	public int[][] consultarDistribucio() {
+			return distribucio;
+		
 	}
 	
 	
-	public void editAssignacions(Assignacio as1, Assignacio as2)  {
+	
+	/**Edita, intercanviant dues assignacions de lloc
+	    * 
+	    * 
+	    */
+	public void editarAssignacions(Assignacio as1, Assignacio as2)  {
 		
 	}
 	
