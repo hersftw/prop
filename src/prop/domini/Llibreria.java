@@ -1,5 +1,5 @@
 package prop.domini;
 
-public class Llibreria {
+public class Llibreria extends ConjuntoNodos {
 
 }
