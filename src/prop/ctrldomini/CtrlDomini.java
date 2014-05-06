@@ -116,7 +116,7 @@ public class CtrlDomini {
 		i = j = 0;
 		String pare1 = null;
 		String pare2 = null;
-		while (it.hasNext() & !trobat){
+		while (it.hasNext() & !trobat) {
 			List<Categoria> llista = it.next();
 			if (llista.get(0).getNom() == cat1) {
 				pare1 = llista.get(0).getPare();
