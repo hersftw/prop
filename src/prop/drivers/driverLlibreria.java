@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import prop.domini.Llibreria;
 import prop.domini.Nodo;
-import prop.domini.Ubicacio;
 
 public class driverLlibreria {
 	private static void menu() {
@@ -47,7 +46,7 @@ public class driverLlibreria {
 		    	case 5: System.out.println("Introdueix les coordenades x i y de la nova ubicacio");
 				    	u = in.nextInt();
 		    	 		p = in.nextInt();
-		    	  		Ubicacio ub = new Ubicacio(u, p);
+		    	  		Nodo ub = new Nodo(u, p);
 		    	  		n.addNodo(ub);
 		    	 		break;
 		    	case 6: System.out.println("Introdueix les coordenades x i y de la ubicacio que vols consultar");

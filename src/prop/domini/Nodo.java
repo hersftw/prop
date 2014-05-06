@@ -39,5 +39,12 @@ public class Nodo {
 	public void setY(int y) {
 		this.y = y;
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		Nodo other = (Nodo) o;
+		return x == other.x & y == other.y;
+	}
+	
 
 }
