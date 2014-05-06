@@ -1,5 +1,4 @@
 package prop.domini;
-import prop.domini.Categoria;
 
 public class Llibre extends Elemento {
 	
@@ -7,7 +6,7 @@ public class Llibre extends Elemento {
 	private String autor;
 	private String editorial;
 	private int any;
-	private Categoria categoria;
+	private String categoria;
 	
 	
     /**Constructora por defecte
@@ -21,7 +20,7 @@ public class Llibre extends Elemento {
     */
 	
 	public Llibre(int id, String titol, String autor,  String editorial,
-			int any, Categoria categoria) {
+			int any, String categoria) {
 		super(id);
 		this.autor = autor;
 		this.titol = titol;
@@ -142,7 +141,7 @@ public class Llibre extends Elemento {
 
     */
 	
-	public Categoria getCategoria() {
+	public String getCategoria() {
 		return categoria;
 	}
 
@@ -152,7 +151,7 @@ public class Llibre extends Elemento {
     * @param categoria Indica la nova categoria del llibre.
     */
 	
-	public void setCategoria(Categoria categoria) {
+	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
 	
