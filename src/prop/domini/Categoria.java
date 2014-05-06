@@ -2,6 +2,7 @@ package prop.domini;
 
 public class Categoria {
 	private String nom;
+	private String pare;
 	
 	
     /**Constructora por defecte
@@ -9,8 +10,9 @@ public class Categoria {
     * @param nom Indica el nom de la categoria.
     */
 
-	public Categoria(String nom) {
+	public Categoria(String nom, String pare) {
 		this.nom = nom;
+		this.pare = pare;
 	}
 
 	
@@ -23,6 +25,10 @@ public class Categoria {
 	public String getNom() {
 		return nom;
 	}
+	
+	public String getPare() {
+		return pare;
+	}
 
 	
 	/**Modificadora del parametre nom de la categoria.
@@ -33,6 +39,8 @@ public class Categoria {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-		
-
+	
+	public void setPare(String pare) {
+		this.pare = pare;
+	}
 }
