@@ -16,7 +16,7 @@ public class ConjuntoNodos {
     * @param n nodo a añadir
     */
 	public void addNodo(Nodo n) {
-		if (c.contains(n)) System.out.println("Error:El nodo esta en la lista");
+		if (c.contains(n)) System.out.println("Error:El nodo esta en la lista.");
 		else c.add(n);
 	}
 	
@@ -27,6 +27,10 @@ public class ConjuntoNodos {
     */
 	public Nodo getNodo(int x, int y) {
 		Nodo n = new Nodo(x, y);
+		if (!c.contains(n)) {
+			System.out.println("Error:El nodo no existe.");
+			return new Nodo(-1, -1);
+		}
 		return c.get(c.indexOf(n));
 	}
 	
