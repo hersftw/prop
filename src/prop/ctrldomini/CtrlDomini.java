@@ -112,14 +112,17 @@ public class CtrlDomini {
 	public void canviarCategories(String cat1, String cat2) {
 		Iterator<List<Categoria>> it = categories.iterator();
 		Boolean trobat = false;
-		int i = 0;
+		int i, j;
+		i = j = 0;
 		String pare1 = null;
 		String pare2 = null;
 		while (it.hasNext() & !trobat){
 			List<Categoria> llista = it.next();
 			if (llista.get(0).getNom() == cat1) {
 				pare1 = llista.get(0).getPare();
-				
+			}
+			if (llista.get(0).getNom() == cat2) {
+				pare2 = llista.get(0).getPare();
 			}
 		}
 	}
