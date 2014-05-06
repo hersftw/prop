@@ -20,7 +20,7 @@ public class DriverCategoria {
 	public static void main(String[] args) {
 		
 		System.out.println("Driver Categoria");
-		System.out.println("Introdueix un nom (string) i el nom del pare (si no te escriu Null)");
+		System.out.println("Introdueix un nom (String) i el nom del pare (String) (si no te escriu Null)");
 		Scanner in = new Scanner(System.in);
 		Categoria cat = new Categoria(in.next(), in.next());
 		boolean sortir = false;
