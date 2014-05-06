@@ -2,9 +2,9 @@ package prop.drivers;
 
 import java.util.Scanner;
 
-import prop.domini.Ubicacio;
+import prop.domini.Nodo;
 
-public class driverUbicacio {
+public class driverNodo {
 	private static void menu() {
 		System.out.println("Selecciona una opcio:");
 	    System.out.println("\t 0) Sortir.");
@@ -18,7 +18,7 @@ public class driverUbicacio {
 	    Scanner in= new Scanner(System.in);
 	    int x = in.nextInt();
 	    int y = in.nextInt();
-	    Ubicacio n = new Ubicacio(x, y);
+	    Nodo n = new Nodo(x, y);
 	    boolean end = false;
 	    while (!end) {
 	    	menu();

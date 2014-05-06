@@ -55,6 +55,4 @@ public class Llibreria extends ConjuntoNodos {
 		this.ubicacions = ubicacions;
 	}
 	
-	
-	
 }
