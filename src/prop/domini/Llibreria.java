@@ -6,8 +6,8 @@ public class Llibreria extends ConjuntoNodos {
 	
 	/**Constructora por defecto
     *
-    * @param prestatges Número de prestatges de la llibreria. 
-    * @param ubicacions  Número d'ubicacions de la llibreria.
+    * @param prestatges Numero de prestatges de la llibreria. 
+    * @param ubicacions  Numero d'ubicacions de la llibreria.
     */
 	
 	public Llibreria(int prestatges, int ubicacions)  {
@@ -17,9 +17,9 @@ public class Llibreria extends ConjuntoNodos {
 		
 	}
 	
-	 /**Consultora del paràmetre prestatges.
+	 /**Consultora del parametre prestatges.
     *
-    * @return  els prestatges que té la llibreria.
+    * @return  els prestatges que te la llibreria.
 
     */
 	
@@ -27,9 +27,9 @@ public class Llibreria extends ConjuntoNodos {
 		return prestatges;
 	}
 	
-	 /**Consultora del paràmetre ubicacions.
+	 /**Consultora del parametre ubicacions.
     *
-    * @return  les ubicacions que conté la llibreria.
+    * @return  les ubicacions que conte la llibreria.
 
     */
 	
@@ -37,18 +37,18 @@ public class Llibreria extends ConjuntoNodos {
 		return ubicacions;
 	}
 	
-	/**Modificadora del paràmetre prestatges de la llibreria
+	/**Modificadora del parametre prestatges de la llibreria
 	    * 
-	    * @param prestatges   nou número de prestatges.
+	    * @param prestatges   nou numero de prestatges.
 	    */
 		
 	public void setPrestatges(int prestatges){
 		this.prestatges = prestatges;
 	}
 	
-	/**Modificadora del paràmetre ubicacions de la llibreria
+	/**Modificadora del parametre ubicacions de la llibreria
 	    * 
-	    * @param ubicacions   nou número d'ubicacions. 
+	    * @param ubicacions   nou numero d'ubicacions. 
 	    */
 
 	public void setUbicacions(int ubicacions){

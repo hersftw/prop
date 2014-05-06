@@ -11,9 +11,9 @@ public class Distribucio {
 	
 	/**Constructora por defecto
     *
-    * @param num Indica el número de distribució. 
-    * @param n  Número d'ubicacions de la distribució.
-    * @param np Número de prestatges de la distribució.
+    * @param num Indica el numero de distribucio. 
+    * @param n  Numero d'ubicacions de la distribucio.
+    * @param np Numero de prestatges de la distribucio.
     */
 	
 	public Distribucio(int num, int n, int np) {
