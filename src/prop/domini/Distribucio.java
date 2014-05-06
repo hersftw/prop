@@ -1,4 +1,5 @@
 package prop.domini;
+import prop.domini.Llibre;
 
 
 
@@ -6,7 +7,14 @@ public class Distribucio {
 	private int num;
 	private Llibre[][] distribucio;
 	
-	/**Constructora por defecto**/
+	
+	
+	/**Constructora por defecto
+    *
+    * @param num Indica el número de distribució. 
+    * @param n  Número d'ubicacions de la distribució.
+    * @param np Número de prestatges de la distribució.
+    */
 	
 	public Distribucio(int num, int n, int np) {
 		this.setNum(num);
@@ -14,11 +22,16 @@ public class Distribucio {
 		
 	}
 	
+	
+	/**Afegeix una assignació a la distribució
+	    * 
+	    * @param as Assignació que s'afegeix a la distribució. 
+	    */
 	public void AfegirAssignacio(Assignacio as){
 		
 	}
 	
-	/**Mostrar una Distribució d'assignacions
+	/**Mostra la Distribució de les assignacions
     * 
     * 
     */
@@ -31,9 +44,9 @@ public class Distribucio {
 		}
 	}
 	
-	/**Consultar una Distribució d'assignacions
+	/**Consulta una Distribució d'assignacions
 	    * 
-	    * 
+	    * @return la matriu d'assignacions de la distribució
 	    */
 	
 	public Llibre[][] consultarDistribucio() {
@@ -43,18 +56,28 @@ public class Distribucio {
 	
 	
 	
-	/**Edita, intercanviant dues assignacions de lloc
+	/**Edita la distribució, intercanviant dues assignacions de lloc
 	    * 
 	    * 
 	    */
 	public void editarAssignacions(Assignacio as1, Assignacio as2)  {
 		
 	}
+	
+	 /**Consultora del paràmetre num.
+    *
+    * @return    el valor que té num.
+
+    */
 
 	public int getNum() {
 		return num;
 	}
 
+	/**Modificadora del paràmetre num de la distribució
+	    * 
+	    * @param num  el nou número de la distribució
+	    */
 	public void setNum(int num) {
 		this.num = num;
 	}
