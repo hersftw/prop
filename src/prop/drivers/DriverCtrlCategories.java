@@ -23,20 +23,51 @@ public class DriverCtrlCategories {
 		// TODO Auto-generated method stub
 		System.out.println("Driver CtrlCategories");
 		CtrlCategories ctrl = new CtrlCategories();
+		ctrl.inicialitzarCategories();
 		Scanner in = new Scanner(System.in);
+		String nom;
+		String pare;
+		String nou;
 		boolean end = false;
+		ctrl.mostrarCategories();
 		while (!end) {
 			menu();
-			switch(in.nextInt())
-		ctrl.inicialitzarCategories();
-		ctrl.afegirCategoria("Bib1", "Biblioteca");
-		ctrl.afegirCategoria("Bib2", "Biblioteca");
-		ctrl.afegirCategoria("Bib1.1", "Bib1");
-		ctrl.afegirCategoria("Bib1.2", "Bib1");
-		ctrl.mostrarCategories();
-		ctrl.canviarCategories("Bib2", "Bib1.1");
-		System.out.println();
-		ctrl.mostrarCategories();
+			switch(in.nextInt()) {
+			case 1:
+				System.out.print("Introdueix el nom de la categoria: ");
+				nom = in.next();
+				System.out.print("Introdueix la categoria a la que pertany: ");
+				pare = in.next();
+				ctrl.afegirCategoria(nom, pare);
+				ctrl.mostrarCategories();
+				break;
+			case 2:
+				System.out.print("Introdueix la categoria a modificar: ");
+				nom = in.next();
+				System.out.print("Introdueix el nou nom: ");
+				nou = in.next();
+				ctrl.modificarCategories(nom, nou);
+				break;
+			case 3:
+				System.out.print("Introdueix una de les categories a intercanviar: ");
+				nom = in.next();
+				System.out.println("Introdueix l'altre categoria a intercanviar: ");
+				nou = in.next();
+				ctrl.canviarCategories(nom, nou);
+				break;
+			case 4:
+				System.out.print("Introdueix la categoria a eliminar: ");
+				nom = in.next();
+				ctrl.eliminarCategoria(nom);
+				break;
+			case 5:
+				ctrl.mostrarCategories();
+				break;
+			case 0:
+				end = true;
+				break;
+			}
+		}
 	}
 
 }

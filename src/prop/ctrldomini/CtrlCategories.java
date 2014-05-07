@@ -24,7 +24,7 @@ public class CtrlCategories {
 		Iterator<List<Categoria>> it = categories.iterator();
 		while(it.hasNext() & !trobat) {
 			List<Categoria> cat = it.next();
-			if (cat.get(0).getNom() == pare) {
+			if (cat.get(0).getNom().equals(pare)) {
 				cat.add(c);
 				categories.set(i, cat);
 				trobat = true;
@@ -42,7 +42,7 @@ public class CtrlCategories {
 		Iterator<List<Categoria>> it = categories.iterator();
 		while(it.hasNext() & !trobat) {
 			List<Categoria> cat = it.next();
-			if(cat.get(0).getNom() == nom) {
+			if(cat.get(0).getNom().equals(nom)) {
 				pare = cat.get(0).getPare();
 				Iterator<Categoria> it2 = cat.iterator();
 				if (it2.hasNext()) it2.next();
@@ -60,10 +60,10 @@ public class CtrlCategories {
 		trobat = false;
 		while(it.hasNext() & !trobat) {
 			List<Categoria> cat = it.next();
-			if(cat.get(0).getNom() == pare) {
+			if(cat.get(0).getNom().equals(pare)) {
 				Iterator<Categoria> it3 = cat.iterator();
 				while(it3.hasNext()) {
-					if (it3.next().getNom() == nom) it3.remove();
+					if (it3.next().getNom().equals(nom)) it3.remove();
 				}
 				for (int j = 0;j<fills.size();++j) {
 					cat.add(fills.get(j));
@@ -80,7 +80,7 @@ public class CtrlCategories {
 		Iterator<List<Categoria>> it = categories.iterator();
 		while (it.hasNext() & !trobat) {
 			List<Categoria> llista = it.next();
-			if (llista.get(0).getNom() == vell) {
+			if (llista.get(0).getNom().equals(vell)) {
 				llista.get(0).setNom(nou);
 				pare = llista.get(0).getPare();
 				categories.set(i, llista);
@@ -93,11 +93,11 @@ public class CtrlCategories {
 		it = categories.iterator();
 		while (it.hasNext() & !trobat) {
 			List<Categoria> llista = it.next();
-			if (llista.get(0).getNom() == pare) {
+			if (llista.get(0).getNom().equals(pare)) {
 				Iterator<Categoria> it2 = llista.iterator();
 				while(it2.hasNext()) {
 					Categoria cat = it2.next();
-					if (cat.getNom() == vell) {
+					if (cat.getNom().equals(vell)) {
 						cat.setNom(nou);
 						llista.set(i, cat);
 						trobat = true;
@@ -118,12 +118,12 @@ public class CtrlCategories {
 		String pare2 = null;
 		while (it.hasNext()) {
 			List<Categoria> llista = it.next();
-			if (llista.get(0).getNom() == cat1) {
+			if (llista.get(0).getNom().equals(cat1)) {
 				pare1 = llista.get(0).getPare();
 				find1 = true;
 			}
 			else if (!find1) ++i;
-			if (llista.get(0).getNom() == cat2)	{
+			if (llista.get(0).getNom().equals(cat2))	{
 				pare2 = llista.get(0).getPare();
 				find2 = true;
 			}
@@ -138,17 +138,17 @@ public class CtrlCategories {
 		it = categories.iterator();
 		while(it.hasNext()) {
 			List<Categoria> llista = it.next();
-			if (llista.get(0).getNom() == pare1) {
+			if (llista.get(0).getNom().equals(pare1)) {
 				Iterator<Categoria> it2 = llista.iterator();
-				while(it2.hasNext()) if (it2.next().getNom() == cat1 & !find1) {
+				while(it2.hasNext()) if (it2.next().getNom().equals(cat1) & !find1) {
 					it2.remove();
 					find1 = true;
 				}
 				llista.add(c2);
 			}
-			if (llista.get(0).getNom() == pare2) {
+			if (llista.get(0).getNom().equals(pare2)) {
 				Iterator<Categoria> it3 = llista.iterator();
-				while(it3.hasNext()) if (it3.next().getNom() == cat2 & !find2) {
+				while(it3.hasNext()) if (it3.next().getNom().equals(cat2) & !find2) {
 					it3.remove();
 					find2 = true;
 				}
