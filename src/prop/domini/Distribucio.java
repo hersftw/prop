@@ -5,7 +5,7 @@ import prop.domini.Llibre;
 
 public class Distribucio {
 	private int num;
-	private Llibre[][] distribucio;
+	public Llibre[][] distribucio;
 	
 	
 	
@@ -23,24 +23,31 @@ public class Distribucio {
 	}
 	
 	
-	/**Afegeix una assignació a la distribució
+	/**Afegeix una assignacio a la distribucio
 	    * 
-	    * @param as Assignació que s'afegeix a la distribució. 
+	    * @param as Assignacio que s'afegeix a la distribucio. 
 	    */
 	public void AfegirAssignacio(Assignacio as){
-		distribucio[as.getNodo().getX()][as.getNodo().getY()] = as.getLlibre();
+		
+		if(as.getNodo().getX() >= distribucio.length || as.getNodo().getX() < 0 || as.getNodo().getY() >= distribucio[0].length || as.getNodo().getY() < 0) {
+            throw new IllegalArgumentException("Error al asignar las posiciones x e y");
+
+		}
+		else distribucio[as.getNodo().getX()][as.getNodo().getY()] = as.getLlibre();
 	}
 	
-	/**Mostra la Distribució de les assignacions
+	/**Mostra la Distribucio de les assignacions
     * 
     * 
     */
 	
 	public void mostrarDistribucio() {
+		
 		for(int i = 0; i < distribucio.length; ++i) {
 			for(int j = 0; j < distribucio[0].length; ++j){
-				System.out.println(distribucio[i][j]+" "+i+" "+j);
+				System.out.print(distribucio[i][j].getId()+" "+i+" "+j+ " ");
 			}
+			System.out.println();
 		}
 	}
 	
@@ -48,17 +55,22 @@ public class Distribucio {
 	
 	
 	
-	/**Edita la distribució, intercanviant dues assignacions de lloc
+	/**Edita la distribucio, intercanviant dues assignacions de lloc
 	    * 
 	    * 
 	    */
 	public void editarAssignacions(Assignacio as1, Assignacio as2)  {
-		
+		int tempx = as1.getNodo().getX();
+		int tempy = as1.getNodo().getY();
+		as1.getNodo().setX(as2.getNodo().getX());
+		as1.getNodo().setY(as2.getNodo().getY());
+		as2.getNodo().setX(tempx);
+		as2.getNodo().setY(tempy);
 	}
 	
-	 /**Consultora del paràmetre num.
+	 /**Consultora del parametre num.
     *
-    * @return    el valor que té num.
+    * @return    el valor que te num.
 
     */
 
@@ -66,9 +78,9 @@ public class Distribucio {
 		return num;
 	}
 
-	/**Modificadora del paràmetre num de la distribució
+	/**Modificadora del parametre num de la distribucio
 	    * 
-	    * @param num  el nou número de la distribució
+	    * @param num  el nou numero de la distribucio
 	    */
 	public void setNum(int num) {
 		this.num = num;
