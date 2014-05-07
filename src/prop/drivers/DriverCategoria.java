@@ -20,24 +20,27 @@ public class DriverCategoria {
 	public static void main(String[] args) {
 		
 		System.out.println("Driver Categoria");
-		System.out.println("Introdueix un nom (String) i el nom del pare (String) (si no te escriu Null)");
 		Scanner in = new Scanner(System.in);
-		Categoria cat = new Categoria(in.next(), in.next());
+		System.out.print("Introdueix el nom de la categoria (String): ");
+		String nom = in.nextLine();
+		System.out.print("Introdueix el nom del pare (String) (si no te escriu Null): ");
+		String pare = in.nextLine();
+		Categoria cat = new Categoria(nom, pare);
 		boolean sortir = false;
 		
 		while(!sortir){
 			menu();
 			
 			switch (in.nextInt()) {
-			
 				case 1: 
 					System.out.println(cat.getNom());
 					break;
 				
 					
 				case 2: 
-					System.out.println("Introdueix el nou Nom(String):");
-					cat.setNom(in.next());
+					in.nextLine();
+					System.out.print("Introdueix el nou Nom(String): ");
+					cat.setNom(in.nextLine());
 					break;
 				
 					
@@ -46,13 +49,16 @@ public class DriverCategoria {
 					break;
 					
 				case 4: 
+					in.nextLine();
 					System.out.println("Introdueix el nou Pare(String):");
-					cat.setPare(in.next());;
+					cat.setPare(in.nextLine());
 					break; 
 					
 				case 5: 
 					sortir = true;
 					break;
+				default: 
+					System.out.println("Opcio no reconeguda");
 			}			
 		}
 		in.close();

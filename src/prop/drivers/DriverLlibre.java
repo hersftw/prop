@@ -6,6 +6,7 @@ import java.util.*;
 
 
 
+
 public class DriverLlibre {
 	
 	private static void menu() {
@@ -28,9 +29,23 @@ public class DriverLlibre {
 	public static void main(String[] args) {
 		
 		System.out.println("Driver Llibre");
-		System.out.println("Introdueix una id(int), un titol(String), un autor(String), una editorial (String), un any (int) i un categoria (String)");
+		System.out.print("Introdueix una ISBN(int): ");
 		Scanner in = new Scanner(System.in);
-		Llibre book = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
+		int id = in.nextInt();
+		in.nextLine();
+		System.out.print("Introdueix Titol (String): ");
+		String titol = in.nextLine();
+		System.out.print("Introdueix Autor (String): ");
+		String autor = in.nextLine();
+		System.out.print("Introdueix Editorial (String): ");
+		String edi = in.nextLine();
+		System.out.print("Introdueix Any (int): ");
+		int any = in.nextInt();
+		in.nextLine();
+		System.out.print("Introdueix Categoria (String): ");
+		String cat = in.nextLine();
+		
+		Llibre book = new Llibre(id, titol, autor, edi, any, cat);
 		boolean sortir = false;
 		while (!sortir){
 			menu();
@@ -43,7 +58,7 @@ public class DriverLlibre {
 				
 					
 				case 2: 
-					System.out.println("Introdueix el nou id(int):");
+					System.out.print("Introdueix el nou ISBN(int): ");
 					book.setId(in.nextInt());
 					break;
 				
@@ -53,8 +68,9 @@ public class DriverLlibre {
 					break;
 					
 				case 4: 
-					System.out.println("Introdueix el nou Titol(String):");
-					book.setTitol(in.next());
+					in.nextLine();
+					System.out.print("Introdueix el nou Titol(String): ");
+					book.setTitol(in.nextLine());
 					break;
 					
 				
@@ -63,8 +79,9 @@ public class DriverLlibre {
 					break;
 					
 				case 6: 
-					System.out.println("Introdueix el nou Autor(String):");
-					book.setAutor(in.next());
+					in.nextLine();
+					System.out.print("Introdueix el nou Autor(String): ");
+					book.setAutor(in.nextLine());
 					break;
 				
 				case 7: 
@@ -72,8 +89,9 @@ public class DriverLlibre {
 					break;
 					
 				case 8: 
-					System.out.println("Introdueix la nova Editorial(String):");
-					book.setEditorial(in.next());
+					in.nextLine();
+					System.out.print("Introdueix la nova Editorial(String): ");
+					book.setEditorial(in.nextLine());
 					break;
 					
 				case 9: 
@@ -81,7 +99,7 @@ public class DriverLlibre {
 					break;
 					
 				case 10: 
-					System.out.println("Introdueix el nou Any (int):");
+					System.out.print("Introdueix el nou Any (int): ");
 					book.setAny(in.nextInt());
 					break;
 					
@@ -90,12 +108,15 @@ public class DriverLlibre {
 					break;
 					
 				case 12: 
-					System.out.println("Introdueix la nova Categria (String):");
-					book.setCategoria(in.next());
+					in.nextLine();
+					System.out.print("Introdueix la nova Categria (String): ");
+					book.setCategoria(in.nextLine());
 					break;
 				case 13: 
 					sortir = true;
 					break;
+				default: 
+					System.out.println("Opcio no reconeguda");
 			}
 		}
 		in.close();
