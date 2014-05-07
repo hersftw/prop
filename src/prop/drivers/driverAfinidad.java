@@ -3,13 +3,12 @@ package prop.drivers;
 import java.util.Scanner;
 
 import prop.domini.Afinidad;
-import prop.domini.Nodo;
 
 public class driverAfinidad {
 	private static void menu() {
 		System.out.println("Selecciona una opcio:");
 	    System.out.println("\t 0) Sortir.");
-	    System.out.println("\t 1) Consulta les coordenades.");
+	    System.out.println("\t 1) Consulta afinitat.");
 	    System.out.println("\t 2) Modifica les coordenades.");
 	}
 	
@@ -19,27 +18,29 @@ public class driverAfinidad {
 	    Scanner in= new Scanner(System.in);
 	    int n = in.nextInt();
 	    Afinidad m = new Afinidad(n);
-	    Nodo n = new Nodo(x, y);
+	    System.out.println("Introdueix tots els elements de la matriu:");
+	    for (int i = 0; i < n; ++i) for (int j = 0; j < n; ++j) m.insertar_afinidad(i, j, in.nextDouble());
 	    boolean end = false;
 	    while (!end) {
 	    	menu();
 		    int num = in.nextInt();
-		    if (num == 0) end = true;
-		    else if (num == 1) {
-		    	System.out.print(n.getX());
-		    	System.out.print(" ");
-		    	System.out.println(n.getY());
+		    switch (num) {
+			    case 0: {
+			    	end = true;
+			    	break;
+			    }
+			    case 1: {
+			    	System.out.println("Introdueix la posició que vols consultar:");
+			    	System.out.println(m.consultar_afinidad(in.nextInt(), in.nextInt()));
+			    	break;
+			    }
+			    case 2: {
+			    	System.out.println("Introdueix la posició que vols modificar i el nou valor:");
+			    	m.insertar_afinidad(in.nextInt(), in.nextInt(), in.nextDouble());
+			    	break;
+			    }
+			    default: System.out.println("Opcio no correcte.");
 		    }
-		    else if (num == 2) {
-		    	System.out.println("Introdueix nous valors per a x i y:");
-		    	System.out.print("x = ");
-		    	x = in.nextInt();
-		    	n.setX(x);
-		    	System.out.print("y = ");
-		    	y = in.nextInt();
-		    	n.setY(y);
-		    }
-		    else System.out.println("Opcio no correcte.");
 	    }
 	    in.close();
 	}
