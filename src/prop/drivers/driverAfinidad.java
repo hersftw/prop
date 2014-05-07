@@ -25,21 +25,16 @@ public class driverAfinidad {
 	    	menu();
 		    int num = in.nextInt();
 		    switch (num) {
-			    case 0: {
-			    	end = true;
-			    	break;
-			    }
-			    case 1: {
-			    	System.out.println("Introdueix la posició que vols consultar:");
-			    	System.out.println(m.consultar_afinidad(in.nextInt(), in.nextInt()));
-			    	break;
-			    }
-			    case 2: {
-			    	System.out.println("Introdueix la posició que vols modificar i el nou valor:");
-			    	m.insertar_afinidad(in.nextInt(), in.nextInt(), in.nextDouble());
-			    	break;
-			    }
-			    default: System.out.println("Opcio no correcte.");
+			    case 0: end = true;
+			    		break;
+			    case 1: System.out.println("Introdueix la posició que vols consultar:");
+			    		System.out.println(m.consultar_afinidad(in.nextInt(), in.nextInt()));
+			    		break;
+			    case 2: System.out.println("Introdueix la posició que vols modificar i el nou valor:");
+			    		m.insertar_afinidad(in.nextInt(), in.nextInt(), in.nextDouble());
+			    		break;
+			    default:System.out.println("Opcio no correcte.");
+			     		break;
 		    }
 	    }
 	    in.close();
