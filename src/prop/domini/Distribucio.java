@@ -18,7 +18,7 @@ public class Distribucio {
 	
 	public Distribucio(int num, int n, int np) {
 		this.setNum(num);
-		this.distribucio = new Llibre[n/np][np];
+		this.distribucio = new Llibre[np][n/np];
 		
 	}
 	
@@ -28,7 +28,7 @@ public class Distribucio {
 	    * @param as Assignació que s'afegeix a la distribució. 
 	    */
 	public void AfegirAssignacio(Assignacio as){
-		
+		distribucio[as.getNodo().getX()][as.getNodo().getY()] = as.getLlibre();
 	}
 	
 	/**Mostra la Distribució de les assignacions
@@ -44,15 +44,7 @@ public class Distribucio {
 		}
 	}
 	
-	/**Consulta una Distribució d'assignacions
-	    * 
-	    * @return la matriu d'assignacions de la distribució
-	    */
-	
-	public Llibre[][] consultarDistribucio() {
-			return distribucio;
-		
-	}
+
 	
 	
 	
