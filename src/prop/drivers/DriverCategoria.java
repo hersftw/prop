@@ -57,6 +57,8 @@ public class DriverCategoria {
 				case 5: 
 					sortir = true;
 					break;
+				default: 
+					System.out.println("Opcio no reconeguda");
 			}			
 		}
 		in.close();
