@@ -27,7 +27,6 @@ public class DriverCategoria {
 		
 		while(!sortir){
 			menu();
-			in = new Scanner(System.in);
 			
 			switch (in.nextInt()) {
 			
@@ -38,7 +37,6 @@ public class DriverCategoria {
 					
 				case 2: 
 					System.out.println("Introdueix el nou Nom(String):");
-					in = new Scanner(System.in);
 					cat.setNom(in.next());
 					break;
 				
@@ -49,7 +47,6 @@ public class DriverCategoria {
 					
 				case 4: 
 					System.out.println("Introdueix el nou Pare(String):");
-					in = new Scanner(System.in);
 					cat.setPare(in.next());;
 					break; 
 					
@@ -58,5 +55,6 @@ public class DriverCategoria {
 					break;
 			}			
 		}
+		in.close();
 	}
 }

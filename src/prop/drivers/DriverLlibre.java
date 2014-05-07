@@ -3,7 +3,7 @@ package prop.drivers;
 import prop.domini.Llibre;
 
 import java.util.*;
-import java.io.*;
+
 
 
 public class DriverLlibre {
@@ -34,7 +34,6 @@ public class DriverLlibre {
 		boolean sortir = false;
 		while (!sortir){
 			menu();
-			in = new Scanner(System.in);
 			
 			switch (in.nextInt()) {
 			
@@ -45,7 +44,6 @@ public class DriverLlibre {
 					
 				case 2: 
 					System.out.println("Introdueix el nou id(int):");
-					in = new Scanner(System.in);
 					book.setId(in.nextInt());
 					break;
 				
@@ -56,7 +54,6 @@ public class DriverLlibre {
 					
 				case 4: 
 					System.out.println("Introdueix el nou Titol(String):");
-					in = new Scanner(System.in);
 					book.setTitol(in.next());
 					break;
 					
@@ -67,7 +64,6 @@ public class DriverLlibre {
 					
 				case 6: 
 					System.out.println("Introdueix el nou Autor(String):");
-					in = new Scanner(System.in);
 					book.setAutor(in.next());
 					break;
 				
@@ -77,7 +73,6 @@ public class DriverLlibre {
 					
 				case 8: 
 					System.out.println("Introdueix la nova Editorial(String):");
-					in = new Scanner(System.in);
 					book.setEditorial(in.next());
 					break;
 					
@@ -87,7 +82,6 @@ public class DriverLlibre {
 					
 				case 10: 
 					System.out.println("Introdueix el nou Any (int):");
-					in = new Scanner(System.in);
 					book.setAny(in.nextInt());
 					break;
 					
@@ -97,7 +91,6 @@ public class DriverLlibre {
 					
 				case 12: 
 					System.out.println("Introdueix la nova Categria (String):");
-					in = new Scanner(System.in);
 					book.setCategoria(in.next());
 					break;
 				case 13: 
@@ -105,5 +98,6 @@ public class DriverLlibre {
 					break;
 			}
 		}
+		in.close();
 	}
 }
