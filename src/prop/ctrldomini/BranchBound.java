@@ -24,7 +24,7 @@ public class BranchBound {
     private int[][] distancia;
     public  Node mejorSolucion;
     private Node solucionParcial;
-    double  mejorCost;
+    public double  mejorCost;
     
     public BranchBound(int mida) {
         mejorCost = Integer.MAX_VALUE;

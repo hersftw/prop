@@ -16,7 +16,7 @@ import java.util.Vector;
  */
 public class Node {
     Vector<Integer> teclasPendientes;
-    int [] teclasAssignadas;
+    public int [] teclasAssignadas;
     double cost;
     int etapa = 0;
     
