@@ -39,8 +39,9 @@ public class Distribucio {
 	public void mostrarDistribucio() {
 		for(int i = 0; i < distribucio.length; ++i) {
 			for(int j = 0; j < distribucio[0].length; ++j){
-				System.out.println(distribucio[i][j]+" "+i+" "+j);
+				System.out.println(distribucio[i][j].getId()+" "+i+" "+j+ " ");
 			}
+			System.out.println("/n");
 		}
 	}
 	
@@ -53,7 +54,12 @@ public class Distribucio {
 	    * 
 	    */
 	public void editarAssignacions(Assignacio as1, Assignacio as2)  {
-		
+		int tempx = as1.getNodo().getX();
+		int tempy = as1.getNodo().getY();
+		as1.getNodo().setX(as2.getNodo().getX());
+		as1.getNodo().setY(as2.getNodo().getY());
+		as2.getNodo().setX(tempx);
+		as2.getNodo().setY(tempy);
 	}
 	
 	 /**Consultora del paràmetre num.
