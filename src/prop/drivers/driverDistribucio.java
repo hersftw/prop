@@ -27,10 +27,12 @@ public class driverDistribucio {
 		System.out.println("Introdueix un numero de distribució, el número d'ubicacions que hi ha i el número de prestatges de la llibreria)");
 		Scanner in = new Scanner(System.in);
 		Distribucio dis = new Distribucio(in.nextInt(), in.nextInt(), in.nextInt());
-		System.out.println("");
+		System.out.println("Afegeix la ubicacio(x, y):");
 		Nodo no = new Nodo(in.nextInt(), in.nextInt());
+		System.out.println("Afegeix les dades del llibre(ISBN, Titol, Autor, Editorial, Any, Categoria :");
 		Llibre lli = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
 		Assignacio ass = new Assignacio(lli, no);
+		dis.AfegirAssignacio(ass);
 		
 		boolean surt = false;
 		
@@ -42,10 +44,10 @@ public class driverDistribucio {
 			
 				case 1: 
 					System.out.println("Introdueix la nova assignacio: ");
-					Nodo no = new Nodo(in.nextInt(), in.nextInt());
-					Llibre lli = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
-					Assignacio ass = new Assignacio(lli, no);
-					dis.AfegirAssignacio(ass);
+					Nodo no1 = new Nodo(in.nextInt(), in.nextInt());
+					Llibre lli1 = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
+					Assignacio ass1 = new Assignacio(lli1, no1);
+					dis.AfegirAssignacio(ass1);
 					break;
 			
 				case 2: 
@@ -55,11 +57,13 @@ public class driverDistribucio {
 					
 				case 3: 
 					System.out.println("edita assignacions");
-					Nodo no = new Nodo(in.nextInt(), in.nextInt());
-					Assignacio ass = new Assignacio(lli, no);
 					Nodo no2 = new Nodo(in.nextInt(), in.nextInt());
+					Llibre lli2 = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
 					Assignacio ass2 = new Assignacio(lli2, no2);
-					dis.editarAssignacions();
+					Nodo no3 = new Nodo(in.nextInt(), in.nextInt());
+					Llibre lli3 = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
+					Assignacio ass3 = new Assignacio(lli3, no3);
+					dis.editarAssignacions(ass2, ass3);
 					break;
 				
 					

@@ -28,7 +28,12 @@ public class Distribucio {
 	    * @param as Assignacio que s'afegeix a la distribucio. 
 	    */
 	public void AfegirAssignacio(Assignacio as){
-		distribucio[as.getNodo().getX()][as.getNodo().getY()] = as.getLlibre();
+		
+		if(as.getNodo().getX() >= distribucio.length || as.getNodo().getX() < 0 || as.getNodo().getY() >= distribucio[0].length || as.getNodo().getY() < 0) {
+            throw new IllegalArgumentException("Error al asignar las posiciones x e y");
+
+		}
+		else distribucio[as.getNodo().getX()][as.getNodo().getY()] = as.getLlibre();
 	}
 	
 	/**Mostra la Distribucio de les assignacions
@@ -37,11 +42,12 @@ public class Distribucio {
     */
 	
 	public void mostrarDistribucio() {
+		
 		for(int i = 0; i < distribucio.length; ++i) {
 			for(int j = 0; j < distribucio[0].length; ++j){
-				System.out.println(distribucio[i][j].getId()+" "+i+" "+j+ " ");
+				System.out.print(distribucio[i][j].getId()+" "+i+" "+j+ " ");
 			}
-			System.out.println("/n");
+			System.out.print("/n");
 		}
 	}
 	
