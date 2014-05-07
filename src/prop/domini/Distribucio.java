@@ -18,7 +18,7 @@ public class Distribucio {
 	
 	public Distribucio(int num, int n, int np) {
 		this.setNum(num);
-		this.distribucio = new Llibre[n/np][np];
+		this.distribucio = new Llibre[np][n/np];
 		
 	}
 	
@@ -44,15 +44,7 @@ public class Distribucio {
 		}
 	}
 	
-	/**Consulta una Distribució d'assignacions
-	    * 
-	    * @return la matriu d'assignacions de la distribució
-	    */
-	
-	public Llibre[][] consultarDistribucio() {
-			return distribucio;
-		
-	}
+
 	
 	
 	
