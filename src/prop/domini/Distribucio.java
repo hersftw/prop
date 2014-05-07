@@ -5,7 +5,7 @@ import prop.domini.Llibre;
 
 public class Distribucio {
 	private int num;
-	private Llibre[][] distribucio;
+	public Llibre[][] distribucio;
 	
 	
 	
@@ -47,7 +47,7 @@ public class Distribucio {
 			for(int j = 0; j < distribucio[0].length; ++j){
 				System.out.print(distribucio[i][j].getId()+" "+i+" "+j+ " ");
 			}
-			System.out.print("/n");
+			System.out.println();
 		}
 	}
 	

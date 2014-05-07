@@ -43,6 +43,7 @@ public class driverDistribucio {
 			switch (in.nextInt()) {
 			
 				case 1: 
+				
 					System.out.println("Introdueix la nova assignacio: ");
 					Nodo no1 = new Nodo(in.nextInt(), in.nextInt());
 					Llibre lli1 = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
@@ -63,7 +64,10 @@ public class driverDistribucio {
 					Nodo no3 = new Nodo(in.nextInt(), in.nextInt());
 					Llibre lli3 = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
 					Assignacio ass3 = new Assignacio(lli3, no3);
+					dis.AfegirAssignacio(ass2);
+					dis.AfegirAssignacio(ass3);
 					dis.editarAssignacions(ass2, ass3);
+				
 					break;
 				
 					
