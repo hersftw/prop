@@ -11,7 +11,7 @@ public class HungarianAlgorithm{
 
 
 
-    public int[][] computeAssignments(float[][] matrix) {
+    public int[][] computeAssignments(int[][] matrix) {
 
 
         // subtract minumum value from rows and columns to create lots of zeroes
@@ -90,7 +90,7 @@ public class HungarianAlgorithm{
      *
      * @return the next step to perform
      */
-    private void reduceMatrix(float[][] matrix) {
+    private void reduceMatrix(int[][] matrix) {
 
         for (int i = 0; i < matrix.length; i++) {
 
@@ -138,7 +138,7 @@ public class HungarianAlgorithm{
      * @param coveredCols
      * @return the next step to perform
      */
-    private void initStars(float costMatrix[][], int[] starsByRow, int[] starsByCol) {
+    private void initStars(int costMatrix[][], int[] starsByRow, int[] starsByCol) {
 
 
         int [] rowHasStarredZero = new int[costMatrix.length];
@@ -178,7 +178,7 @@ public class HungarianAlgorithm{
      * @param coveredCols
      * @return
      */
-    private int[] primeSomeUncoveredZero(float matrix[][], int[] primesByRow,
+    private int[] primeSomeUncoveredZero(int matrix[][], int[] primesByRow,
                                        int[] coveredRows, int[] coveredCols) {
 
 
@@ -242,7 +242,7 @@ public class HungarianAlgorithm{
     }
 
 
-    private void makeMoreZeroes(float[][] matrix, int[] coveredRows, int[] coveredCols) {
+    private void makeMoreZeroes(int[][] matrix, int[] coveredRows, int[] coveredCols) {
 
         // find the minimum uncovered value
         float minUncoveredValue = Float.MAX_VALUE;
