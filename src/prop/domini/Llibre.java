@@ -37,7 +37,7 @@ public class Llibre extends Elemento {
     */
 	
 	public int getId() {
-		return super.id;
+		return super.getId();
 	}
 
 
@@ -47,7 +47,7 @@ public class Llibre extends Elemento {
     */
 	
 	public void setId(int id) {
-		super.id = id;
+		super.setId(id);
 	}
 	
 

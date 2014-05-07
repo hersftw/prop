@@ -31,7 +31,6 @@ public class DriverDistancia {
 		
 		while(!sortir){
 			menu();
-			in = new Scanner(System.in);
 			
 			switch (in.nextInt()) {
 			
@@ -42,7 +41,6 @@ public class DriverDistancia {
 					
 				case 2: 
 					System.out.println("Introdueix el nou Numero de Files (int):");
-					in = new Scanner(System.in);
 					dist.setNumeroFilas(in.nextInt());
 					break;
 				
@@ -53,7 +51,6 @@ public class DriverDistancia {
 					
 				case 4: 
 					System.out.println("Introdueix el nou numero de columnes:");
-					in = new Scanner(System.in);
 					dist.setNumeroColumnas(in.nextInt());
 					break; 
 					
@@ -63,13 +60,11 @@ public class DriverDistancia {
 					
 				case 6: 
 					System.out.println("Introdueix el nou numero de posicions:");
-					in = new Scanner(System.in);
 					dist.setNumeroPosiciones(in.nextInt());
 					break; 
 					
 				case 7: 
 					System.out.println("Introdueix les dues posicions (int) i la distania entre elles(int):");
-					in = new Scanner(System.in);
 					dist.setDistanciaMatriz(in.nextInt(),in.nextInt(), in.nextInt());
 					break; 
 				
@@ -82,5 +77,6 @@ public class DriverDistancia {
 					break;
 			}			
 		}
+		in.close();
 	}
 }
