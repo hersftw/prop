@@ -62,7 +62,7 @@ public class driverLlibreria {
 		    	 		p = in.nextInt();
 		    	 		n.deleteNodo(u, p);
 		    	 		break;
-		    	default: System.out.println("Opcio no correcte!");
+		    	default: System.out.println("Opcio no correcta!");
 		    	 		break;
 		    }
 	    }

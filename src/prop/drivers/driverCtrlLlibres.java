@@ -2,6 +2,8 @@ package prop.drivers;
 
 import java.util.Scanner;
 
+import prop.ctrldomini.CrtlLlibres;
+import prop.domini.Llibre;
 import prop.domini.Llibreria;
 
 public class driverCtrlLlibres {
@@ -15,11 +17,12 @@ public class driverCtrlLlibres {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println("Introdueix el nombre de prestatges i ubicacions:");
-	    Scanner in= new Scanner(System.in);
-	    int p = in.nextInt();
-	    int u = in.nextInt();
-	    Llibreria n = new Llibreria(p, u);
+		System.out.println("Introdueix un llibre(isbn, titol, autor, editorial, any i categoria):");
+		Scanner in = new Scanner(System.in);
+		Llibre book = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
+		CrtlLlibres ctrl = new CrtlLlibres();
+		ctrl.inicialitzarLlibres();
+		ctrl.afegirLlibre(book);
 	    boolean end = false;
 	    while (!end) {
 	    	menu();
@@ -39,7 +42,7 @@ public class driverCtrlLlibres {
 		    	 		u = in.nextInt();
 		    	 		n.setUbicacions(u);
 		    	 		break;
-		    	default:System.out.println("");
+		    	default:System.out.println("Opcio no correcta!");
 		    			break;
 		    }
 	    }

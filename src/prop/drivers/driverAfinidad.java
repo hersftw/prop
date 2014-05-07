@@ -33,7 +33,7 @@ public class driverAfinidad {
 			    case 2: System.out.println("Introdueix la posició que vols modificar i el nou valor:");
 			    		m.insertar_afinidad(in.nextInt(), in.nextInt(), in.nextDouble());
 			    		break;
-			    default:System.out.println("Opcio no correcte.");
+			    default:System.out.println("Opcio no correcta!");
 			     		break;
 		    }
 	    }

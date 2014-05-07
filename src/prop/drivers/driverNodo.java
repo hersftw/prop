@@ -38,7 +38,7 @@ public class driverNodo {
 		    	y = in.nextInt();
 		    	n.setY(y);
 		    }
-		    else System.out.println("Opcio no correcte.");
+		    else System.out.println("Opcio no correcta!");
 	    }
 	    in.close();
 	}
