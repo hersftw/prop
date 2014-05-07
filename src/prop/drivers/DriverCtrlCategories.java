@@ -68,6 +68,7 @@ public class DriverCtrlCategories {
 				break;
 			}
 		}
+		in.close();
 	}
 
 }
