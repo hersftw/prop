@@ -62,9 +62,9 @@ public class Distribucio {
 		as2.getNodo().setY(tempy);
 	}
 	
-	 /**Consultora del paràmetre num.
+	 /**Consultora del parametre num.
     *
-    * @return    el valor que té num.
+    * @return    el valor que te num.
 
     */
 

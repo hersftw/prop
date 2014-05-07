@@ -27,6 +27,11 @@ public class driverDistribucio {
 		System.out.println("Introdueix un numero de distribució, el número d'ubicacions que hi ha i el número de prestatges de la llibreria)");
 		Scanner in = new Scanner(System.in);
 		Distribucio dis = new Distribucio(in.nextInt(), in.nextInt(), in.nextInt());
+		System.out.println("");
+		Nodo no = new Nodo(in.nextInt(), in.nextInt());
+		Llibre lli = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
+		Assignacio ass = new Assignacio(lli, no);
+		
 		boolean surt = false;
 		
 		while(!surt){
@@ -39,8 +44,8 @@ public class driverDistribucio {
 					System.out.println("Introdueix la nova assignacio: ");
 					Nodo no = new Nodo(in.nextInt(), in.nextInt());
 					Llibre lli = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
-					Assignacio ass = new Assignacio(no, lli);
-					//System.out.println(dis.AfegirAssignacio(ass));
+					Assignacio ass = new Assignacio(lli, no);
+					dis.AfegirAssignacio(ass);
 					break;
 			
 				case 2: 
@@ -50,7 +55,11 @@ public class driverDistribucio {
 					
 				case 3: 
 					System.out.println("edita assignacions");
-					//dis.editarAssignacions(in.nextInt());
+					Nodo no = new Nodo(in.nextInt(), in.nextInt());
+					Assignacio ass = new Assignacio(lli, no);
+					Nodo no2 = new Nodo(in.nextInt(), in.nextInt());
+					Assignacio ass2 = new Assignacio(lli2, no2);
+					dis.editarAssignacions();
 					break;
 				
 					
@@ -61,7 +70,6 @@ public class driverDistribucio {
 				case 5: 
 
 					System.out.println("Introdueix el numero de distribucio:");
-					in = new Scanner(System.in);
 					dis.setNum(in.nextInt());;
 					break; 
 					
