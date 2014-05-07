@@ -58,10 +58,15 @@ public class driverDistribucio {
 					
 				case 3: 
 					System.out.println("edita assignacions");
+					System.out.println("Afegeix la ubicacio(x, y):");
 					Nodo no2 = new Nodo(in.nextInt(), in.nextInt());
+					System.out.println("Afegeix les dades del llibre(ISBN, Titol, Autor, Editorial, Any, Categoria :");
 					Llibre lli2 = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
 					Assignacio ass2 = new Assignacio(lli2, no2);
+					System.out.println("Afegeix la ubicacio de la 2(x, y):");
 					Nodo no3 = new Nodo(in.nextInt(), in.nextInt());
+					System.out.println("Afegeix les dades del llibre 2(ISBN, Titol, Autor, Editorial, Any, Categoria :");
+
 					Llibre lli3 = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
 					Assignacio ass3 = new Assignacio(lli3, no3);
 					dis.AfegirAssignacio(ass2);
