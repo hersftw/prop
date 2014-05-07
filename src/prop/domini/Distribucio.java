@@ -28,7 +28,7 @@ public class Distribucio {
 	    * @param as Assignació que s'afegeix a la distribució. 
 	    */
 	public void AfegirAssignacio(Assignacio as){
-		
+		distribucio[as.getNodo().getX()][as.getNodo().getY()] = as.getLlibre();
 	}
 	
 	/**Mostra la Distribució de les assignacions

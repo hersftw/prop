@@ -2,6 +2,9 @@ package prop.drivers;
 
 
 import prop.domini.Distribucio;
+import prop.domini.Llibre;
+import prop.domini.Nodo;
+import prop.domini.Assignacio;
 
 import java.util.*;
 
@@ -34,7 +37,10 @@ public class driverDistribucio {
 			
 				case 1: 
 					System.out.println("Introdueix la nova assignacio: ");
-					//System.out.println(dis.AfegirAssignacio(in.nextInt()));
+					Nodo no = new Nodo(in.nextInt(), in.nextInt());
+					Llibre lli = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
+					Assignacio ass = new Assignacio(no, lli);
+					//System.out.println(dis.AfegirAssignacio(ass));
 					break;
 			
 				case 2: 
@@ -53,6 +59,7 @@ public class driverDistribucio {
 					break;
 					
 				case 5: 
+
 					System.out.println("Introdueix el numero de distribucio:");
 					in = new Scanner(System.in);
 					dis.setNum(in.nextInt());;
