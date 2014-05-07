@@ -2,10 +2,9 @@ package prop.ctrldomini;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import prop.presentacio.*;
 import prop.domini.*;
 
-public class CtrlDomini {
+public class CtrlCategories {
 	private List<List<Categoria>> categories;
 	
 	public void inicialitzarCategories() {
@@ -111,18 +110,49 @@ public class CtrlDomini {
 	
 	public void canviarCategories(String cat1, String cat2) {
 		Iterator<List<Categoria>> it = categories.iterator();
-		Boolean trobat = false;
 		int i, j;
+		boolean find1, find2;
+		find1 = find2 = false;
 		i = j = 0;
 		String pare1 = null;
 		String pare2 = null;
-		while (it.hasNext() & !trobat) {
+		while (it.hasNext()) {
 			List<Categoria> llista = it.next();
 			if (llista.get(0).getNom() == cat1) {
 				pare1 = llista.get(0).getPare();
+				find1 = true;
 			}
-			if (llista.get(0).getNom() == cat2) {
+			else if (!find1) ++i;
+			if (llista.get(0).getNom() == cat2)	{
 				pare2 = llista.get(0).getPare();
+				find2 = true;
+			}
+			else if (!find2) ++j;
+		}
+		categories.get(i).get(0).setPare(pare2);
+		Categoria c1 = categories.get(i).get(0);
+		categories.get(j).get(0).setPare(pare1);
+		Categoria c2 = categories.get(j).get(0);
+		
+		find1 = find2 = false;
+		it = categories.iterator();
+		while(it.hasNext()) {
+			List<Categoria> llista = it.next();
+			if (llista.get(0).getNom() == pare1) {
+				Iterator<Categoria> it2 = llista.iterator();
+				while(it2.hasNext()) if (it2.next().getNom() == cat1 & !find1) {
+					it2.remove();
+					find1 = true;
+				}
+				llista.add(c2);
+			}
+			if (llista.get(0).getNom() == pare2) {
+				Iterator<Categoria> it3 = llista.iterator();
+				while(it3.hasNext()) if (it3.next().getNom() == cat2 & !find2) {
+					it3.remove();
+					find2 = true;
+				}
+				llista.add(c1);
 			}
 		}
 	}
