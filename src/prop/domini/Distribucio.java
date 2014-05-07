@@ -23,15 +23,15 @@ public class Distribucio {
 	}
 	
 	
-	/**Afegeix una assignació a la distribució
+	/**Afegeix una assignacio a la distribucio
 	    * 
-	    * @param as Assignació que s'afegeix a la distribució. 
+	    * @param as Assignacio que s'afegeix a la distribucio. 
 	    */
 	public void AfegirAssignacio(Assignacio as){
 		distribucio[as.getNodo().getX()][as.getNodo().getY()] = as.getLlibre();
 	}
 	
-	/**Mostra la Distribució de les assignacions
+	/**Mostra la Distribucio de les assignacions
     * 
     * 
     */
@@ -48,7 +48,7 @@ public class Distribucio {
 	
 	
 	
-	/**Edita la distribució, intercanviant dues assignacions de lloc
+	/**Edita la distribucio, intercanviant dues assignacions de lloc
 	    * 
 	    * 
 	    */
@@ -66,9 +66,9 @@ public class Distribucio {
 		return num;
 	}
 
-	/**Modificadora del paràmetre num de la distribució
+	/**Modificadora del parametre num de la distribucio
 	    * 
-	    * @param num  el nou número de la distribució
+	    * @param num  el nou numero de la distribucio
 	    */
 	public void setNum(int num) {
 		this.num = num;
