@@ -25,14 +25,17 @@ public class Assignacio {
 	}
 	 /**Modificadora del Llibre llibre
 	    *
-	    * @param llibre
+	    * @param llibre 
+	    * \pre Cert
+	    * \post S'ha assignat el llibre a l'assignació
 	    */
 	public void setLlibre(Llibre llibre) {
 		this.llibre = llibre;
 	}
 	
 	/**Consultora del node nodo
-    *
+    * \pre Cert
+    * \post S'ha retornat el node
     * @return el valor de nodo
     */
 	public nodo getNodo() {
@@ -42,6 +45,8 @@ public class Assignacio {
 	/**Modificadora del node nodo
     *
     * @param nodo
+    * \pre Cert
+    * \post S'ha assignat el node a l'assignació
     */
 	public void setNodo(nodo nodo) {
 		this.nodo = nodo;
