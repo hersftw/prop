@@ -1,6 +1,6 @@
 package prop.domini;
 
-public class Nodo {
+public class nodo {
 	protected int x;
 	protected int y;
 	
@@ -9,7 +9,7 @@ public class Nodo {
     * @param coordenada x del nodo
     * @param coordenada y del nodo
     */
-	public Nodo(int x, int y) {
+	public nodo(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
@@ -42,7 +42,7 @@ public class Nodo {
 	
 	@Override
 	public boolean equals(Object o) {
-		Nodo other = (Nodo) o;
+		nodo other = (nodo) o;
 		return x == other.x & y == other.y;
 	}
 	

@@ -5,11 +5,11 @@ import prop.domini.Llibre;
 public class Assignacio {
 
 	 private Llibre llibre;
-	 private Nodo nodo;
+	 private nodo nodo;
 	 
 	 /**Constructora per defecte**/
 	 
-	 public Assignacio(Llibre llibre, Nodo nodo) {
+	 public Assignacio(Llibre llibre, nodo nodo) {
 			
 			this.llibre = llibre;
 			this.nodo = nodo;
@@ -35,7 +35,7 @@ public class Assignacio {
     *
     * @return el valor de nodo
     */
-	public Nodo getNodo() {
+	public nodo getNodo() {
 		return nodo;
 	}
 	
@@ -43,7 +43,7 @@ public class Assignacio {
     *
     * @param nodo
     */
-	public void setNodo(Nodo nodo) {
+	public void setNodo(nodo nodo) {
 		this.nodo = nodo;
 	}
 

@@ -79,7 +79,7 @@ public class Distribucio {
 		for(int i = 0; i < distribucio.length; ++i) {
 			for(int j = 0; j < distribucio[0].length; ++j){
 				if(distribucio[i][j].getId() == isbn) {
-					Nodo no = new Nodo(i, j);
+					nodo no = new nodo(i, j);
 					Assignacio as = new Assignacio(distribucio[i][j], no);
 					return as;
 				}

@@ -6,15 +6,15 @@ import prop.ctrldomini.CtrlDistribucions;
 import prop.domini.Assignacio;
 import prop.domini.Distribucio;
 import prop.domini.Llibre;
-import prop.domini.Nodo;
+import prop.domini.nodo;
 
 public class DriverCtrlDistribucions {
 	private static void menu() {
-		System.out.println("Escull una opció:");
-        System.out.println(" 1) Afegir Distribució ");
-        System.out.println(" 2) Consulta Distribució ");
-        System.out.println(" 3) Esborra Distribució ");
-        System.out.println(" 4) Modifica Distribució ");
+		System.out.println("Escull una opciï¿½:");
+        System.out.println(" 1) Afegir Distribuciï¿½ ");
+        System.out.println(" 2) Consulta Distribuciï¿½ ");
+        System.out.println(" 3) Esborra Distribuciï¿½ ");
+        System.out.println(" 4) Modifica Distribuciï¿½ ");
 
         System.out.println(" 5) Sortir ");
 	}
@@ -25,11 +25,11 @@ public class DriverCtrlDistribucions {
 		System.out.println("Driver CtrlDistribucio");
 		CtrlDistribucions ctrldis = new CtrlDistribucions();
 		ctrldis.inicialitzarDistribucions();		
-		System.out.println("Introdueix un numero de distribució, el número d'ubicacions que hi ha i el número de prestatges de la llibreria)");
+		System.out.println("Introdueix un numero de distribuciï¿½, el nï¿½mero d'ubicacions que hi ha i el nï¿½mero de prestatges de la llibreria)");
 		Scanner in = new Scanner(System.in);
 		Distribucio dis = new Distribucio(in.nextInt(), in.nextInt(), in.nextInt());
 		System.out.println("Afegeix la ubicacio(x, y):");
-		Nodo no = new Nodo(in.nextInt(), in.nextInt());
+		nodo no = new nodo(in.nextInt(), in.nextInt());
 		
 		System.out.print("Introdueix una ISBN(int): ");
 		int id = in.nextInt();
@@ -59,13 +59,13 @@ public class DriverCtrlDistribucions {
 			switch (in.nextInt()) {
 			
 				case 1: 
-					System.out.println("Introdueix un numero de distribució, el número d'ubicacions que hi ha i el número de prestatges de la llibreria)");
+					System.out.println("Introdueix un numero de distribuciï¿½, el nï¿½mero d'ubicacions que hi ha i el nï¿½mero de prestatges de la llibreria)");
 		
 					dis = new Distribucio(in.nextInt(), in.nextInt(), in.nextInt());
-					System.out.println("Introdueix el numero de la nova Distribució: ");
+					System.out.println("Introdueix el numero de la nova Distribuciï¿½: ");
 					
 					System.out.println("Afegeix la ubicacio(x, y):");
-					Nodo no1 = new Nodo(in.nextInt(), in.nextInt());
+					nodo no1 = new nodo(in.nextInt(), in.nextInt());
 					System.out.print("Introdueix una ISBN(int): ");
 					id = in.nextInt();
 					in.nextLine();
