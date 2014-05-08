@@ -10,21 +10,21 @@ import java.util.Scanner;
     /* Esta clase implementa el Controlador de Persistencia, sera el encargado de conectar Dominio y Persistencia, es decir, de
        almacenar aquellos datos de dominio que sea preciso almacenar y de leer de ficheros aquellos de datos que sea preciso leer */
 
-public class CtrlPersistencia {
+public class ctrlPersistencia {
 
-    private static int tam;
-    private static int[][] afin;
-    private static int[][] dist;
+    private int tam;
+    private int[][] afin;
+    private int[][] dist;
 
-    public static int getTam() {
+    public int getTam() {
         return tam;
     }
 
-    public static int[][] getAfin() {
+    public int[][] getAfin() {
         return afin;
     }
 
-    public static int[][] getDist() {
+    public int[][] getDist() {
         return dist;
     }
 
@@ -35,12 +35,16 @@ public class CtrlPersistencia {
     public void leerJuegoDePrueba(String ruta) {
         ruta += ".dat";     // anado la extension a la ruta para leer
         try {
-            Scanner sc = new Scanner(new File(ruta));
+            File archivo = new File(ruta);
+            
+            Scanner sc = new Scanner(archivo);
+            
+            
             tam = sc.nextInt();
             afin = new int[tam][tam];
             dist = new int[tam][tam];
-            for (int i = 0; i < tam; ++i)
-                for (int j = 0; j < tam; ++j)
+            for (int i = 0; i < tam; ++i) 
+                for (int j = 0; j < tam; ++j) 
                     afin[i][j] = sc.nextInt();
             for (int i = 0; i < tam; ++i)
                 for (int j = 0; j < tam; ++j)

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Iterator;
 import prop.domini.Llibre;
 
-public class CrtlLlibres {
+public class crtlLlibres {
 	private List<Llibre> llibres;
 	
 	public void inicialitzarLlibres(){

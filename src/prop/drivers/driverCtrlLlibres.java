@@ -2,7 +2,7 @@ package prop.drivers;
 
 import java.util.Scanner;
 
-import prop.ctrldomini.CrtlLlibres;
+import prop.ctrldomini.crtlLlibres;
 import prop.domini.Llibre;
 
 public class driverCtrlLlibres {
@@ -34,7 +34,7 @@ public class driverCtrlLlibres {
 		String cat = in.nextLine();
 		
 		Llibre book = new Llibre(id, titol, autor, edi, any, cat);
-		CrtlLlibres ctrl = new CrtlLlibres();
+		crtlLlibres ctrl = new crtlLlibres();
 		ctrl.inicialitzarLlibres();
 		ctrl.afegirLlibre(book);
 	    boolean end = false;

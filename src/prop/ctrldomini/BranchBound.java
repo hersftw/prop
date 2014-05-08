@@ -17,16 +17,20 @@ import java.util.Random;
  *
  * @author alejandro.del.amo.gonzalez
  */
-public class BranchBound {
-    private PriorityQueue<Node> nodes;
-    private int mida;
-    private int[][] estadistica;
-    private int[][] distancia;
-    public  Node mejorSolucion;
-    private Node solucionParcial;
-    public double  mejorCost;
+public class branchBound {
     
-    public BranchBound(int mida) {
+    private PriorityQueue<Node> nodes; //Cua de prioritat ordenada de forma ascendent
+    private int mida;                 // mida de la solucio
+    private int[][] estadistica;      // matriu de flux
+    private int[][] distancia;        // matriu de distancia
+    public  Node mejorSolucion;       // Node amb la millor solucio 
+    double  mejorCost;                // Millor cost fins al moment
+    
+    /**
+     * Constructora per defecte
+     * @param mida mida de la solucio
+     */
+    public branchBound(int mida) {
         mejorCost = Integer.MAX_VALUE;
         double coste = 0;
         int h[] = new int [mida];
@@ -36,31 +40,46 @@ public class BranchBound {
         nodes.add(mejorSolucion);
     }
     
-    public BranchBound(int[][] estadistica, int[][] distancia) {
+    /**
+     * Constructora de la clase BranchBound
+     * @param estadistica Matriu de fluxe o de similitud 
+     * @param distancia Matriu de distancia 
+     */
+    public branchBound(int[][] estadistica, int[][] distancia) {
         this.mida = estadistica.length;
         this.distancia = distancia;
         this.estadistica = estadistica;
-        mejorCost = Integer.MAX_VALUE;
+        mejorCost = Integer.MAX_VALUE;  // Millor cost = infinit
         double coste = 0;
         int h[] = new int [mida];
         Vector<Integer> v = new Vector<Integer> (estadistica[0].length);
         mejorSolucion = new Node (v,h,0);
-        anadirPendientes();
-        System.out.println ("Mida teclas Pendientes"+ mejorSolucion.teclasPendientes.size());
-        nodes = new PriorityQueue<> (1,new NodeComparador());
-        nodes.add(mejorSolucion);
-        greedy2();
+        anadirPendientes();            
+        nodes = new PriorityQueue<> (1,new NodeComparador()); 
+        nodes.add(mejorSolucion);          
+        greedy();
         solve();
 
         
     }
     
+    /**
+     * Omple el vector de assignacions pendents
+     */
     public void anadirPendientes(){
         for(int i=0; i < estadistica.length; ++i) {
             mejorSolucion.teclasPendientes.add(i);
             
         }
     }
+
+    /**
+     * Calcula el cost de el vector de assignacion de un possible solució
+     * @param b Vector de assignacion de un node
+     * @param n Posició de la assignacio realitzada
+     * @param cost Cost de haber fet una assignacio
+     * @return Retorna el cost total del node 
+     */
     public double calcularCost(int [] b, int n,double cost) {
         for(int i=0; i < n;++i) {
             cost += estadistica[b[i]][b[n]]*distancia[i][n];
@@ -68,7 +87,11 @@ public class BranchBound {
         }
         return cost;
     }
-    public void greedy() {
+
+    /**
+     * Metode que calcula la primera branca del Branch & Bound
+     */
+    public void greedy2() {
        mejorCost = 0;
        Vector<Integer> p = new Vector<Integer> ();
        int s[] = new int [mida];
@@ -84,37 +107,33 @@ public class BranchBound {
        mejorSolucion = new Node(p,s,mejorCost);
        System.out.println("El mejor coste es :"+ mejorCost);
     }
-    public void greedy2() {
+
+    /** 
+     *  Metode que calcula de forma aleatoria una possible solució i el seu cost
+     */
+    public void greedy() {
         double costeParcial = 0;
         for(int j =0; j < 3; ++j) {
             costeParcial=0;
             Vector<Integer> p = new Vector<Integer> ();
             for(int i=0; i< mida;++i) {
                 p.add(i);
-                System.out.print("Pendientes "+p.get(i));
             }
-            System.out.println ("");
             int s[] = new int [mida];
             int i=0;
             while(!p.isEmpty()) {
                 Random randomGenerator = new Random();
                 int n = randomGenerator.nextInt(p.size());
-                System.out.print ("Valor random"+n);
-                System.out.print(" Valor de en el vector "+ n);
                 s[i] = p.get(n);
-                System.out.println ("");
-                System.out.println("Valor de s[i]"+s[i]);
                 p.remove(n);
                 ++i;
             }
-            System.out.println ("");
             for(int n=0; n < mida; ++n){
                 for(int m=0; m < mida;++m) {
                     costeParcial += estadistica[n][m]* distancia[s[n]][s[m]];
                 }
             }
             if(costeParcial < mejorCost) {
-                System.out.println("CosteParcial "+costeParcial);
                 mejorCost = costeParcial;
                 mejorSolucion = new Node(p,s,mejorCost);
             }
@@ -125,91 +144,47 @@ public class BranchBound {
         
     }
     
-    
+    /**
+     * Metode per comprobar si una possible solucio 
+     * @param a Cost de una solucio
+     * @return true, si es una possible solucio i false, si no ho es
+     */
     public boolean esMejor(double a) {
-        System.out.println ("Entro esMejor");
         if(a <= mejorCost) return true;
         else return false; 
     }
         
+    /**
+     * Metode principal de BranchBound
+     */
     public void solve()  {
         Node a = nodes.peek();
         while(!nodes.isEmpty()){
-            Node b = nodes.poll();
-            System.out.println("Teclas asignadas");
-            for (int k = 0; k < b.teclasAssignadas.length; k++) {
-                 System.out.print(b.teclasAssignadas[k] + " ");
-            }
-            System.out.println("");
-            System.out.println("Coste del nodo : "+ b.cost);
-            Vector<Integer> v1 = b.getTeclasPendientes();
+            Node b = nodes.poll();                          // Saca un node 
+            Vector<Integer> v1 = b.getTeclasPendientes();    
             if(esMejor(b.cost)) {
                 if(v1.isEmpty()) {
-                    System.out.print("ES UNA SOLUCION : ");
-                    for (int i = 0; i < b.teclasAssignadas.length; i++) {
-                    System.out.print(b.teclasAssignadas[i] + " ");
-                    }
-                    System.out.println("");
                     mejorSolucion = b;
                     mejorCost = b.cost;
                 }          
                 else {
-                    System.out.println ("Else");
                     for(int i=0; i < v1.size(); ++i) {
-                            int aux [] = b.getTeclasAssginadas();
-                            System.out.println("Teclas asignadas del padre:");
-                            for (int k = 0; k < aux.length; k++) {
-                                  System.out.print( aux[k] + " ");
-                            }
-                            System.out.println("");
-                            System.out.println("  Numero de teclas asignadas "+ aux.length);
-                            System.out.println("Teclas Pendientes del padre : ");
-                            for (int k = 0; k < v1.size(); k++) {
-                                  System.out.print( v1.get(k) + " ");
-                            }
-                            System.out.println("");
-                            System.out.println(" Numero de teclas Pendientes "+ v1.size());
-                            
-                            aux[mida-v1.size()] = v1.get(i);
-                            System.out.println ("La tecla asignada es: "+ v1.get(i));
-                            System.out.println("Teclas asignadas: " );
-                            for (int k = 0; k < aux.length; k++) {
-                                  System.out.print(aux[k] + " ");
-                            }
-                            System.out.println("");
+                            int aux [] = b.getTeclasAssginadas();  // Copia las assignaciones realizadas del padre
                             Vector<Integer> h1 = new Vector<Integer>();
-                            for(int m = 0; m < v1.size();++m) h1.add(v1.get(m));
+                            for(int m = 0; m < v1.size();++m) h1.add(v1.get(m));  //Copia las assignaciones pendientes del padre
                             h1.remove(i);
-                            System.out.println("Teclas pendientes: ");
-                            for (int m = 0; m < h1.size(); m++) {
-                                  System.out.print(h1.get(m)+ " ");
-                            }
-                            System.out.println("");
-                            System.out.println ("Calculo coste");
                             int pos = mida-v1.size();
-                            double x = calcularCost(aux,pos,b.cost);
-                            System.out.println ("El coste es: "+ x);
+		            aux[pos] = v1.get(i);
+                            double x = calcularCost(aux,pos,b.cost); // Calcula el coste del nodo     
                             Node c = new Node(h1,aux,x);                          
                             if(esMejor(c.cost)) {
                                 if(v1.isEmpty()) {
-                                     System.out.print("ES UNA SOLUCION : ");
-                                    for (int k = 0; k < b.teclasAssignadas.length; k++) {
-                                         System.out.print(b.teclasAssignadas[k] + " ");
-                                    }
-                                    System.out.println("");
                                     mejorSolucion = b;
                                     mejorCost = b.cost;
                                 }          
-                                else {
-                                    nodes.add(c);
-                                    System.out.println("lo vuelvo a poner, Coste nodo : "+ c.cost+" Coste mejor "+mejorCost);
-                            }   }
-                            
-                //            for (int k = 0; k < b.teclasAssignadas.size(); k++) {
-               //                  System.out.print(b.teclasAssignadas.get(k) + " ");
-               //             }
-               //             System.out.println("");
-                     
+                                else nodes.add(c);
+                                    
+                            }                               
                     }
                 }
 
@@ -218,8 +193,11 @@ public class BranchBound {
   
     }
     
-
-
+    /**
+     *
+     * @param a
+     * @return
+     */
     public boolean esSolucion(ArrayList<Integer> a) {
         System.out.println ("Sale");
         return (a.size() == (estadistica.length-1));
