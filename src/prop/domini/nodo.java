@@ -37,7 +37,7 @@ public class nodo {
 	
 	/**@brief Consultora del parametre y.
     *
-    * \pre cert.
+    * \pre Cert.
     * \post Retorna la coordenada y.
     */
 	public int getY() {

@@ -6,24 +6,33 @@ import java.util.List;
 public class conjuntoNodos {
 	protected List<nodo> c;
 
-	/**Constructora por defecto**/
+	/**@brief Constructora per defecte.
+    *
+    * S'executa automaticament a la hora de declarar un conjunt de nodes.
+    * \pre Cert.
+    * \post El resultat es un conjunt de nodes buit.
+    */
 	public conjuntoNodos() {
 		c = new ArrayList<nodo>();
 	}
 	
-	/**Añadir nodo
+	/**@brief Afegir node.
     *
-    * @param n nodo a añadir
+    * @param n node a afegir.
+    * \pre Cert.
+    * \post El resultat es el conjunt de nodes amb el node afegit.
     */
 	public void addNodo(nodo n) {
 		if (c.contains(n)) System.out.println("Error:El nodo esta en la lista.");
 		else c.add(n);
 	}
 	
-	/**Obtener nodo
+	/**@brief Consultora node.
     *
-    * @param coordenada x del nodo
-    * @param coordenada y del nodo
+    * @param coordenada x del node.
+    * @param coordenada y del node.
+    * \pre Cert.
+    * \post Retorna el node amb coordenades x i y.
     */
 	public nodo getNodo(int x, int y) {
 		nodo n = new nodo(x, y);
@@ -34,10 +43,12 @@ public class conjuntoNodos {
 		return c.get(c.indexOf(n));
 	}
 	
-	/**Destructora nodo
+	/**@brief Destructora node.
     *
-    * @param coordenada x del nodo
-    * @param coordenada y del nodo
+    * @param coordenada x del node.
+    * @param coordenada y del node.
+    * \pre Cert.
+    * \post El resultat es el conjunt de nodes sense el node amb coordenades x i y.
     */
 	public void deleteNodo(int x, int y) {
 		nodo n = new nodo(x, y);
