@@ -16,7 +16,7 @@ public class DriverCtrlDistribucions {
         System.out.println(" 3) Esborra Distribució ");
         System.out.println(" 4) Modifica Distribució ");
 
-        System.out.println(" 7) Sortir ");
+        System.out.println(" 5) Sortir ");
 	}
 	
 	
@@ -134,7 +134,7 @@ public class DriverCtrlDistribucions {
 					
 				
 					
-				case 7: 
+				case 5: 
 					surt = true;
 					break;
 			}			
