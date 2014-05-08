@@ -1,13 +1,13 @@
 package prop.domini;
 import prop.domini.Llibre;
 
-
-
 public class Distribucio {
 	private int num;
 	public Llibre[][] distribucio;
 	
-	
+		public Distribucio() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	/**Constructora por defecto
     *
@@ -16,18 +16,19 @@ public class Distribucio {
     * @param np Numero de prestatges de la distribucio.
     */
 	
+
+	
 	public Distribucio(int num, int n, int np) {
 		this.setNum(num);
 		this.distribucio = new Llibre[np][n/np];
 		
 	}
 	
-	
 	/**Afegeix una assignacio a la distribucio
 	    * 
 	    * @param as Assignacio que s'afegeix a la distribucio. 
 	    */
-	public void AfegirAssignacio(Assignacio as){
+	public void afegirAssignacio(Assignacio as){
 		
 		if(as.getNodo().getX() >= distribucio.length || as.getNodo().getX() < 0 || as.getNodo().getY() >= distribucio[0].length || as.getNodo().getY() < 0) {
             throw new IllegalArgumentException("Error al asignar las posiciones x e y");
@@ -45,7 +46,7 @@ public class Distribucio {
 		
 		for(int i = 0; i < distribucio.length; ++i) {
 			for(int j = 0; j < distribucio[0].length; ++j){
-				System.out.print(distribucio[i][j].getId()+" "+i+" "+j+ " ");
+				System.out.print(" en la pos "+i+" "+j+ " isbn:"+ distribucio[i][j].getId()+" |");
 			}
 			System.out.println();
 		}
@@ -66,14 +67,42 @@ public class Distribucio {
 		as1.getNodo().setY(as2.getNodo().getY());
 		as2.getNodo().setX(tempx);
 		as2.getNodo().setY(tempy);
+		afegirAssignacio(as1);
+		afegirAssignacio(as2);
 	}
 	
+	
+	/**Consulta el conjunt de llibres de la distribucio
+	    * 
+	    * 
+	    */
+	public Llibre[][] consultarDistribucio(){
+		return distribucio;
+	}
+	
+	/**Consulta una ubicacio i el llibre assignat
+	    * 
+	    * 
+	    */
+	public Assignacio consultarAssignacio(int isbn) {
+		
+		for(int i = 0; i < distribucio.length; ++i) {
+			for(int j = 0; j < distribucio[0].length; ++j){
+				if(distribucio[i][j].getId() == isbn) {
+					nodo no = new nodo(i, j);
+					Assignacio as = new Assignacio(distribucio[i][j], no);
+					return as;
+				}
+			}
+		}
+		return null;
+	}
+
 	 /**Consultora del parametre num.
     *
     * @return    el valor que te num.
 
     */
-
 	public int getNum() {
 		return num;
 	}

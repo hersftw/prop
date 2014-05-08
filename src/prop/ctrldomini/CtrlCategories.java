@@ -7,6 +7,21 @@ import prop.domini.*;
 public class CtrlCategories {
 	private List<List<Categoria>> categories;
 	
+	/**@brief Constructora per defecte.
+    *
+    * S'executa automaticament a la hora de declarar un controlador de categories.
+    * \pre Cert.
+    * \post El resultat es un controlador de categories buit.
+    */
+	public CtrlCategories() {
+		
+	}
+	
+	/**@brief Inicialitzar arbre de categories.
+    *
+    * \pre Cert.
+    * \post El resultat es un arbre de categories amb l'arrel principal Biblioteca creada.
+    */
 	public void inicialitzarCategories() {
 		categories = new ArrayList<List<Categoria>>();
 		Categoria c = new Categoria("Biblioteca", null);
@@ -15,6 +30,12 @@ public class CtrlCategories {
 		categories.add(llista);
 	}
 	
+	/**@brief Afegir categoria.
+    *
+    * @param nom Nom de la categoria a afegir.
+    * \pre Cert.
+    * \post El resultat es l'arbre de categories amb la categoria afegida.
+    */
 	public void afegirCategoria(String nom, String pare) {
 		Categoria c = new Categoria(nom, pare);
 		List<Categoria> llista = new ArrayList<Categoria>();
@@ -34,6 +55,12 @@ public class CtrlCategories {
 		categories.add(llista);
 	}
 	
+	/**@brief Eliminar node.
+    *
+    * @param nom Nom de la categoria a eliminar.
+    * \pre Cert.
+    * \post El resultat es l'arbre de categories amb la categoria eliminada.
+    */
 	public void eliminarCategoria(String nom) {
 		Boolean trobat = false;
 		int i = 0;
@@ -73,6 +100,13 @@ public class CtrlCategories {
 		}
 	}
 	
+	/**@brief Modificar categoria.
+    *
+    * @param vell Nom antic de la categoria
+    * @param nou Nom nou de la categoria
+    * \pre Cert.
+    * \post El resultat es l'arbre de categories amb la categoria canviada de nom.
+    */
 	public void modificarCategories(String vell, String nou) {
 		Boolean trobat = false;
 		int i = 0;
@@ -108,6 +142,13 @@ public class CtrlCategories {
 		}
 	}
 	
+	/**@brief Canviar categories.
+    *
+    * @param cat1 Categoria 1 a intercanviar
+    * @param cat2 Categoria 2 a intercanviar
+    * \pre Cert.
+    * \post El resultat es l'arbre de categories amb les categories 1 i 2 intercanviades.
+    */
 	public void canviarCategories(String cat1, String cat2) {
 		Iterator<List<Categoria>> it = categories.iterator();
 		int i, j;
@@ -157,6 +198,10 @@ public class CtrlCategories {
 		}
 	}
 	
+	/**@brief Mostrar categories.
+    * \pre Cert
+    * \post S'ha mostrat l'arbre de categories.
+    */
 	public void mostrarCategories() {
 		Iterator<List<Categoria>> it = categories.iterator();
 		while (it.hasNext()) {

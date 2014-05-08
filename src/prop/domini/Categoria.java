@@ -5,7 +5,7 @@ public class Categoria {
 	private String pare;
 	
 	
-    /**Constructora por defecte
+    /**Constructora
     *
     * @param nom Indica el nom de la categoria.
     */
@@ -25,7 +25,11 @@ public class Categoria {
 	public String getNom() {
 		return nom;
 	}
-	
+	/**Consultora del paràmetre pare.
+    *
+    * @return el valor que pren pare.
+
+    */
 	public String getPare() {
 		return pare;
 	}
@@ -40,6 +44,10 @@ public class Categoria {
 		this.nom = nom;
 	}
 	
+	/**Modificadora del parametre pare de la categoria.
+    *
+    * @param pare Indica el nou nom de la categoria superior.
+    */
 	public void setPare(String pare) {
 		this.pare = pare;
 	}
