@@ -10,7 +10,7 @@ public class CtrlDistribucions {
 
 	private List<Distribucio> distrib;
 	
-	public void inicialitzarDistribucio(){
+	public void inicialitzarDistribucions(){
 		distrib = new ArrayList<Distribucio>(); 
 	}
 	
