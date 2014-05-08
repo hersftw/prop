@@ -17,6 +17,9 @@ public class Llibre extends Elemento {
     * @param editorial Indica la editorial que va publicar el llibre.
     * @param any Indica el any en que es va publicar el llibre.
     * @param categoria Indica la categoria temàtica a la que pertany el llibre.
+    * 
+    * \pre Cert.
+    * \post El resultat es un llibre amb tots els seus parametres.
     */
 	
 	public Llibre(int id, String titol, String autor,  String editorial,
@@ -33,6 +36,9 @@ public class Llibre extends Elemento {
 	 /**Consultora del parametre id.
     *
     * @return el valor que pren id.
+    * 
+    * \pre Cert.
+    * \post Retorna la id.
 
     */
 	
@@ -44,6 +50,9 @@ public class Llibre extends Elemento {
 	/**Modificadora del parametre id del llibre
     *
     * @param id Indica el nou id del llibre.
+    * 
+    * \pre Ha de ser una id valida.
+    * \post El parametre this.id passa a ser id.
     */
 	
 	public void setId(int id) {
@@ -54,6 +63,9 @@ public class Llibre extends Elemento {
 		 /**Consultora del parametre titol.
     *
     * @return el valor que pren titol. 
+    * 
+    * \pre Cert.
+    * \post Retorna el titol del llibre.
 
     */
 	
