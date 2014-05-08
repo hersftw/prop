@@ -1,6 +1,6 @@
 package prop.domini;
 
-public class Llibre extends Elemento {
+public class llibre extends elemento {
 	
 	private String titol;
 	private String autor;
@@ -22,7 +22,7 @@ public class Llibre extends Elemento {
     * \post El resultat es un llibre amb tots els seus parametres.
     */
 	
-	public Llibre(int id, String titol, String autor,  String editorial,
+	public llibre(int id, String titol, String autor,  String editorial,
 			int any, String categoria) {
 		super(id);
 		this.autor = autor;

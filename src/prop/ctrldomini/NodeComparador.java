@@ -15,10 +15,10 @@ import java.util.Comparator;
 
 
 
-public class NodeComparador implements Comparator<Node>
+public class nodeComparador implements Comparator<node>
 {
     @Override
-    public int compare(Node x, Node y)
+    public int compare(node x, node y)
     {
         // Compara los costes de los nodos y devuelve un valor 
         // indicando si es major,menor o igual

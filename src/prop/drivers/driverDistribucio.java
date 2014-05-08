@@ -1,10 +1,10 @@
 package prop.drivers;
 
 
-import prop.domini.Distribucio;
-import prop.domini.Llibre;
+import prop.domini.distribucio;
+import prop.domini.llibre;
 import prop.domini.nodo;
-import prop.domini.Assignacio;
+import prop.domini.assignacio;
 
 import java.util.*;
 
@@ -27,7 +27,7 @@ public class driverDistribucio {
 		System.out.println("Driver Distribucio");
 		System.out.println("Introdueix un numero de distribució, el número d'ubicacions que hi ha i el número de prestatges de la llibreria)");
 		Scanner in = new Scanner(System.in);
-		Distribucio dis = new Distribucio(in.nextInt(), in.nextInt(), in.nextInt());
+		distribucio dis = new distribucio(in.nextInt(), in.nextInt(), in.nextInt());
 		System.out.println("Afegeix la ubicacio(x, y):");
 		nodo no = new nodo(in.nextInt(), in.nextInt());
 		
@@ -45,8 +45,8 @@ public class driverDistribucio {
 		in.nextLine();
 		System.out.print("Introdueix Categoria (String): ");
 		String cat = in.nextLine();
-		Llibre lli = new Llibre(id, titol, autor, edi, any, cat);
-		Assignacio ass = new Assignacio(lli, no);
+		llibre lli = new llibre(id, titol, autor, edi, any, cat);
+		assignacio ass = new assignacio(lli, no);
 		dis.afegirAssignacio(ass);
 		
 		boolean surt = false;
@@ -76,8 +76,8 @@ public class driverDistribucio {
 					in.nextLine();
 					System.out.print("Introdueix Categoria (String): ");
 					cat = in.nextLine();
-					Llibre lli1 = new Llibre(id, titol, autor, edi, any, cat);
-					Assignacio ass1 = new Assignacio(lli1, no1);
+					llibre lli1 = new llibre(id, titol, autor, edi, any, cat);
+					assignacio ass1 = new assignacio(lli1, no1);
 					dis.afegirAssignacio(ass1);
 					break;
 			
@@ -104,9 +104,9 @@ public class driverDistribucio {
 					in.nextLine();
 					System.out.print("Introdueix Categoria (String): ");
 					cat = in.nextLine();
-					Llibre lli2 = new Llibre(id, titol, autor, edi, any, cat);
+					llibre lli2 = new llibre(id, titol, autor, edi, any, cat);
 				
-					Assignacio ass2 = new Assignacio(lli2, no2);
+					assignacio ass2 = new assignacio(lli2, no2);
 					System.out.println("Afegeix la ubicacio de la 2(x, y):");
 					nodo no3 = new nodo(in.nextInt(), in.nextInt());
 					System.out.print("Introdueix una ISBN(int): ");
@@ -123,8 +123,8 @@ public class driverDistribucio {
 					in.nextLine();
 					System.out.print("Introdueix Categoria (String): ");
 					cat = in.nextLine();
-					Llibre lli3 = new Llibre(id, titol, autor, edi, any, cat);
-					Assignacio ass3 = new Assignacio(lli3, no3);
+					llibre lli3 = new llibre(id, titol, autor, edi, any, cat);
+					assignacio ass3 = new assignacio(lli3, no3);
 					dis.afegirAssignacio(ass2);
 					dis.afegirAssignacio(ass3);
 					dis.editarAssignacions(ass2, ass3);
@@ -134,7 +134,7 @@ public class driverDistribucio {
 					
 				case 4: 
 					System.out.println("Introdueix el isbn del llibre:");
-					Assignacio as = dis.consultarAssignacio(in.nextInt());
+					assignacio as = dis.consultarAssignacio(in.nextInt());
 					System.out.println(as.getLlibre().getId());
 					System.out.println(as.getLlibre().getTitol());
 					System.out.println(as.getLlibre().getAutor());

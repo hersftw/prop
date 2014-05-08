@@ -1,6 +1,6 @@
 package prop.domini;
 
-public class Llibreria extends conjuntoNodos {
+public class llibreria extends conjuntoNodos {
 	protected int prestatges;
 	protected int ubicacions;
 	
@@ -10,7 +10,7 @@ public class Llibreria extends conjuntoNodos {
     * @param ubicacions  Numero d'ubicacions de la llibreria.
     */
 	
-	public Llibreria(int prestatges, int ubicacions)  {
+	public llibreria(int prestatges, int ubicacions)  {
 		super();
 		this.prestatges = prestatges;
 		this.ubicacions = ubicacions;

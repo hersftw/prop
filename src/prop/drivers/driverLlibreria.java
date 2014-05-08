@@ -2,7 +2,7 @@ package prop.drivers;
 
 import java.util.Scanner;
 
-import prop.domini.Llibreria;
+import prop.domini.llibreria;
 import prop.domini.nodo;
 
 public class driverLlibreria {
@@ -23,7 +23,7 @@ public class driverLlibreria {
 	    Scanner in= new Scanner(System.in);
 	    int p = in.nextInt();
 	    int u = in.nextInt();
-	    Llibreria n = new Llibreria(p, u);
+	    llibreria n = new llibreria(p, u);
 	    boolean end = false;
 	    while (!end) {
 	    	menu();

@@ -2,9 +2,9 @@ package prop.drivers;
 
 import java.util.Scanner;
 
-import prop.ctrldomini.CtrlCategories;
+import prop.ctrldomini.ctrlCategories;
 
-public class DriverCtrlCategories {
+public class driverCtrlCategories {
 
 	private static void menu() {
 		System.out.println("Selecciona una opcio:");
@@ -22,7 +22,7 @@ public class DriverCtrlCategories {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("Driver CtrlCategories");
-		CtrlCategories ctrl = new CtrlCategories();
+		ctrlCategories ctrl = new ctrlCategories();
 		ctrl.inicialitzarCategories();
 		Scanner in = new Scanner(System.in);
 		String nom;

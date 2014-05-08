@@ -14,7 +14,7 @@ import java.util.Vector;
  *
  * @author alex
  */
-public class Node {
+public class node {
     Vector<Integer> teclasPendientes; // Vector de assignaciones pendientes de la solucion
     int [] teclasAssignadas;          // Vector de assignaciones realizadas de la solucion
     double cost;                      // Coste de la solucion
@@ -26,7 +26,7 @@ public class Node {
      * @param teclasAssignadas Vector de assignaciones realizadas
      * @param cost Coste de la solucion
      */
-    public Node(Vector<Integer> teclasPendientes,int[] teclasAssignadas,double cost) {
+    public node(Vector<Integer> teclasPendientes,int[] teclasAssignadas,double cost) {
         this.teclasPendientes = teclasPendientes;
         this.teclasAssignadas = teclasAssignadas;
         this.cost = cost;
@@ -36,7 +36,7 @@ public class Node {
      * Metodo que hace una copia del node que se pasa por parametro
      * @param b Node que queremos copiar
      */
-    public Node(Node b) {
+    public node(node b) {
         this.teclasPendientes = b.teclasPendientes;
         this.teclasAssignadas = b.teclasAssignadas;
         this.cost = b.cost;

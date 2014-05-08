@@ -4,18 +4,18 @@ package prop.domini;
  * versión: 1.0
  */
 
-public class Elemento {
+public class elemento {
     
     private int id;                     // Id de un elemento
     private static int numElem = 0;     // Nombre de elementos
     
     
-    public Elemento(){
+    public elemento(){
         id = numElem;
         numElem++;
     }
     
-    public Elemento(int ident){
+    public elemento(int ident){
         id = ident;
         numElem++;
     }

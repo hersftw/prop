@@ -7,7 +7,7 @@ import java.util.*;
  * Copyright 2007 Gary Baker (GPL v3)
  * @author gbaker
  */
-public class HungarianAlgorithm{
+public class hungarianAlgorithm{
 
 
 
