@@ -3,7 +3,7 @@ package prop.drivers;
 import java.util.Scanner;
 
 import prop.domini.Llibreria;
-import prop.domini.Nodo;
+import prop.domini.nodo;
 
 public class driverLlibreria {
 	private static void menu() {
@@ -46,13 +46,13 @@ public class driverLlibreria {
 		    	case 5: System.out.println("Introdueix les coordenades x i y de la nova ubicacio");
 				    	u = in.nextInt();
 		    	 		p = in.nextInt();
-		    	  		Nodo ub = new Nodo(u, p);
+		    	  		nodo ub = new nodo(u, p);
 		    	  		n.addNodo(ub);
 		    	 		break;
 		    	case 6: System.out.println("Introdueix les coordenades x i y de la ubicacio que vols consultar");
 				    	u = in.nextInt();
 		    	 		p = in.nextInt();
-		    			Nodo tmp = n.getNodo(u, p);
+		    			nodo tmp = n.getNodo(u, p);
 		    			System.out.print(tmp.getX());
 		    			System.out.print(" ");
 		    			System.out.println(tmp.getY());

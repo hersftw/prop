@@ -3,19 +3,19 @@ package prop.domini;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConjuntoNodos {
-	protected List<Nodo> c;
+public class conjuntoNodos {
+	protected List<nodo> c;
 
 	/**Constructora por defecto**/
-	public ConjuntoNodos() {
-		c = new ArrayList<Nodo>();
+	public conjuntoNodos() {
+		c = new ArrayList<nodo>();
 	}
 	
 	/**Añadir nodo
     *
     * @param n nodo a añadir
     */
-	public void addNodo(Nodo n) {
+	public void addNodo(nodo n) {
 		if (c.contains(n)) System.out.println("Error:El nodo esta en la lista.");
 		else c.add(n);
 	}
@@ -25,11 +25,11 @@ public class ConjuntoNodos {
     * @param coordenada x del nodo
     * @param coordenada y del nodo
     */
-	public Nodo getNodo(int x, int y) {
-		Nodo n = new Nodo(x, y);
+	public nodo getNodo(int x, int y) {
+		nodo n = new nodo(x, y);
 		if (!c.contains(n)) {
 			System.out.println("Error:El nodo no existe.");
-			return new Nodo(-1, -1);
+			return new nodo(-1, -1);
 		}
 		return c.get(c.indexOf(n));
 	}
@@ -40,7 +40,7 @@ public class ConjuntoNodos {
     * @param coordenada y del nodo
     */
 	public void deleteNodo(int x, int y) {
-		Nodo n = new Nodo(x, y);
+		nodo n = new nodo(x, y);
 		try {
 			c.remove(c.indexOf(n));
         }

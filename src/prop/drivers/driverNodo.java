@@ -2,7 +2,7 @@ package prop.drivers;
 
 import java.util.Scanner;
 
-import prop.domini.Nodo;
+import prop.domini.nodo;
 
 public class driverNodo {
 	private static void menu() {
@@ -18,7 +18,7 @@ public class driverNodo {
 	    Scanner in= new Scanner(System.in);
 	    int x = in.nextInt();
 	    int y = in.nextInt();
-	    Nodo n = new Nodo(x, y);
+	    nodo n = new nodo(x, y);
 	    boolean end = false;
 	    while (!end) {
 	    	menu();

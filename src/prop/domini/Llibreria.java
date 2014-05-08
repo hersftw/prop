@@ -1,6 +1,6 @@
 package prop.domini;
 
-public class Llibreria extends ConjuntoNodos {
+public class Llibreria extends conjuntoNodos {
 	protected int prestatges;
 	protected int ubicacions;
 	
