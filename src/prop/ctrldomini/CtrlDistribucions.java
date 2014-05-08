@@ -7,17 +7,32 @@ import prop.domini.Assignacio;
 
 
 public class CtrlDistribucions {
-
+	
 	private List<Distribucio> distrib;
 	
+	/**Constructora per defecte
+
+    */
 	public void inicialitzarDistribucions(){
 		distrib = new ArrayList<Distribucio>(); 
 	}
+	
+	/**Afegeix una distribucio al conjunt de distribucions.
+	 * 
+	 * @param distribucio Distribucio que s'afegeix al conjunt de distribucions. 
+
+	    */
 	
 	public void afegirDistribucio(Distribucio distribucio) {
 		distribucio.setNum(distrib.size());
 		distrib.add(distribucio);
 	}
+	
+	/**Consulta una distribucio i la mostra
+	 * 
+	 * @param num numero de la distribucio a consultar. 
+
+	    */
 	
 	public void consultarDistribucio(int num){
 		Distribucio dis = null;
@@ -30,6 +45,12 @@ public class CtrlDistribucions {
 			System.out.println("Error:No s'ha trobat la distribucio");
 		}
 	}
+	
+	/**Eliminar una distribucio del conjunt de distribucions
+	 * 
+	 * @param num numero de la distribucio a eliminar. 
+
+	    */
 	
 	public void deleteDistribucio(int num){
 		Distribucio dis = null;
@@ -44,7 +65,12 @@ public class CtrlDistribucions {
 		
 	}
 	
-	
+	/**Modifica una distribucio del conjunt de distribucions, pasant-li dos llibres per a intercanviart-los
+	 * 
+	 * @param num numero de la distribucio a eliminar. 
+	 * @param isbn1 identificador del llibre 1 que es vol intercanviar.
+	 * @param isbn2 identificador del llibre 2 que es vol intercanviar.
+	    */
 	public void modificarDistribucio(int num, int isbn1, int isbn2) {
 		
 		

@@ -71,16 +71,19 @@ public class Distribucio {
 		afegirAssignacio(as2);
 	}
 	
-	 /**Consultora del parametre num.
-    *
-    * @return    el valor que te num.
-
-    */
 	
+	/**Consulta el conjunt de llibres de la distribucio
+	    * 
+	    * 
+	    */
 	public Llibre[][] consultarDistribucio(){
 		return distribucio;
 	}
 	
+	/**Consulta una ubicacio i el llibre assignat
+	    * 
+	    * 
+	    */
 	public Assignacio consultarAssignacio(int isbn) {
 		
 		for(int i = 0; i < distribucio.length; ++i) {
@@ -95,6 +98,11 @@ public class Distribucio {
 		return null;
 	}
 
+	 /**Consultora del parametre num.
+    *
+    * @return    el valor que te num.
+
+    */
 	public int getNum() {
 		return num;
 	}

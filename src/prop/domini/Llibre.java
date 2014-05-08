@@ -9,7 +9,7 @@ public class Llibre extends Elemento {
 	private String categoria;
 	
 	
-    /**Constructora por defecte
+    /**Constructora
     *
     * @param id Identificador del llibre, no pot haver repetits. 
     * @param titol Indica el nom del llibre.
@@ -30,7 +30,7 @@ public class Llibre extends Elemento {
 	}
 
 	
-	 /**Consultora del paràmetre id.
+	 /**Consultora del parametre id.
     *
     * @return el valor que pren id.
 
@@ -51,7 +51,7 @@ public class Llibre extends Elemento {
 	}
 	
 
-		 /**Consultora del paràmetre titol.
+		 /**Consultora del parametre titol.
     *
     * @return el valor que pren titol. 
 
@@ -64,7 +64,7 @@ public class Llibre extends Elemento {
 	
 	/**Modificadora del parametre titol del llibre
     *
-    * @param titol Indica el nou títol del llibre.
+    * @param titol Indica el nou titol del llibre.
     */
 
 	public void setTitol(String titol) {
@@ -72,7 +72,7 @@ public class Llibre extends Elemento {
 	}
 	
 	
-	 /**Consultora del paràmetre Autor.
+	 /**Consultora del parametre Autor.
     *
     * @return el valor que pren autor.
 
@@ -93,7 +93,7 @@ public class Llibre extends Elemento {
 	}
 
 
-	 /**Consultora del paràmetre editorial.
+	 /**Consultora del parametre editorial.
     *
     * @return el valor que pren editorial.
 
@@ -114,7 +114,7 @@ public class Llibre extends Elemento {
 	}
 
 	
-	 /**Consultora del paràmetre any.
+	 /**Consultora del parametre any.
     *
     * @return el valor que pren any.
 
@@ -127,7 +127,7 @@ public class Llibre extends Elemento {
 
 	/**Modificadora del parametre any del llibre
     *
-    * @param any Indica el nou any de publicació del llibre.
+    * @param any Indica el nou any de publicacio del llibre.
     */
 	
 	public void setAny(int any) {
@@ -135,7 +135,7 @@ public class Llibre extends Elemento {
 	}
 
 	
-	 /**Consultora del paràmetre categoria.
+	 /**Consultora del parametre categoria.
     *
     * @return el valor que pren categoria.
 
