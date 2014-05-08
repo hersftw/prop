@@ -20,8 +20,8 @@ public class NodeComparador implements Comparator<Node>
     @Override
     public int compare(Node x, Node y)
     {
-        // Assume neither string is null. Real code should
-        // probably be more robust
+        // Compara los costes de los nodos y devuelve un valor 
+        // indicando si es major,menor o igual
         if (x.cost < y.cost)
         {
             return -1;

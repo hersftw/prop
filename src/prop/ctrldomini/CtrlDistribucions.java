@@ -6,6 +6,7 @@ import java.util.Iterator;
 import prop.domini.Distribucio;
 import prop.domini.Assignacio;
 
+
 public class CtrlDistribucions {
 
 	private List<Distribucio> distrib;
@@ -15,6 +16,7 @@ public class CtrlDistribucions {
 	}
 	
 	public void afegirDistribucio(Distribucio distribucio) {
+		distribucio.setNum(distrib.size());
 		distrib.add(distribucio);
 	}
 	
@@ -48,24 +50,32 @@ public class CtrlDistribucions {
 	}
 	
 	public void modificarDistribucio(int num, int isbn1, int isbn2) {
-		boolean trobat = false;
-		Distribucio dis = null;
+		
+		/*Distribucio dis = null;
 		Iterator<Distribucio> it = distrib.iterator();
 		while(!trobat & it.hasNext()){
 			dis = it.next();
 			if (dis.getNum() == num) trobat = true;
+		}*/
+		Distribucio dis = null;
+		try{
+		dis = distrib.get(num);
+		
 		}
-		if (trobat) {
-			Distribucio dismod = dis;
-			Assignacio as1 = dismod.consultarAssignacio(isbn1);
-			Assignacio as2 = dismod.consultarAssignacio(isbn2);
+		catch (Exception e){
+			System.out.println("Error:No s'ha trobat la distribucio");
+		}
+		
+		
+			Assignacio as1 = dis.consultarAssignacio(isbn1);
+			Assignacio as2 = dis.consultarAssignacio(isbn2);
 			if(as1 == null || as2 == null) {
 				throw new IllegalArgumentException("Error: Assignacio no trobada");
 			}
-			dismod.editarAssignacions(as1, as2);
-			distrib.add(dismod);
-		}
-		else System.out.println("Error:la distribucio no ha estat trobada");
+			dis.editarAssignacions(as1, as2);
+			
+		
+		
 	}
 	
 	
