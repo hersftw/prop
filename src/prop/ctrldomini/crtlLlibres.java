@@ -8,10 +8,22 @@ import prop.domini.Llibre;
 public class crtlLlibres {
 	private List<Llibre> llibres;
 	
+	/**@brief Constructora per defecte.
+    *
+    * S'executa automaticament a la hora de declarar un crtlLlibres.
+    * \pre Cert.
+    * \post El resultat es un crtlLlibres buit.
+    */
 	public void inicialitzarLlibres(){
 		llibres = new ArrayList<Llibre>();
 	}
 	
+	/**@brief Consultora d'un llibre.
+    *
+    * @param isbn del llibre.
+    * \pre Cert.
+    * \post Retorna el llibre associat al isbn.
+    */
 	public void consultarLlibre(int isbn){
 		boolean find = false;
 		Llibre l = null;
@@ -31,10 +43,28 @@ public class crtlLlibres {
 		else System.out.println("Error: llibre no trobat!");
 	}
 	
+	/**@brief Afegir llibre.
+    *
+    * @param llibre a afegir.
+    * \pre Cert.
+    * \post El resultat es el crtlLlibres amb el llibre afegit.
+    */
 	public void afegirLlibre(Llibre llibre){
 		llibres.add(llibre);
 	}
 	
+	/**@brief Modificadora d'un llibre.
+	* 
+    * @param isbn del llibre a modificar.
+    * @param isbn nou.
+    * @param titol nou.
+    * @param autor nou.
+    * @param editorial nova.
+    * @param any nou.
+    * @param categoria nova.
+    * \pre Cert.
+    * \post El resultat es crtlLlibres amb el llibre amb els nous parametres.
+    */
 	public void modificarLlibre(int isbn1, int isbn2, String titol, String autor,  String editorial,
 			int any, String categoria ){
 		boolean find = false;
@@ -55,6 +85,12 @@ public class crtlLlibres {
 		else System.out.println("Error: llibre no trobat!");
 	}
 	
+	/**@brief Destructora d'un llibre.
+    *
+    * @param isbn del llibre a eliminar.
+    * \pre Cert.
+    * \post El resultat es el crtlLlibres sense el llibre especificat.
+    */
 	public void eliminarLlibre(int isbn){
 		boolean find = false;
 		Llibre l = null;
