@@ -30,8 +30,22 @@ public class driverDistribucio {
 		Distribucio dis = new Distribucio(in.nextInt(), in.nextInt(), in.nextInt());
 		System.out.println("Afegeix la ubicacio(x, y):");
 		Nodo no = new Nodo(in.nextInt(), in.nextInt());
-		System.out.println("Afegeix les dades del llibre(ISBN, Titol, Autor, Editorial, Any, Categoria :");
-		Llibre lli = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
+		
+		System.out.print("Introdueix una ISBN(int): ");
+		int id = in.nextInt();
+		in.nextLine();
+		System.out.print("Introdueix Titol (String): ");
+		String titol = in.nextLine();
+		System.out.print("Introdueix Autor (String): ");
+		String autor = in.nextLine();
+		System.out.print("Introdueix Editorial (String): ");
+		String edi = in.nextLine();
+		System.out.print("Introdueix Any (int): ");
+		int any = in.nextInt();
+		in.nextLine();
+		System.out.print("Introdueix Categoria (String): ");
+		String cat = in.nextLine();
+		Llibre lli = new Llibre(id, titol, autor, edi, any, cat);
 		Assignacio ass = new Assignacio(lli, no);
 		dis.afegirAssignacio(ass);
 		
@@ -48,8 +62,21 @@ public class driverDistribucio {
 					System.out.println("Introdueix la nova assignacio: ");
 					System.out.println("Afegeix la ubicacio(x, y):");
 					Nodo no1 = new Nodo(in.nextInt(), in.nextInt());
-					System.out.println("Afegeix les dades del llibre(ISBN, Titol, Autor, Editorial, Any, Categoria :");
-					Llibre lli1 = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
+					System.out.print("Introdueix una ISBN(int): ");
+					id = in.nextInt();
+					in.nextLine();
+					System.out.print("Introdueix Titol (String): ");
+					titol = in.nextLine();
+					System.out.print("Introdueix Autor (String): ");
+					autor = in.nextLine();
+					System.out.print("Introdueix Editorial (String): ");
+					edi = in.nextLine();
+					System.out.print("Introdueix Any (int): ");
+					any = in.nextInt();
+					in.nextLine();
+					System.out.print("Introdueix Categoria (String): ");
+					cat = in.nextLine();
+					Llibre lli1 = new Llibre(id, titol, autor, edi, any, cat);
 					Assignacio ass1 = new Assignacio(lli1, no1);
 					dis.afegirAssignacio(ass1);
 					break;
