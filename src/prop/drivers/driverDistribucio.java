@@ -15,9 +15,10 @@ public class driverDistribucio {
           System.out.println(" 1) Afegir Assignació ");
           System.out.println(" 2) Mostrar Distribució ");
           System.out.println(" 3) Editar Assignacions ");
-          System.out.println(" 4) getNum /n");
-          System.out.println(" 5) setNum /n");
-          System.out.println(" 6) Sortir /n");
+          System.out.println(" 4) Consulta Assignació ");
+          System.out.println(" 5) getNum ");
+          System.out.println(" 6) setNum ");
+          System.out.println(" 7) Sortir ");
 	}
 	
 	
@@ -32,7 +33,7 @@ public class driverDistribucio {
 		System.out.println("Afegeix les dades del llibre(ISBN, Titol, Autor, Editorial, Any, Categoria :");
 		Llibre lli = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
 		Assignacio ass = new Assignacio(lli, no);
-		dis.AfegirAssignacio(ass);
+		dis.afegirAssignacio(ass);
 		
 		boolean surt = false;
 		
@@ -50,7 +51,7 @@ public class driverDistribucio {
 					System.out.println("Afegeix les dades del llibre(ISBN, Titol, Autor, Editorial, Any, Categoria :");
 					Llibre lli1 = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
 					Assignacio ass1 = new Assignacio(lli1, no1);
-					dis.AfegirAssignacio(ass1);
+					dis.afegirAssignacio(ass1);
 					break;
 			
 				case 2: 
@@ -71,24 +72,36 @@ public class driverDistribucio {
 
 					Llibre lli3 = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
 					Assignacio ass3 = new Assignacio(lli3, no3);
-					dis.AfegirAssignacio(ass2);
-					dis.AfegirAssignacio(ass3);
+					dis.afegirAssignacio(ass2);
+					dis.afegirAssignacio(ass3);
 					dis.editarAssignacions(ass2, ass3);
 				
 					break;
 				
 					
 				case 4: 
+					System.out.println("Introdueix el isbn del llibre:");
+					Assignacio as = dis.consultarAssignacio(in.nextInt());
+					System.out.println(as.getLlibre().getId());
+					System.out.println(as.getLlibre().getTitol());
+					System.out.println(as.getLlibre().getAutor());
+					System.out.print(as.getNodo().getX() + " ");
+					System.out.println(as.getNodo().getY());
+					
+					
+					break;	
+					
+				case 5: 
 					System.out.println(dis.getNum());
 					break;
 					
-				case 5: 
+				case 6: 
 
 					System.out.println("Introdueix el numero de distribucio:");
 					dis.setNum(in.nextInt());;
 					break; 
 					
-				case 6: 
+				case 7: 
 					surt = true;
 					break;
 			}			
