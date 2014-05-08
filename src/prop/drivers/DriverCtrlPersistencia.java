@@ -2,7 +2,7 @@ package prop.drivers;
 
 import java.util.Scanner;
 
-import prop.ctrldomini.CtrlPersistencia;
+import prop.ctrldomini.ctrlPersistencia;;
 
 public class DriverCtrlPersistencia {
 
@@ -21,7 +21,7 @@ public class DriverCtrlPersistencia {
 	 */
 	public static void main(String[] args) {	
 		System.out.println("Driver CtrlPersistencia");
-		CtrlPersistencia ctrl = new CtrlPersistencia();
+		ctrlPersistencia ctrl = new ctrlPersistencia();
 		boolean end = false;
 		Scanner in = new Scanner(System.in);
 		while (!end) {
