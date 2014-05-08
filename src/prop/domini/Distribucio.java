@@ -27,7 +27,7 @@ public class Distribucio {
 	    * 
 	    * @param as Assignacio que s'afegeix a la distribucio. 
 	    */
-	public void AfegirAssignacio(Assignacio as){
+	public void afegirAssignacio(Assignacio as){
 		
 		if(as.getNodo().getX() >= distribucio.length || as.getNodo().getX() < 0 || as.getNodo().getY() >= distribucio[0].length || as.getNodo().getY() < 0) {
             throw new IllegalArgumentException("Error al asignar las posiciones x e y");
@@ -73,6 +73,20 @@ public class Distribucio {
     * @return    el valor que te num.
 
     */
+	
+	public Assignacio consultarAssignacio(int isbn) {
+		
+		for(int i = 0; i < distribucio.length; ++i) {
+			for(int j = 0; j < distribucio[0].length; ++j){
+				if(distribucio[i][j].getId() == isbn) {
+					Nodo no = new Nodo(i, j);
+					Assignacio as = new Assignacio(distribucio[i][j], no);
+					return as;
+				}
+			}
+		}
+		return null;
+	}
 
 	public int getNum() {
 		return num;
