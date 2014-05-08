@@ -112,22 +112,7 @@ public class DriverCtrlDistribucions {
 					
 					break;
 				case 4: 
-					/*System.out.println("edita assignacions");
-					System.out.println("Afegeix la ubicacio(x, y):");
-					nodo no2 = new nodo(in.nextInt(), in.nextInt());
-					System.out.println("Afegeix les dades del llibre(ISBN, Titol, Autor, Editorial, Any, Categoria :");
-					Llibre lli2 = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
-					Assignacio ass2 = new Assignacio(lli2, no2);
-					System.out.println("Afegeix la ubicacio de la 2(x, y):");
-					nodo no3 = new nodo(in.nextInt(), in.nextInt());
-					System.out.println("Afegeix les dades del llibre 2(ISBN, Titol, Autor, Editorial, Any, Categoria :");
-
-					Llibre lli3 = new Llibre(in.nextInt(), in.next(), in.next(), in.next(), in.nextInt(), in.next());
-					Assignacio ass3 = new Assignacio(lli3, no3);
-					dis.afegirAssignacio(ass2);
-					dis.afegirAssignacio(ass3);
-					ctrldis.add(dis);
-					dis.editarAssignacions(ass2, ass3);*/
+				
 					System.out.print("Introdueix numero (int): ");
 					int numero = in.nextInt();
 					System.out.print("Introdueix isbn llibre1 (int): ");

@@ -2,7 +2,6 @@ package prop.ctrldomini;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Iterator;
 import prop.domini.Distribucio;
 import prop.domini.Assignacio;
 
@@ -21,42 +20,34 @@ public class CtrlDistribucions {
 	}
 	
 	public void consultarDistribucio(int num){
-		boolean trobat = false;
 		Distribucio dis = null;
-		Iterator<Distribucio> it = distrib.iterator();
-		while(!trobat & it.hasNext()){
-			dis = it.next();
-			if (dis.getNum() == num) trobat = true;
-		}
-		if (trobat) {
+		try{
+			dis = distrib.get(num);
 			dis.mostrarDistribucio();
 		
 		}
-		else System.out.println("Error:la distribucio no ha estat trobada");
+		catch (Exception e){
+			System.out.println("Error:No s'ha trobat la distribucio");
+		}
 	}
 	
 	public void deleteDistribucio(int num){
-		boolean trobat = false;
 		Distribucio dis = null;
-		Iterator<Distribucio> it = distrib.iterator();
-		while(!trobat & it.hasNext()) {
-			dis = it.next();
-			if(dis.getNum() == num) trobat = true;
-		}
-		if (trobat) {
+		try{
+			dis = distrib.get(num);
 			distrib.remove(dis);
+		
 		}
-		else System.out.println("Error: la distribucio no ha estat trobada");
+		catch (Exception e){
+			System.out.println("Error:No s'ha trobat la distribucio");
+		}
+		
 	}
+	
 	
 	public void modificarDistribucio(int num, int isbn1, int isbn2) {
 		
-		/*Distribucio dis = null;
-		Iterator<Distribucio> it = distrib.iterator();
-		while(!trobat & it.hasNext()){
-			dis = it.next();
-			if (dis.getNum() == num) trobat = true;
-		}*/
+		
 		Distribucio dis = null;
 		try{
 		dis = distrib.get(num);
