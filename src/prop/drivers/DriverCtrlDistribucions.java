@@ -25,16 +25,19 @@ public class DriverCtrlDistribucions {
 		System.out.println("Driver CtrlDistribucio");
 		CtrlDistribucions ctrldis = new CtrlDistribucions();
 		ctrldis.inicialitzarDistribucions();		
-		System.out.println("Introdueix un numero de distribució, el número d'ubicacions que hi ha i el número de prestatges de la llibreria)");
+		System.out.println("Introdueix el número d'ubicacions que hi ha i el número de prestatges de la llibreria)");
 		Scanner in = new Scanner(System.in);
-		Distribucio dis = new Distribucio(in.nextInt(), in.nextInt(), in.nextInt());
+		int numllibres = in.nextInt();
+		Distribucio dis = new Distribucio(0, numllibres, in.nextInt());
+		for(int i = 0; i < numllibres; ++i) {
+			System.out.println("Introdueix les dades de la seguent ubicacio");
 		System.out.println("Afegeix la ubicacio(x, y):");
 		Nodo no = new Nodo(in.nextInt(), in.nextInt());
 		
 		System.out.print("Introdueix una ISBN(int): ");
 		int id = in.nextInt();
 		in.nextLine();
-		System.out.print("Introdueix Titol (String): ");
+		/*System.out.print("Introdueix Titol (String): ");
 		String titol = in.nextLine();
 		System.out.print("Introdueix Autor (String): ");
 		String autor = in.nextLine();
@@ -44,10 +47,13 @@ public class DriverCtrlDistribucions {
 		int any = in.nextInt();
 		in.nextLine();
 		System.out.print("Introdueix Categoria (String): ");
-		String cat = in.nextLine();
-		Llibre lli = new Llibre(id, titol, autor, edi, any, cat);
+		String cat = in.nextLine();*/
+		//Llibre lli = new Llibre(id, titol, autor, edi, any, cat);
+		Llibre lli = new Llibre(id, "jfjf", "jfjf", "jejeje", 54, "jjfj");
 		Assignacio ass = new Assignacio(lli, no);
 		dis.afegirAssignacio(ass);
+		
+		}
 		ctrldis.afegirDistribucio(dis);
 		
 		boolean surt = false;
@@ -59,31 +65,36 @@ public class DriverCtrlDistribucions {
 			switch (in.nextInt()) {
 			
 				case 1: 
-					System.out.println("Introdueix un numero de distribució, el número d'ubicacions que hi ha i el número de prestatges de la llibreria)");
-		
-					dis = new Distribucio(in.nextInt(), in.nextInt(), in.nextInt());
-					System.out.println("Introdueix el numero de la nova Distribució: ");
-					
+					System.out.println("Introdueix  el número d'ubicacions que hi ha i el número de prestatges de la llibreria)");
+					 numllibres = in.nextInt();
+					dis = new Distribucio(0, numllibres, in.nextInt());
+				
+					for(int i = 0; i < numllibres; ++i) {
+						System.out.println("Introdueix les dades de la seguent ubicacio");
 					System.out.println("Afegeix la ubicacio(x, y):");
 					Nodo no1 = new Nodo(in.nextInt(), in.nextInt());
 					System.out.print("Introdueix una ISBN(int): ");
-					id = in.nextInt();
+					int id = in.nextInt();
 					in.nextLine();
-					System.out.print("Introdueix Titol (String): ");
-					titol = in.nextLine();
+					/*System.out.print("Introdueix Titol (String): ");
+					String titol = in.nextLine();
 					System.out.print("Introdueix Autor (String): ");
-					autor = in.nextLine();
+					String autor = in.nextLine();
 					System.out.print("Introdueix Editorial (String): ");
-					edi = in.nextLine();
+					String edi = in.nextLine();
 					System.out.print("Introdueix Any (int): ");
-					any = in.nextInt();
+					int any = in.nextInt();
 					in.nextLine();
 					System.out.print("Introdueix Categoria (String): ");
-					cat = in.nextLine();
-					Llibre lli1 = new Llibre(id, titol, autor, edi, any, cat);
+					String cat = in.nextLine();
+					Llibre lli1 = new Llibre(id, titol, autor, edi, any, cat);*/
+					Llibre lli1 = new Llibre(id, "jfjf", "jfjf", "jejeje", 54, "jjfj");
 					Assignacio ass1 = new Assignacio(lli1, no1);
 					dis.afegirAssignacio(ass1);
+					
+					}
 					ctrldis.afegirDistribucio(dis);
+					
 					break;
 			
 				case 2: 

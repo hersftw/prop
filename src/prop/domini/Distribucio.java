@@ -1,13 +1,13 @@
 package prop.domini;
 import prop.domini.Llibre;
 
-
-
 public class Distribucio {
 	private int num;
 	public Llibre[][] distribucio;
 	
-	
+		public Distribucio() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	/**Constructora por defecto
     *
@@ -16,12 +16,13 @@ public class Distribucio {
     * @param np Numero de prestatges de la distribucio.
     */
 	
+
+	
 	public Distribucio(int num, int n, int np) {
 		this.setNum(num);
 		this.distribucio = new Llibre[np][n/np];
 		
 	}
-	
 	
 	/**Afegeix una assignacio a la distribucio
 	    * 
@@ -45,7 +46,7 @@ public class Distribucio {
 		
 		for(int i = 0; i < distribucio.length; ++i) {
 			for(int j = 0; j < distribucio[0].length; ++j){
-				System.out.print(distribucio[i][j].getId()+" "+i+" "+j+ " ");
+				System.out.print(" en la pos "+i+" "+j+ " isbn:"+ distribucio[i][j].getId()+" |");
 			}
 			System.out.println();
 		}
@@ -66,6 +67,8 @@ public class Distribucio {
 		as1.getNodo().setY(as2.getNodo().getY());
 		as2.getNodo().setX(tempx);
 		as2.getNodo().setY(tempy);
+		afegirAssignacio(as1);
+		afegirAssignacio(as2);
 	}
 	
 	 /**Consultora del parametre num.
@@ -73,6 +76,10 @@ public class Distribucio {
     * @return    el valor que te num.
 
     */
+	
+	public Llibre[][] consultarDistribucio(){
+		return distribucio;
+	}
 	
 	public Assignacio consultarAssignacio(int isbn) {
 		

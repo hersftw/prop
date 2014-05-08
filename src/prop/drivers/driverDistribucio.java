@@ -102,6 +102,8 @@ public class driverDistribucio {
 					dis.afegirAssignacio(ass2);
 					dis.afegirAssignacio(ass3);
 					dis.editarAssignacions(ass2, ass3);
+					/*dis.afegirAssignacio(ass2);
+					dis.afegirAssignacio(ass3);*/
 				
 					break;
 				
