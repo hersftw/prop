@@ -4,37 +4,51 @@ public class nodo {
 	protected int x;
 	protected int y;
 	
-	/**Constructora por defecto
+	/**@brief Constructora per defecte.
     *
-    * @param coordenada x del nodo
-    * @param coordenada y del nodo
+    * @param coordenada x del node.
+    * @param coordenada y del node.
+    * \pre x >= 0, y >= 0.
+    * \post El resultat es un nodo amb coordenades x i y.
     */
 	public nodo(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
 	
-	 /**Consultora del parametro x**/
+	/**@brief Consultora del parametre x.
+    *
+    * \pre cert.
+    * \post Retorna la coordenada x.
+    */
 	public int getX() {
 		return x;
 	}
 	
-	/**Modificadora del parametro x del nodo
-    *
+	/**@brief Modificadora del parametre x.
+	* 
     * @param coordenada x del nodo
+    * \pre x >= 0.
+    * \post El resultat es la nova coordenada x.
     */
 	public void setX(int x) {
 		this.x = x;
 	}
 	
-	/**Consultora del parametro y**/
+	/**@brief Consultora del parametre y.
+    *
+    * \pre cert.
+    * \post Retorna la coordenada y.
+    */
 	public int getY() {
 		return y;
 	}
 	
-	/**Modificadora del parametro y del nodo
-    *
-    * @param coordenada y del nodo
+	/**@brief Modificadora del parametre y.
+	* 
+    * @param coordenada x del nodo
+    * \pre y >= 0.
+    * \post El resultat es la nova coordenada y.
     */
 	public void setY(int y) {
 		this.y = y;
