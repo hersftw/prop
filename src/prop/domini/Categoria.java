@@ -1,6 +1,6 @@
 package prop.domini;
 
-public class Categoria {
+public class categoria {
 	private String nom;
 	private String pare;
 	
@@ -10,7 +10,7 @@ public class Categoria {
     * @param nom Indica el nom de la categoria.
     */
 
-	public Categoria(String nom, String pare) {
+	public categoria(String nom, String pare) {
 		this.nom = nom;
 		this.pare = pare;
 	}

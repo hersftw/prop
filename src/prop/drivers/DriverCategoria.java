@@ -1,12 +1,12 @@
 package prop.drivers;
 
-import prop.domini.Categoria;
+import prop.domini.categoria;
 
 import java.util.*;
 
 
 
-public class DriverCategoria {
+public class driverCategoria {
 	
 	private static void menu() {
 		System.out.println("Escull una opció:/n");
@@ -25,7 +25,7 @@ public class DriverCategoria {
 		String nom = in.nextLine();
 		System.out.print("Introdueix el nom del pare (String) (si no te escriu Null): ");
 		String pare = in.nextLine();
-		Categoria cat = new Categoria(nom, pare);
+		categoria cat = new categoria(nom, pare);
 		boolean sortir = false;
 		
 		while(!sortir){

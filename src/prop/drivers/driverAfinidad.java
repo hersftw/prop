@@ -2,7 +2,7 @@ package prop.drivers;
 
 import java.util.Scanner;
 
-import prop.domini.Afinidad;
+import prop.domini.afinidad;
 
 public class driverAfinidad {
 	private static void menu() {
@@ -17,7 +17,7 @@ public class driverAfinidad {
 		System.out.println("Introdueix la mida de la matriu:");
 	    Scanner in= new Scanner(System.in);
 	    int n = in.nextInt();
-	    Afinidad m = new Afinidad(n);
+	    afinidad m = new afinidad(n);
 	    System.out.println("Introdueix tots els elements de la matriu:");
 	    for (int i = 0; i < n; ++i) for (int j = 0; j < n; ++j) m.insertar_afinidad(i, j, in.nextDouble());
 	    boolean end = false;

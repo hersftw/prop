@@ -1,13 +1,13 @@
 package prop.drivers;
 
-import prop.domini.Llibre;
+import prop.domini.llibre;
 
 import java.util.*;
 
 
 
 
-public class DriverLlibre {
+public class driverLlibre {
 	
 	private static void menu() {
 		System.out.println("Escull una opció:/n");
@@ -45,7 +45,7 @@ public class DriverLlibre {
 		System.out.print("Introdueix Categoria (String): ");
 		String cat = in.nextLine();
 		
-		Llibre book = new Llibre(id, titol, autor, edi, any, cat);
+		llibre book = new llibre(id, titol, autor, edi, any, cat);
 		boolean sortir = false;
 		while (!sortir){
 			menu();

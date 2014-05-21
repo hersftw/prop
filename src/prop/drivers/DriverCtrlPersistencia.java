@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import prop.ctrldomini.ctrlPersistencia;;
 
-public class DriverCtrlPersistencia {
+public class driverCtrlPersistencia {
 
 	private static void menu() {
 		System.out.println("Selecciona una opcio:");

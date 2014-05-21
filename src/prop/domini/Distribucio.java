@@ -1,11 +1,11 @@
 package prop.domini;
-import prop.domini.Llibre;
+import prop.domini.llibre;
 
-public class Distribucio {
+public class distribucio {
 	private int num;
-	public Llibre[][] distribucio;
+	public llibre[][] distribucio;
 	
-		public Distribucio() {
+		public distribucio() {
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -18,9 +18,9 @@ public class Distribucio {
 	
 
 	
-	public Distribucio(int num, int n, int np) {
+	public distribucio(int num, int n, int np) {
 		this.setNum(num);
-		this.distribucio = new Llibre[np][n/np];
+		this.distribucio = new llibre[np][n/np];
 		
 	}
 	
@@ -28,7 +28,7 @@ public class Distribucio {
 	    * 
 	    * @param as Assignacio que s'afegeix a la distribucio. 
 	    */
-	public void afegirAssignacio(Assignacio as){
+	public void afegirAssignacio(assignacio as){
 		
 		if(as.getNodo().getX() >= distribucio.length || as.getNodo().getX() < 0 || as.getNodo().getY() >= distribucio[0].length || as.getNodo().getY() < 0) {
             throw new IllegalArgumentException("Error al asignar las posiciones x e y");
@@ -60,7 +60,7 @@ public class Distribucio {
 	    * 
 	    * 
 	    */
-	public void editarAssignacions(Assignacio as1, Assignacio as2)  {
+	public void editarAssignacions(assignacio as1, assignacio as2)  {
 		int tempx = as1.getNodo().getX();
 		int tempy = as1.getNodo().getY();
 		as1.getNodo().setX(as2.getNodo().getX());
@@ -76,7 +76,7 @@ public class Distribucio {
 	    * 
 	    * 
 	    */
-	public Llibre[][] consultarDistribucio(){
+	public llibre[][] consultarDistribucio(){
 		return distribucio;
 	}
 	
@@ -84,13 +84,13 @@ public class Distribucio {
 	    * 
 	    * 
 	    */
-	public Assignacio consultarAssignacio(int isbn) {
+	public assignacio consultarAssignacio(int isbn) {
 		
 		for(int i = 0; i < distribucio.length; ++i) {
 			for(int j = 0; j < distribucio[0].length; ++j){
 				if(distribucio[i][j].getId() == isbn) {
 					nodo no = new nodo(i, j);
-					Assignacio as = new Assignacio(distribucio[i][j], no);
+					assignacio as = new assignacio(distribucio[i][j], no);
 					return as;
 				}
 			}

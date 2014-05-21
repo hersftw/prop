@@ -10,7 +10,7 @@ package prop.domini;
  *
  * @author gabriel
  */
-public class Distancia {
+public class distancia {
     
 //  Atributos 
     private int matrizDistancias[][];
@@ -22,7 +22,7 @@ public class Distancia {
     /** Creadora por defecto de distancia
      *
      */
-        public Distancia() {}
+        public distancia() {}
     
     /**
      * distancia.   Creadora de la matriz de distancias con nF filas y nC columnas
@@ -30,7 +30,7 @@ public class Distancia {
      * @param nC:   numero de columnas de la matriz
      * @param nP:   numero de posiciones de la matriz
      */
-    public Distancia(int nF, int nC, int nP){
+    public distancia(int nF, int nC, int nP){
 		matrizDistancias = new int[nP][nP];
         setNumeroFilas(nF);
         setNumeroColumnas(nC);

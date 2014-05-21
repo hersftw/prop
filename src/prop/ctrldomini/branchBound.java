@@ -19,11 +19,11 @@ import java.util.Random;
  */
 public class branchBound {
     
-    private PriorityQueue<Node> nodes; //Cua de prioritat ordenada de forma ascendent
+    private PriorityQueue<node> nodes; //Cua de prioritat ordenada de forma ascendent
     private int mida;                 // mida de la solucio
     private int[][] estadistica;      // matriu de flux
     private int[][] distancia;        // matriu de distancia
-    public  Node mejorSolucion;       // Node amb la millor solucio 
+    public  node mejorSolucion;       // Node amb la millor solucio 
     double  mejorCost;                // Millor cost fins al moment
     
     /**
@@ -35,8 +35,8 @@ public class branchBound {
         double coste = 0;
         int h[] = new int [mida];
         Vector<Integer> v  = new Vector<Integer> ();
-        mejorSolucion = new Node(v,h,coste);
-        nodes = new PriorityQueue<Node> (1,new NodeComparador());
+        mejorSolucion = new node(v,h,coste);
+        nodes = new PriorityQueue<node> (1,new nodeComparador());
         nodes.add(mejorSolucion);
     }
     
@@ -53,9 +53,9 @@ public class branchBound {
         double coste = 0;
         int h[] = new int [mida];
         Vector<Integer> v = new Vector<Integer> (estadistica[0].length);
-        mejorSolucion = new Node (v,h,0);
+        mejorSolucion = new node (v,h,0);
         anadirPendientes();            
-        nodes = new PriorityQueue<> (1,new NodeComparador()); 
+        nodes = new PriorityQueue<> (1,new nodeComparador()); 
         nodes.add(mejorSolucion);          
         greedy();
         solve();
@@ -104,7 +104,7 @@ public class branchBound {
                mejorCost += estadistica[i][j]* distancia[s[i]][s[j]];
            }
        }
-       mejorSolucion = new Node(p,s,mejorCost);
+       mejorSolucion = new node(p,s,mejorCost);
        System.out.println("El mejor coste es :"+ mejorCost);
     }
 
@@ -135,7 +135,7 @@ public class branchBound {
             }
             if(costeParcial < mejorCost) {
                 mejorCost = costeParcial;
-                mejorSolucion = new Node(p,s,mejorCost);
+                mejorSolucion = new node(p,s,mejorCost);
             }
         }
         
@@ -158,9 +158,9 @@ public class branchBound {
      * Metode principal de BranchBound
      */
     public void solve()  {
-        Node a = nodes.peek();
+        node a = nodes.peek();
         while(!nodes.isEmpty()){
-            Node b = nodes.poll();                          // Saca un node 
+            node b = nodes.poll();                          // Saca un node 
             Vector<Integer> v1 = b.getTeclasPendientes();    
             if(esMejor(b.cost)) {
                 if(v1.isEmpty()) {
@@ -176,7 +176,7 @@ public class branchBound {
                             int pos = mida-v1.size();
 		            aux[pos] = v1.get(i);
                             double x = calcularCost(aux,pos,b.cost); // Calcula el coste del nodo     
-                            Node c = new Node(h1,aux,x);                          
+                            node c = new node(h1,aux,x);                          
                             if(esMejor(c.cost)) {
                                 if(v1.isEmpty()) {
                                     mejorSolucion = b;

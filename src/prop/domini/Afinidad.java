@@ -13,14 +13,14 @@ import java.io.IOException;
  *
  * @author alex
  */
-public class Afinidad {
+public class afinidad {
     public double[][] afinidades;
     
     /**Constructora por defecto
      *
      * @param mida Mida que tendra la matriz de afinidades
      */
-    public Afinidad(int mida) {
+    public afinidad(int mida) {
         afinidades= new double[mida][mida];
     }
 

@@ -3,7 +3,7 @@ package prop.drivers;
 import java.util.Scanner;
 
 import prop.ctrldomini.crtlLlibres;
-import prop.domini.Llibre;
+import prop.domini.llibre;
 
 public class driverCtrlLlibres {
 	private static void menu() {
@@ -33,7 +33,7 @@ public class driverCtrlLlibres {
 		System.out.print("Introdueix Categoria (String): ");
 		String cat = in.nextLine();
 		
-		Llibre book = new Llibre(id, titol, autor, edi, any, cat);
+		llibre book = new llibre(id, titol, autor, edi, any, cat);
 		crtlLlibres ctrl = new crtlLlibres();
 		ctrl.inicialitzarLlibres();
 		ctrl.afegirLlibre(book);
@@ -63,7 +63,7 @@ public class driverCtrlLlibres {
 						System.out.print("Introdueix Categoria (String): ");
 						cat = in.nextLine();
 						
-						book = new Llibre(id, titol, autor, edi, any, cat);
+						book = new llibre(id, titol, autor, edi, any, cat);
 						ctrl.afegirLlibre(book);
 		    	 		break;
 		    	case 3: System.out.println("Introdueix l'isbn del llibre a modificar:");

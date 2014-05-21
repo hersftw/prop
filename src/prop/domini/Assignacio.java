@@ -1,15 +1,15 @@
 package prop.domini;
 
-import prop.domini.Llibre;
+import prop.domini.llibre;
 
-public class Assignacio {
+public class assignacio {
 
-	 private Llibre llibre;
+	 private llibre llibre;
 	 private nodo nodo;
 	 
 	 /**Constructora per defecte**/
 	 
-	 public Assignacio(Llibre llibre, nodo nodo) {
+	 public assignacio(llibre llibre, nodo nodo) {
 			
 			this.llibre = llibre;
 			this.nodo = nodo;
@@ -20,7 +20,7 @@ public class Assignacio {
 	    *
 	    * @return el valor de llibre
 	    */
-	 public Llibre getLlibre() {
+	 public llibre getLlibre() {
 		return llibre;
 	}
 	 /**Modificadora del Llibre llibre
@@ -29,7 +29,7 @@ public class Assignacio {
 	    * \pre Cert
 	    * \post S'ha assignat el llibre a l'assignació
 	    */
-	public void setLlibre(Llibre llibre) {
+	public void setLlibre(llibre llibre) {
 		this.llibre = llibre;
 	}
 	

@@ -2,19 +2,19 @@ package prop.ctrldomini;
 
 import java.util.ArrayList;
 import java.util.List;
-import prop.domini.Distribucio;
-import prop.domini.Assignacio;
+import prop.domini.distribucio;
+import prop.domini.assignacio;
 
 
-public class CtrlDistribucions {
+public class ctrlDistribucions {
 	
-	private List<Distribucio> distrib;
+	private List<distribucio> distrib;
 	
 	/**Constructora per defecte
 
     */
 	public void inicialitzarDistribucions(){
-		distrib = new ArrayList<Distribucio>(); 
+		distrib = new ArrayList<distribucio>(); 
 	}
 	
 	/**Afegeix una distribucio al conjunt de distribucions.
@@ -23,7 +23,7 @@ public class CtrlDistribucions {
 
 	    */
 	
-	public void afegirDistribucio(Distribucio distribucio) {
+	public void afegirDistribucio(distribucio distribucio) {
 		distribucio.setNum(distrib.size());
 		distrib.add(distribucio);
 	}
@@ -35,7 +35,7 @@ public class CtrlDistribucions {
 	    */
 	
 	public void consultarDistribucio(int num){
-		Distribucio dis = null;
+		distribucio dis = null;
 		try{
 			dis = distrib.get(num);
 			dis.mostrarDistribucio();
@@ -53,7 +53,7 @@ public class CtrlDistribucions {
 	    */
 	
 	public void deleteDistribucio(int num){
-		Distribucio dis = null;
+		distribucio dis = null;
 		try{
 			dis = distrib.get(num);
 			distrib.remove(dis);
@@ -74,7 +74,7 @@ public class CtrlDistribucions {
 	public void modificarDistribucio(int num, int isbn1, int isbn2) {
 		
 		
-		Distribucio dis = null;
+		distribucio dis = null;
 		try{
 		dis = distrib.get(num);
 		
@@ -84,8 +84,8 @@ public class CtrlDistribucions {
 		}
 		
 		
-			Assignacio as1 = dis.consultarAssignacio(isbn1);
-			Assignacio as2 = dis.consultarAssignacio(isbn2);
+			assignacio as1 = dis.consultarAssignacio(isbn1);
+			assignacio as2 = dis.consultarAssignacio(isbn2);
 			if(as1 == null || as2 == null) {
 				throw new IllegalArgumentException("Error: Assignacio no trobada");
 			}

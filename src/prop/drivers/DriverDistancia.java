@@ -1,12 +1,12 @@
 package prop.drivers;
 
-import prop.domini.Distancia;
+import prop.domini.distancia;
 
 import java.util.*;
 
 
 
-public class DriverDistancia {
+public class driverDistancia {
 	
 	private static void menu() {
 		System.out.println("Escull una opció:/n");
@@ -26,7 +26,7 @@ public class DriverDistancia {
 		System.out.println("Driver Distancia");
 		System.out.println("Introdueix un Numero de files (int), un numero de columnes (int) i un numero de posicions (int)");
 		Scanner in = new Scanner(System.in);
-		Distancia dist = new Distancia(in.nextInt(), in.nextInt(), in.nextInt());
+		distancia dist = new distancia(in.nextInt(), in.nextInt(), in.nextInt());
 		boolean sortir = false;
 		
 		while(!sortir){

@@ -3,10 +3,10 @@ package prop.ctrldomini;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
-import prop.domini.Llibre;
+import prop.domini.llibre;
 
 public class crtlLlibres {
-	private List<Llibre> llibres;
+	private List<llibre> llibres;
 	
 	/**@brief Constructora per defecte.
     *
@@ -15,7 +15,7 @@ public class crtlLlibres {
     * \post El resultat es un crtlLlibres buit.
     */
 	public void inicialitzarLlibres(){
-		llibres = new ArrayList<Llibre>();
+		llibres = new ArrayList<llibre>();
 	}
 	
 	/**@brief Consultora d'un llibre.
@@ -26,8 +26,8 @@ public class crtlLlibres {
     */
 	public void consultarLlibre(int isbn){
 		boolean find = false;
-		Llibre l = null;
-		Iterator<Llibre> it = llibres.iterator();
+		llibre l = null;
+		Iterator<llibre> it = llibres.iterator();
 		while(!find & it.hasNext()){
 			l = it.next();
 			if (l.getId() == isbn) find = true;
@@ -49,7 +49,7 @@ public class crtlLlibres {
     * \pre Cert.
     * \post El resultat es el crtlLlibres amb el llibre afegit.
     */
-	public void afegirLlibre(Llibre llibre){
+	public void afegirLlibre(llibre llibre){
 		llibres.add(llibre);
 	}
 	
@@ -68,8 +68,8 @@ public class crtlLlibres {
 	public void modificarLlibre(int isbn1, int isbn2, String titol, String autor,  String editorial,
 			int any, String categoria ){
 		boolean find = false;
-		Llibre l = null;
-		Iterator<Llibre> it = llibres.iterator();
+		llibre l = null;
+		Iterator<llibre> it = llibres.iterator();
 		while(!find & it.hasNext()){
 			l = it.next();
 			if (l.getId() == isbn1) find = true;
@@ -93,8 +93,8 @@ public class crtlLlibres {
     */
 	public void eliminarLlibre(int isbn){
 		boolean find = false;
-		Llibre l = null;
-		Iterator<Llibre> it = llibres.iterator();
+		llibre l = null;
+		Iterator<llibre> it = llibres.iterator();
 		while(!find & it.hasNext()){
 			l = it.next();
 			if (l.getId() == isbn) find = true;
