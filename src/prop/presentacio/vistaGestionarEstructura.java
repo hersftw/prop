@@ -85,15 +85,20 @@ public class vistaGestionarEstructura extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\Edgar\\Desktop\\gif prop\\linealdef.png"));
+		btnNewButton.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/linealdef.png")));
 		btnNewButton.setBounds(184, 83, 127, 118);
 		contentPane.add(btnNewButton);
 		
 		JButton button = new JButton();
 		button.setBackground(SystemColor.menu);
-		button.setIcon(new ImageIcon("C:\\Users\\Edgar\\Desktop\\gif prop\\conicadef.png"));
+		button.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/conicadef.png")));
 		button.setBounds(337, 83, 127, 118);
 		contentPane.add(button);
+		
+		JButton button_1 = new JButton("");
+		button_1.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/Flaticon_9260.png")));
+		button_1.setBounds(548, 404, 65, 35);
+		contentPane.add(button_1);
 	}
 
 }
