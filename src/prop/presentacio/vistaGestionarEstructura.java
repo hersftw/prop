@@ -18,6 +18,7 @@ import java.awt.Rectangle;
 import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.awt.Window.Type;
 
 public class vistaGestionarEstructura extends JFrame {
 
@@ -78,27 +79,14 @@ public class vistaGestionarEstructura extends JFrame {
 		lblEscullLaForma.setBounds(234, 29, 239, 35);
 		contentPane.add(lblEscullLaForma);
 		
-		JButton btnNewButton = new JButton();
-		btnNewButton.setForeground(Color.WHITE);
-		btnNewButton.setBackground(SystemColor.menu);
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnNewButton.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/linealdef.png")));
-		btnNewButton.setBounds(184, 83, 127, 118);
-		contentPane.add(btnNewButton);
-		
-		JButton button = new JButton();
-		button.setBackground(SystemColor.menu);
-		button.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/conicadef.png")));
-		button.setBounds(337, 83, 127, 118);
-		contentPane.add(button);
-		
 		JButton button_1 = new JButton("");
 		button_1.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/Flaticon_9260.png")));
-		button_1.setBounds(548, 404, 65, 35);
+		button_1.setBounds(559, 416, 65, 35);
 		contentPane.add(button_1);
+		
+		JButton button_2 = new JButton("");
+		button_2.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/flecha.png")));
+		button_2.setBounds(10, 416, 65, 35);
+		contentPane.add(button_2);
 	}
-
 }

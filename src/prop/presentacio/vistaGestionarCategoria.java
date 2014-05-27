@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Dimension;
 import javax.swing.JButton;
 import java.awt.Font;
+import javax.swing.ImageIcon;
 
 public class vistaGestionarCategoria extends JFrame {
 
@@ -68,6 +69,11 @@ public class vistaGestionarCategoria extends JFrame {
 		btnEliminarCategoria.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnEliminarCategoria.setBounds(235, 351, 171, 49);
 		contentPane.add(btnEliminarCategoria);
+		
+		JButton button = new JButton("");
+		button.setIcon(new ImageIcon(vistaGestionarCategoria.class.getResource("/prop/icons/flecha.png")));
+		button.setBounds(10, 416, 65, 35);
+		contentPane.add(button);
 	}
 
 }
