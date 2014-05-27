@@ -80,7 +80,7 @@ public class vistaGestionarEstructura extends JFrame {
 		contentPane.add(lblEscullLaForma);
 		
 		JButton button_1 = new JButton("");
-		button_1.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/Flaticon_9260.png")));
+		button_1.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/tick.png")));
 		button_1.setBounds(559, 416, 65, 35);
 		contentPane.add(button_1);
 		
