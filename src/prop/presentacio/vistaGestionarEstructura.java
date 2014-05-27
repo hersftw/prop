@@ -19,6 +19,7 @@ import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.SystemColor;
 
+
 public class vistaGestionarEstructura extends JFrame {
 
 	private JPanel contentPane;
@@ -87,6 +88,16 @@ public class vistaGestionarEstructura extends JFrame {
 		button_2.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/flecha.png")));
 		button_2.setBounds(10, 416, 65, 35);
 		contentPane.add(button_2);
+		
+		JButton button = new JButton("");
+		button.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/linealdef.png")));
+		button.setBounds(186, 87, 99, 112);
+		contentPane.add(button);
+		
+		JButton button_3 = new JButton("");
+		button_3.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/conicadef.png")));
+		button_3.setBounds(373, 90, 106, 112);
+		contentPane.add(button_3);
 	}
 
 }
