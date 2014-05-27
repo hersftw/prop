@@ -18,7 +18,6 @@ import java.awt.Rectangle;
 import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.SystemColor;
-import java.awt.Window.Type;
 
 public class vistaGestionarEstructura extends JFrame {
 
@@ -89,4 +88,5 @@ public class vistaGestionarEstructura extends JFrame {
 		button_2.setBounds(10, 416, 65, 35);
 		contentPane.add(button_2);
 	}
+
 }
