@@ -40,6 +40,7 @@ public class vistaGestionarLlibres extends JFrame {
 	 * Create the frame.
 	 */
 	public vistaGestionarLlibres() {
+		setTitle("Gestionar Llibres\r\n");
 		setResizable(false);
 		setMinimumSize(new Dimension(650, 500));
 		setMaximumSize(new Dimension(650, 500));
@@ -55,15 +56,15 @@ public class vistaGestionarLlibres extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Afegeix llibre");
-		btnNewButton.setBounds(211, 108, 198, 88);
+		btnNewButton.setBounds(233, 129, 185, 49);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Consulta/Modifica/Elimina");
-		btnNewButton_1.setBounds(211, 276, 198, 88);
+		btnNewButton_1.setBounds(233, 248, 185, 49);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton();
-		btnNewButton_2.setIcon(new ImageIcon("C:\\Users\\Ricard\\Documents\\GitHub\\prop\\flecha.png"));
+		btnNewButton_2.setIcon(new ImageIcon(vistaGestionarLlibres.class.getResource("/prop/icons/flecha.png")));
 		
 		
 		btnNewButton_2.setBounds(10, 424, 59, 37);
