@@ -7,13 +7,23 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
-import javax.swing.JRadioButton;
+import java.awt.Dimension;
 import javax.swing.JLabel;
 import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Rectangle;
+import javax.swing.UIManager;
+import java.awt.Color;
+import java.awt.SystemColor;
 
 public class vistaGestionarEstructura extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -35,41 +45,55 @@ public class vistaGestionarEstructura extends JFrame {
 	 * Create the frame.
 	 */
 	public vistaGestionarEstructura() {
+		setTitle("Gestionar Estructura");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 612, 410);
+		setBounds(100, 100, 650, 500);
 		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.menu);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(70, 230, 89, 23);
+		JLabel lblN = new JLabel("N\u00BA Ubicacions:");
+		lblN.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblN.setBounds(122, 243, 136, 25);
+		contentPane.add(lblN);
+		
+		JLabel lblNPrestatges = new JLabel("N\u00BA Prestatges:");
+		lblNPrestatges.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNPrestatges.setBounds(122, 315, 136, 25);
+		contentPane.add(lblNPrestatges);
+		
+		textField = new JTextField();
+		textField.setBounds(268, 242, 241, 35);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(268, 314, 241, 35);
+		contentPane.add(textField_1);
+		
+		JLabel lblEscullLaForma = new JLabel("Escull la forma de l'estructura:");
+		lblEscullLaForma.setBounds(234, 29, 239, 35);
+		contentPane.add(lblEscullLaForma);
+		
+		JButton btnNewButton = new JButton();
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setBackground(SystemColor.menu);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnNewButton.setIcon(new ImageIcon("C:\\Users\\Edgar\\Desktop\\gif prop\\linealdef.png"));
+		btnNewButton.setBounds(184, 83, 127, 118);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.setBounds(225, 230, 89, 23);
-		contentPane.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("New button");
-		btnNewButton_2.setBounds(401, 230, 89, 23);
-		contentPane.add(btnNewButton_2);
-		
-		JButton btnNewButton_3 = new JButton("New button");
-		btnNewButton_3.setBounds(70, 292, 89, 23);
-		contentPane.add(btnNewButton_3);
-		
-		JButton btnNewButton_4 = new JButton("New button");
-		btnNewButton_4.setBounds(225, 292, 89, 23);
-		contentPane.add(btnNewButton_4);
-		
-		JButton btnNewButton_5 = new JButton("New button");
-		btnNewButton_5.setBounds(401, 292, 89, 23);
-		contentPane.add(btnNewButton_5);
-		
-		JLabel lblDisposicio = new JLabel("Disposicio");
-		lblDisposicio.setFont(new Font("Tahoma", Font.BOLD, 54));
-		lblDisposicio.setBounds(142, 22, 292, 169);
-		contentPane.add(lblDisposicio);
+		JButton button = new JButton();
+		button.setBackground(SystemColor.menu);
+		button.setIcon(new ImageIcon("C:\\Users\\Edgar\\Desktop\\gif prop\\conicadef.png"));
+		button.setBounds(337, 83, 127, 118);
+		contentPane.add(button);
 	}
+
 }
