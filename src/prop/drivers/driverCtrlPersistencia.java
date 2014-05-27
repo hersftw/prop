@@ -13,7 +13,7 @@ public class driverCtrlPersistencia {
 	    System.out.println("\t 2) Mostrar tamany.");
 	    System.out.println("\t 3) Mostrar matriu d'afinitats.");
 	    System.out.println("\t 4) Mostrar matriu de distancies.");
-	    System.out.println("\t 5) Guardar solució al fitxer.");
+	    System.out.println("\t 5) Guardar soluciï¿½ al fitxer.");
 	}
 	
 	/**
@@ -54,7 +54,7 @@ public class driverCtrlPersistencia {
 				int res[] = {1, 8, 3, 2, 7, 6, 9, 5, 4};
 				System.out.print("Introdueix el nom del fitxer a guardar: ");
 				ctrl.guardarResultado(res, in.next());
-				System.out.println("S'ha guardat un exemple de solució al fitxer indicat.");
+				System.out.println("S'ha guardat un exemple de soluciï¿½ al fitxer indicat.");
 				break;
 			case 0:
 				end = true;

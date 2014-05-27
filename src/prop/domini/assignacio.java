@@ -27,7 +27,7 @@ public class assignacio {
 	    *
 	    * @param llibre 
 	    * \pre Cert
-	    * \post S'ha assignat el llibre a l'assignació
+	    * \post S'ha assignat el llibre a l'assignaciï¿½
 	    */
 	public void setLlibre(llibre llibre) {
 		this.llibre = llibre;
@@ -46,7 +46,7 @@ public class assignacio {
     *
     * @param nodo
     * \pre Cert
-    * \post S'ha assignat el node a l'assignació
+    * \post S'ha assignat el node a l'assignaciï¿½
     */
 	public void setNodo(nodo nodo) {
 		this.nodo = nodo;

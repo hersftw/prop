@@ -16,7 +16,7 @@ public class categoria {
 	}
 
 	
-	 /**Consultora del paràmetre nom.
+	 /**Consultora del parï¿½metre nom.
     * \pre Cert
     * \post S'ha retornat el nom de la categoria
     * @return el valor que pren nom.
@@ -25,7 +25,7 @@ public class categoria {
 		return nom;
 	}
 	
-	/**Consultora del paràmetre pare.
+	/**Consultora del parï¿½metre pare.
     * \pre Cert
     * \post S'ha retornat el pare de la categoria
     * @return el valor que pren pare.

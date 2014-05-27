@@ -16,7 +16,7 @@ public class llibre extends elemento {
     * @param autor Indica el nom del autor del llibre.
     * @param editorial Indica la editorial que va publicar el llibre.
     * @param any Indica el any en que es va publicar el llibre.
-    * @param categoria Indica la categoria temàtica a la que pertany el llibre.
+    * @param categoria Indica la categoria temï¿½tica a la que pertany el llibre.
     * 
     * \pre Cert.
     * \post El resultat es un llibre amb tots els seus parametres.
