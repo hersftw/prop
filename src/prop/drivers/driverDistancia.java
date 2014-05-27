@@ -9,7 +9,7 @@ import java.util.*;
 public class driverDistancia {
 	
 	private static void menu() {
-		System.out.println("Escull una opció:/n");
+		System.out.println("Escull una opciï¿½:/n");
 		System.out.println("1. Get Numero de files");
 		System.out.println("2. Set Numero de files");
 		System.out.println("3. Get Numero de columnes");

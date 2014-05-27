@@ -9,7 +9,7 @@ import java.util.*;
 public class driverCategoria {
 	
 	private static void menu() {
-		System.out.println("Escull una opció:/n");
+		System.out.println("Escull una opciï¿½:/n");
 		System.out.println("1. Get nom");
 		System.out.println("2. Set nom");
 		System.out.println("3. Get pare");

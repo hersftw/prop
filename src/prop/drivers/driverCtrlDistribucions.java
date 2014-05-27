@@ -10,11 +10,11 @@ import prop.domini.nodo;
 
 public class driverCtrlDistribucions {
 	private static void menu() {
-		System.out.println("Escull una opció:");
-        System.out.println(" 1) Afegir Distribució ");
-        System.out.println(" 2) Consulta Distribució ");
-        System.out.println(" 3) Esborra Distribució ");
-        System.out.println(" 4) Modifica Distribució ");
+		System.out.println("Escull una opciï¿½:");
+        System.out.println(" 1) Afegir Distribuciï¿½ ");
+        System.out.println(" 2) Consulta Distribuciï¿½ ");
+        System.out.println(" 3) Esborra Distribuciï¿½ ");
+        System.out.println(" 4) Modifica Distribuciï¿½ ");
 
         System.out.println(" 5) Sortir ");
 	}
@@ -25,7 +25,7 @@ public class driverCtrlDistribucions {
 		System.out.println("Driver CtrlDistribucio");
 		ctrlDistribucions ctrldis = new ctrlDistribucions();
 		ctrldis.inicialitzarDistribucions();		
-		System.out.println("Introdueix el número d'ubicacions que hi ha i el número de prestatges de la llibreria)");
+		System.out.println("Introdueix el nï¿½mero d'ubicacions que hi ha i el nï¿½mero de prestatges de la llibreria)");
 		Scanner in = new Scanner(System.in);
 		int numllibres = in.nextInt();
 		distribucio dis = new distribucio(0, numllibres, in.nextInt());
@@ -64,7 +64,7 @@ public class driverCtrlDistribucions {
 			switch (in.nextInt()) {
 			
 				case 1: 
-					System.out.println("Introdueix  el número d'ubicacions que hi ha i el número de prestatges de la llibreria)");
+					System.out.println("Introdueix  el nï¿½mero d'ubicacions que hi ha i el nï¿½mero de prestatges de la llibreria)");
 					 numllibres = in.nextInt();
 					dis = new distribucio(0, numllibres, in.nextInt());
 				

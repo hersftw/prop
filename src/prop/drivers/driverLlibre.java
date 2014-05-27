@@ -10,7 +10,7 @@ import java.util.*;
 public class driverLlibre {
 	
 	private static void menu() {
-		System.out.println("Escull una opció:/n");
+		System.out.println("Escull una opciï¿½:/n");
 		System.out.println("1. Get id");
 		System.out.println("2. Set id");
 		System.out.println("3. Get titol");
