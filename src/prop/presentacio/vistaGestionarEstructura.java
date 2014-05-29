@@ -46,6 +46,7 @@ public class vistaGestionarEstructura extends JFrame {
 	 * Create the frame.
 	 */
 	public vistaGestionarEstructura() {
+		setMinimumSize(new Dimension(650, 500));
 		setTitle("Gestionar Estructura");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 650, 500);
@@ -85,13 +86,20 @@ public class vistaGestionarEstructura extends JFrame {
 		contentPane.add(button_1);
 		
 		JButton button_2 = new JButton("");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaMenuPrincipal panmenu = new vistaMenuPrincipal();
+				panmenu.setVisible(true);
+				dispose();
+			}
+		});
 		button_2.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/flecha.png")));
 		button_2.setBounds(10, 416, 65, 35);
 		contentPane.add(button_2);
 		
 		JButton button = new JButton("");
 		button.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/linealdef.png")));
-		button.setBounds(186, 87, 99, 112);
+		button.setBounds(186, 87, 106, 112);
 		contentPane.add(button);
 		
 		JButton button_3 = new JButton("");

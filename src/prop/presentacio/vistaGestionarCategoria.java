@@ -10,6 +10,8 @@ import java.awt.Dimension;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class vistaGestionarCategoria extends JFrame {
 
@@ -47,18 +49,36 @@ public class vistaGestionarCategoria extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnCrearCategoria = new JButton("Crear Categoria");
+		btnCrearCategoria.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaCrearCategoria panelcrea = new vistaCrearCategoria();
+				panelcrea.setVisible(true);
+			}
+		});
 		btnCrearCategoria.setName("");
 		btnCrearCategoria.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnCrearCategoria.setBounds(235, 50, 171, 49);
 		contentPane.add(btnCrearCategoria);
 		
 		JButton btnModificarNom = new JButton("Modificar Nom");
+		btnModificarNom.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaModificarNomCat panmodif = new vistaModificarNomCat();
+				panmodif.setVisible(true);
+				dispose();
+			}
+		});
 		btnModificarNom.setName("");
 		btnModificarNom.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnModificarNom.setBounds(235, 150, 171, 49);
 		contentPane.add(btnModificarNom);
 		
 		JButton btnCanviarOrdre = new JButton("Canviar Ordre");
+		btnCanviarOrdre.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnCanviarOrdre.setName("");
 		btnCanviarOrdre.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnCanviarOrdre.setBounds(235, 253, 171, 49);
@@ -71,6 +91,13 @@ public class vistaGestionarCategoria extends JFrame {
 		contentPane.add(btnEliminarCategoria);
 		
 		JButton button = new JButton("");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaMenuPrincipal panmenu = new vistaMenuPrincipal();
+				panmenu.setVisible(true);
+				dispose();
+			}
+		});
 		button.setIcon(new ImageIcon(vistaGestionarCategoria.class.getResource("/prop/icons/flecha.png")));
 		button.setBounds(10, 416, 65, 35);
 		contentPane.add(button);
