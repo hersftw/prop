@@ -77,7 +77,10 @@ public class vistaGestionarCategoria extends JFrame {
 		JButton btnCanviarOrdre = new JButton("Canviar Ordre");
 		btnCanviarOrdre.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				/*vistaCanviarOrdre panordre = new vistaCanviarOrdre();
+				 panordre.setVisible(true);
+				 dispose();
+				 */
 			}
 		});
 		btnCanviarOrdre.setName("");
@@ -86,6 +89,13 @@ public class vistaGestionarCategoria extends JFrame {
 		contentPane.add(btnCanviarOrdre);
 		
 		JButton btnEliminarCategoria = new JButton("Eliminar Categoria");
+		btnEliminarCategoria.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaEliminarCategoria panelim = new vistaEliminarCategoria();
+				panelim.setVisible(true);
+				dispose();
+			}
+		});
 		btnEliminarCategoria.setName("");
 		btnEliminarCategoria.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnEliminarCategoria.setBounds(235, 351, 171, 49);

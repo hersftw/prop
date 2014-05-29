@@ -41,6 +41,7 @@ public class vistaModificarNomCat extends JFrame {
 	 * Create the frame.
 	 */
 	public vistaModificarNomCat() {
+		setResizable(false);
 		setTitle("Modificar Nom [Categoria]");
 		setMinimumSize(new Dimension(650, 500));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
