@@ -1,18 +1,18 @@
 package prop.presentacio;
 
+import prop.ctrldomini.*;
+
 public class CtrlPresentacio {
 	
+	ctrlCategories categ;
+	
 	public CtrlPresentacio() {
+		categ = new ctrlCategories();
+		categ.inicialitzarCategories();
 		
 	}
-	void hola() {
-		System.out.println("adeu");
-		System.out.println("hola");
-	}
 	
-
-
-	public void edgar(){
-		hola();
+	public void mostrarArbre() {
+		
 	}
 }

@@ -21,6 +21,8 @@ import java.awt.GridLayout;
 import java.awt.Rectangle;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class vistaMenuPrincipal extends JFrame {
 
@@ -57,7 +59,15 @@ public class vistaMenuPrincipal extends JFrame {
 		panel.setBounds(40, 11, 584, 462);
 		getContentPane().add(panel);
 		
+		
 		JButton button = new JButton("Gestionar Estructura");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				vistaGestionarEstructura panelest = new vistaGestionarEstructura(); 
+		        panelest.setVisible(true);
+		        dispose(); 
+			}
+		});
 		button.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		button.setName("");
 		button.setBounds(75, 216, 171, 49);
@@ -80,6 +90,17 @@ public class vistaMenuPrincipal extends JFrame {
 		panel.add(button_2);
 		
 		JButton button_3 = new JButton("Gestionar Categoria");
+		//vistaGestionarCategoria panelcat = new vistaGestionarCategoria();
+		button_3.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				vistaGestionarCategoria panelcat = new vistaGestionarCategoria();
+				panelcat.setVisible(true);
+				dispose();
+				
+			}
+		});
+		
 		button_3.setName("");
 		button_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		button_3.setBounds(296, 216, 171, 49);
@@ -98,6 +119,12 @@ public class vistaMenuPrincipal extends JFrame {
 		panel.add(button_5);
 		
 		JButton btnCarregarexportarDades = new JButton("Carregar/Exportar Dades");
+		btnCarregarexportarDades.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				vistaImportarExportar panimex = new vistaImportarExportar();
+				panimex.setVisible(true);
+			}
+		});
 		btnCarregarexportarDades.setName("");
 		btnCarregarexportarDades.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnCarregarexportarDades.setBounds(296, 358, 171, 49);
