@@ -77,10 +77,9 @@ public class vistaGestionarCategoria extends JFrame {
 		JButton btnCanviarOrdre = new JButton("Canviar Ordre");
 		btnCanviarOrdre.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				/*vistaCanviarOrdre panordre = new vistaCanviarOrdre();
-				 panordre.setVisible(true);
-				 dispose();
-				 */
+				vistaCanviarOrdre panordre = new vistaCanviarOrdre();
+				panordre.setVisible(true);
+				dispose();
 			}
 		});
 		btnCanviarOrdre.setName("");
