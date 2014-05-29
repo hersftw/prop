@@ -54,7 +54,8 @@ public class vistaModificarNomCat extends JFrame {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				vistaGestionarCategoria pancat = new vistaGestionarCategoria();
-				pancat.
+				pancat.setVisible(true);
+				dispose();
 			}
 		});
 		button.setIcon(new ImageIcon(vistaModificarNomCat.class.getResource("/prop/icons/flecha.png")));
