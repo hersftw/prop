@@ -23,7 +23,7 @@ import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class vistaMenuPrincipal extends JFrame {
+public class vistaMenuPrincipal extends JFrame implements ActionListener {
 
 	/**
 	 * Launch the application.
@@ -144,4 +144,8 @@ public class vistaMenuPrincipal extends JFrame {
 		btnCarregarexportarDades.setBounds(296, 358, 171, 49);
 		panel.add(btnCarregarexportarDades);
 	}
+	 public void actionPerformed(ActionEvent e){
+		System.out.println("Button Pressed");
+		}
+		
 }
