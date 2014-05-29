@@ -91,7 +91,7 @@ public class vistaGestionarEstructura extends JFrame {
 		
 		JButton button = new JButton("");
 		button.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/linealdef.png")));
-		button.setBounds(186, 87, 99, 112);
+		button.setBounds(186, 87, 106, 112);
 		contentPane.add(button);
 		
 		JButton button_3 = new JButton("");
