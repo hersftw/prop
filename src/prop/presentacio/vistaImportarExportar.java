@@ -76,43 +76,36 @@ public class vistaImportarExportar extends JFrame {
 		textField_1.setColumns(10);
 		
 		JButton btnImportar = new JButton("");
+		btnImportar.setIcon(new ImageIcon(vistaImportarExportar.class.getResource("/prop/icons/Flaticon_32527.png")));
 		btnImportar.addActionListener(new ActionListener() { //boto importar
 			public void actionPerformed(ActionEvent arg0) {
 				JFileChooser jfile = new JFileChooser();
-				jfile.showOpenDialog(null);
-				jfile.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-				File file = jfile.getSelectedFile();
-				textField.setText(file.getAbsolutePath().toString());
+				jfile.setFileSelectionMode(JFileChooser.FILES_ONLY);
+				int value = jfile.showOpenDialog(null);
+				if (value == JFileChooser.APPROVE_OPTION){
+					File file = jfile.getSelectedFile();
+					textField.setText(file.getAbsolutePath().toString());
+				}
 			}
 		});
 		btnImportar.setBounds(412, 170, 95, 25);
 		contentPane.add(btnImportar);
 		
 		JButton btnExportar = new JButton("");
+		btnExportar.setIcon(new ImageIcon(vistaImportarExportar.class.getResource("/prop/icons/Flaticon_32527.png")));
 		btnExportar.addActionListener(new ActionListener() { //boto exportar
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser jfile2 = new JFileChooser();
 				jfile2.setAcceptAllFileFilterUsed(false);
 				jfile2.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-				jfile2.showOpenDialog(null);
-				int value = 0;
-				value = JFileChooser.ERROR_OPTION;
-				System.out.println(value);
-				if (value == 0) {
-					File file2 = jfile2.getCurrentDirectory();
+				int value = jfile2.showOpenDialog(null);
+				if (value == JFileChooser.APPROVE_OPTION) {
+					File file2 = jfile2.getSelectedFile();
 					textField_1.setText(file2.getAbsolutePath().toString());
 				}
 			}
 		});
 		btnExportar.setBounds(412, 217, 95, 25);
 		contentPane.add(btnExportar);
-		
-		JButton button = new JButton("");
-		button.setBounds(553, 435, 63, 25);
-		contentPane.add(button);
-		
-		JButton button_1 = new JButton("");
-		button_1.setBounds(45, 435, 63, 25);
-		contentPane.add(button_1);
 	}
 }
