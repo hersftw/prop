@@ -46,6 +46,7 @@ public class vistaGestionarEstructura extends JFrame {
 	 * Create the frame.
 	 */
 	public vistaGestionarEstructura() {
+		setResizable(false);
 		setMinimumSize(new Dimension(650, 500));
 		setTitle("Gestionar Estructura");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

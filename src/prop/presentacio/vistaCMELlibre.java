@@ -60,6 +60,7 @@ public class vistaCMELlibre extends JFrame {
 	 * Create the frame.
 	 */
 	public vistaCMELlibre() {
+		setResizable(false);
 		setTitle("Consulta/Modifica/Elimina Llibre");
 		setMinimumSize(new Dimension(650, 500));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
