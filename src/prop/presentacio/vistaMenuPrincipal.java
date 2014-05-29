@@ -107,6 +107,13 @@ public class vistaMenuPrincipal extends JFrame {
 		panel.add(button_3);
 		
 		JButton button_4 = new JButton("Gestionar Llibres");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaGestionarLlibres panmenu = new vistaGestionarLlibres();
+				panmenu.setVisible(true);
+				dispose();
+			}
+		});
 		button_4.setName("");
 		button_4.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		button_4.setBounds(296, 288, 171, 49);
