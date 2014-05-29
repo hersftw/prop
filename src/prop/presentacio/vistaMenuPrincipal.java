@@ -46,6 +46,7 @@ public class vistaMenuPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public vistaMenuPrincipal() {
+		setResizable(false);
 		setPreferredSize(new Dimension(800, 800));
 		setMaximizedBounds(new Rectangle(0, 0, 0, 0));
 		setTitle("Menu Principal");
