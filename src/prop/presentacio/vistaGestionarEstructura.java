@@ -58,23 +58,23 @@ public class vistaGestionarEstructura extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblN = new JLabel("N\u00BA Ubicacions:");
-		lblN.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblN.setBounds(122, 243, 136, 25);
+		lblN.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblN.setBounds(146, 252, 95, 25);
 		contentPane.add(lblN);
 		
 		JLabel lblNPrestatges = new JLabel("N\u00BA Prestatges:");
-		lblNPrestatges.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNPrestatges.setBounds(122, 315, 136, 25);
+		lblNPrestatges.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNPrestatges.setBounds(146, 314, 95, 25);
 		contentPane.add(lblNPrestatges);
 		
 		textField = new JTextField();
-		textField.setBounds(268, 242, 241, 35);
+		textField.setBounds(251, 256, 256, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(268, 314, 241, 35);
+		textField_1.setBounds(251, 318, 256, 20);
 		contentPane.add(textField_1);
 		
 		JLabel lblEscullLaForma = new JLabel("Escull la forma de l'estructura:");
