@@ -38,6 +38,7 @@ public class vistaCMELlibre extends JFrame {
 	private JTextField textField_11;
 	private JButton button;
 	private JButton button_1;
+	private JButton button_2;
 
 	/**
 	 * Launch the application.
@@ -212,5 +213,10 @@ public class vistaCMELlibre extends JFrame {
 		button_1.setIcon(new ImageIcon(vistaCMELlibre.class.getResource("/prop/icons/tick.png")));
 		button_1.setBounds(559, 416, 65, 35);
 		contentPane.add(button_1);
+		
+		button_2 = new JButton("");
+		button_2.setIcon(new ImageIcon(vistaCMELlibre.class.getResource("/prop/icons/Flaticon_48352.png")));
+		button_2.setBounds(507, 416, 43, 35);
+		contentPane.add(button_2);
 	}
 }
