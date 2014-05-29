@@ -202,6 +202,17 @@ public class ctrlCategories {
     * \pre Cert
     * \post S'ha mostrat l'arbre de categories.
     */
+	public void mostrarCategories_old() {
+		Iterator<List<categoria>> it = categories.iterator();
+		while (it.hasNext()) {
+			Iterator<categoria> it2 = it.next().iterator();
+			while(it2.hasNext()) {
+				System.out.print(it2.next().getNom()+" ");
+			}
+			System.out.println();
+		}
+	}
+	
 	public void mostrarCategories() {
 		Iterator<List<categoria>> it = categories.iterator();
 		while (it.hasNext()) {

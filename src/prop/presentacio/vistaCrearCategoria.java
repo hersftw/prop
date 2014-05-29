@@ -1,16 +1,24 @@
 package prop.presentacio;
 
+import prop.ctrldomini.ctrlPersistencia;
+import prop.presentacio.CtrlPresentacio;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+<<<<<<< HEAD
 import java.awt.Dimension;
+=======
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
 
 public class vistaCrearCategoria extends JFrame {
-
-	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
@@ -35,10 +43,23 @@ public class vistaCrearCategoria extends JFrame {
 		setMinimumSize(new Dimension(650, 500));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
+		getContentPane().setLayout(null);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addActionListener(new ActionListener() {
+			int x = 10;
+			int y = 10;
+			public void actionPerformed(ActionEvent e) {
+				
+				//JLabel label = new JLabel("pene");
+				//label.setBounds(x, y, 50, 50);
+				//getContentPane().add(label);
+				//getContentPane().repaint();
+				//System.out.println(getContentPane().getComponentCount());
+				//y+=20;
+			}
+		});
+		btnNewButton.setBounds(123, 92, 97, 25);
+		getContentPane().add(btnNewButton);
 	}
-
 }
