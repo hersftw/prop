@@ -120,6 +120,13 @@ public class vistaMenuPrincipal extends JFrame {
 		panel.add(button_4);
 		
 		JButton button_5 = new JButton("Gestionar Solucions");
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaGestionarSolucions pansolu = new vistaGestionarSolucions();
+				pansolu.setVisible(true);
+				dispose();
+			}
+		});
 		button_5.setName("");
 		button_5.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		button_5.setBounds(75, 358, 171, 49);
