@@ -1,24 +1,22 @@
 package prop.presentacio;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
-import java.awt.Dimension;
-
-import javax.swing.JButton;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.geom.FlatteningPathIterator;
-
-public class vistaGestionarLlibres extends JFrame {
+public class vistaCanviarOrdre extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -27,7 +25,7 @@ public class vistaGestionarLlibres extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					vistaGestionarLlibres frame = new vistaGestionarLlibres();
+					vistaCanviarOrdre frame = new vistaCanviarOrdre();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,9 +37,9 @@ public class vistaGestionarLlibres extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public vistaGestionarLlibres() {
+	public vistaCanviarOrdre() {
+		setTitle("Canviar Ordre [Categoria]\r\n");
 		setResizable(false);
-		setTitle("Gestionar Llibres\r\n");
 		setMinimumSize(new Dimension(650, 500));
 		setMaximumSize(new Dimension(650, 500));
 		setPreferredSize(new Dimension(650, 500));
@@ -55,24 +53,39 @@ public class vistaGestionarLlibres extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Afegir llibre");
-		btnNewButton.setBounds(233, 129, 185, 49);
-		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Consulta/Modifica/Elimina");
-		btnNewButton_1.setBounds(233, 248, 185, 49);
-		contentPane.add(btnNewButton_1);
+		
+		
+		JButton button_1 = new JButton("");
+		button_1.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/tick.png")));
+		button_1.setBounds(559, 416, 65, 35);
+		contentPane.add(button_1);
 		
 		JButton btnNewButton_2 = new JButton();
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				vistaMenuPrincipal panmenu = new vistaMenuPrincipal();
-				panmenu.setVisible(true);
-				dispose();
-			}
-		});		
 		btnNewButton_2.setIcon(new ImageIcon(vistaGestionarLlibres.class.getResource("/prop/icons/flecha.png")));
 		btnNewButton_2.setBounds(10, 416, 65, 35);
 		contentPane.add(btnNewButton_2);
+		
+		JLabel lblNewLabel = new JLabel("Indica:");
+		lblNewLabel.setBounds(71, 274, 46, 14);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Nom antic:");
+		lblNewLabel_1.setBounds(167, 312, 65, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel label = new JLabel("Nom nou:");
+		label.setBounds(167, 360, 65, 14);
+		contentPane.add(label);
+		
+		textField = new JTextField();
+		textField.setBounds(242, 312, 249, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(242, 360, 249, 20);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
 	}
 }
