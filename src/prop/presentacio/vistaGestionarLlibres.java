@@ -56,10 +56,25 @@ public class vistaGestionarLlibres extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("Afegir llibre");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaAfegirLlibre llibre = new vistaAfegirLlibre();
+				llibre.setVisible(true);
+				dispose();
+				
+			}
+		});
 		btnNewButton.setBounds(233, 129, 185, 49);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Consulta/Modifica/Elimina");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaCMELlibre cme = new vistaCMELlibre();
+				cme.setVisible(true);
+				dispose();
+			}
+		});
 		btnNewButton_1.setBounds(233, 248, 185, 49);
 		contentPane.add(btnNewButton_1);
 		

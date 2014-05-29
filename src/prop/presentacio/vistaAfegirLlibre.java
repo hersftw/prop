@@ -11,6 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class vistaAfegirLlibre extends JFrame {
 
@@ -157,6 +159,13 @@ public class vistaAfegirLlibre extends JFrame {
 		contentPane.add(button_1);
 		
 		JButton btnNewButton_2 = new JButton();
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaGestionarLlibres llibreria = new vistaGestionarLlibres();
+				llibreria.setVisible(true);
+				dispose();
+			}
+		});
 		btnNewButton_2.setIcon(new ImageIcon(vistaGestionarLlibres.class.getResource("/prop/icons/flecha.png")));
 		btnNewButton_2.setBounds(10, 416, 65, 35);
 		contentPane.add(btnNewButton_2);

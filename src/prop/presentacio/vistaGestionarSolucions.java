@@ -117,6 +117,9 @@ public class vistaGestionarSolucions extends JFrame {
 		btnNewButton = new JButton("");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				vistaMenuPrincipal panmenu = new vistaMenuPrincipal();
+				panmenu.setVisible(true);
+				dispose();
 			}
 		});
 		btnNewButton.setIcon(new ImageIcon(vistaGestionarSolucions.class.getResource("/prop/icons/floppy.png")));
