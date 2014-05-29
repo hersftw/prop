@@ -44,6 +44,7 @@ public class vistaImportarExportar extends JFrame {
 	 * Create the frame.
 	 */
 	public vistaImportarExportar() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 650, 500);
 		contentPane = new JPanel();
@@ -74,6 +75,23 @@ public class vistaImportarExportar extends JFrame {
 		textField_1.setBounds(199, 221, 199, 19);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
+		
+		JButton button = new JButton();
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaMenuPrincipal pancat = new vistaMenuPrincipal();
+				pancat.setVisible(true);
+				dispose();
+			}
+		});
+		button.setIcon(new ImageIcon(vistaModificarNomCat.class.getResource("/prop/icons/flecha.png")));
+		button.setBounds(10, 416, 65, 35);
+		contentPane.add(button);
+		
+		JButton button_1 = new JButton("");
+		button_1.setIcon(new ImageIcon(vistaModificarNomCat.class.getResource("/prop/icons/tick.png")));
+		button_1.setBounds(559, 416, 65, 35);
+		contentPane.add(button_1);
 		
 		JButton btnImportar = new JButton("");
 		btnImportar.setIcon(new ImageIcon(vistaImportarExportar.class.getResource("/prop/icons/Flaticon_32527.png")));
