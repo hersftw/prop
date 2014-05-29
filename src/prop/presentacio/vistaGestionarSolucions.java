@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -102,6 +103,13 @@ public class vistaGestionarSolucions extends JFrame {
 		contentPane.add(button_1);
 		
 		JButton btnNewButton_2 = new JButton();
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaMenuPrincipal panmenu = new vistaMenuPrincipal();
+				panmenu.setVisible(true);
+				dispose();
+			}
+		});
 		btnNewButton_2.setIcon(new ImageIcon(vistaGestionarLlibres.class.getResource("/prop/icons/flecha.png")));
 		btnNewButton_2.setBounds(10, 416, 65, 35);
 		contentPane.add(btnNewButton_2);
@@ -116,6 +124,7 @@ public class vistaGestionarSolucions extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		btnNewButton_1 = new JButton("");
+		btnNewButton_1.setIcon(new ImageIcon(vistaGestionarSolucions.class.getResource("/prop/icons/Flaticon_48352.png")));
 		btnNewButton_1.setBounds(440, 416, 50, 35);
 		contentPane.add(btnNewButton_1);
 	}
