@@ -37,6 +37,7 @@ public class vistaGestionarCategoria extends JFrame {
 	 * Create the frame.
 	 */
 	public vistaGestionarCategoria() {
+		setResizable(false);
 		setTitle("Gestionar Categoria");
 		setPreferredSize(new Dimension(650, 500));
 		setMinimumSize(new Dimension(650, 500));
