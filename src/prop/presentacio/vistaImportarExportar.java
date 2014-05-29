@@ -94,6 +94,7 @@ public class vistaImportarExportar extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser jfile2 = new JFileChooser();
 				jfile2.showOpenDialog(null);
+				jfile2.setAcceptAllFileFilterUsed(false);
 				jfile2.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 				File file2 = jfile2.getCurrentDirectory();
 				textField_1.setText(file2.getAbsolutePath().toString());
