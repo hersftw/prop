@@ -7,13 +7,24 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
-import javax.swing.JRadioButton;
+import java.awt.Dimension;
 import javax.swing.JLabel;
 import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Rectangle;
+import javax.swing.UIManager;
+import java.awt.Color;
+import java.awt.SystemColor;
+
 
 public class vistaGestionarEstructura extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -35,41 +46,58 @@ public class vistaGestionarEstructura extends JFrame {
 	 * Create the frame.
 	 */
 	public vistaGestionarEstructura() {
+		setTitle("Gestionar Estructura");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 612, 410);
+		setBounds(100, 100, 650, 500);
 		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.menu);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(70, 230, 89, 23);
-		contentPane.add(btnNewButton);
+		JLabel lblN = new JLabel("N\u00BA Ubicacions:");
+		lblN.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblN.setBounds(122, 243, 136, 25);
+		contentPane.add(lblN);
 		
-		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.setBounds(225, 230, 89, 23);
-		contentPane.add(btnNewButton_1);
+		JLabel lblNPrestatges = new JLabel("N\u00BA Prestatges:");
+		lblNPrestatges.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNPrestatges.setBounds(122, 315, 136, 25);
+		contentPane.add(lblNPrestatges);
 		
-		JButton btnNewButton_2 = new JButton("New button");
-		btnNewButton_2.setBounds(401, 230, 89, 23);
-		contentPane.add(btnNewButton_2);
+		textField = new JTextField();
+		textField.setBounds(268, 242, 241, 35);
+		contentPane.add(textField);
+		textField.setColumns(10);
 		
-		JButton btnNewButton_3 = new JButton("New button");
-		btnNewButton_3.setBounds(70, 292, 89, 23);
-		contentPane.add(btnNewButton_3);
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(268, 314, 241, 35);
+		contentPane.add(textField_1);
 		
-		JButton btnNewButton_4 = new JButton("New button");
-		btnNewButton_4.setBounds(225, 292, 89, 23);
-		contentPane.add(btnNewButton_4);
+		JLabel lblEscullLaForma = new JLabel("Escull la forma de l'estructura:");
+		lblEscullLaForma.setBounds(234, 29, 239, 35);
+		contentPane.add(lblEscullLaForma);
 		
-		JButton btnNewButton_5 = new JButton("New button");
-		btnNewButton_5.setBounds(401, 292, 89, 23);
-		contentPane.add(btnNewButton_5);
+		JButton button_1 = new JButton("");
+		button_1.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/tick.png")));
+		button_1.setBounds(559, 416, 65, 35);
+		contentPane.add(button_1);
 		
-		JLabel lblDisposicio = new JLabel("Disposicio");
-		lblDisposicio.setFont(new Font("Tahoma", Font.BOLD, 54));
-		lblDisposicio.setBounds(142, 22, 292, 169);
-		contentPane.add(lblDisposicio);
+		JButton button_2 = new JButton("");
+		button_2.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/flecha.png")));
+		button_2.setBounds(10, 416, 65, 35);
+		contentPane.add(button_2);
+		
+		JButton button = new JButton("");
+		button.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/linealdef.png")));
+		button.setBounds(186, 87, 106, 112);
+		contentPane.add(button);
+		
+		JButton button_3 = new JButton("");
+		button_3.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/conicadef.png")));
+		button_3.setBounds(373, 90, 106, 112);
+		contentPane.add(button_3);
 	}
+
 }

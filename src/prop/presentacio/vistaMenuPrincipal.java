@@ -19,10 +19,12 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Rectangle;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class vistaMenuPrincipal extends JFrame {
-
-	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
@@ -45,112 +47,87 @@ public class vistaMenuPrincipal extends JFrame {
 	 */
 	public vistaMenuPrincipal() {
 		setPreferredSize(new Dimension(800, 800));
-		setMaximizedBounds(new Rectangle(0, 0, 600000, 600000));
+		setMaximizedBounds(new Rectangle(0, 0, 0, 0));
 		setTitle("Menu Principal");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(0,5));
+		setBounds(100, 100, 650, 500);
+		getContentPane().setLayout(null);
 		
-		Component verticalStrut = Box.createVerticalStrut(20);
-		contentPane.add(verticalStrut);
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		panel.setBounds(40, 11, 584, 462);
+		getContentPane().add(panel);
 		
-		Component verticalStrut_1 = Box.createVerticalStrut(20);
-		contentPane.add(verticalStrut_1);
 		
-		Component verticalStrut_2 = Box.createVerticalStrut(20);
-		contentPane.add(verticalStrut_2);
+		JButton button = new JButton("Gestionar Estructura");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				vistaGestionarEstructura panelest = new vistaGestionarEstructura(); 
+		        panelest.setVisible(true);
+		        dispose(); 
+			}
+		});
+		button.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		button.setName("");
+		button.setBounds(75, 216, 171, 49);
+		panel.add(button);
 		
-		Component verticalStrut_3 = Box.createVerticalStrut(20);
-		contentPane.add(verticalStrut_3);
+		JLabel lblNewLabel = new JLabel("Disposici\u00F3 de llibres");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 45));
+		lblNewLabel.setBounds(55, 26, 483, 66);
+		panel.add(lblNewLabel);
 		
-		Component verticalStrut_12 = Box.createVerticalStrut(20);
-		contentPane.add(verticalStrut_12);
+		JLabel lblAUnaBiblioteca = new JLabel("a una biblioteca");
+		lblAUnaBiblioteca.setFont(new Font("Tahoma", Font.BOLD, 45));
+		lblAUnaBiblioteca.setBounds(94, 109, 421, 55);
+		panel.add(lblAUnaBiblioteca);
 		
-		Component horizontalStrut = Box.createHorizontalStrut(20);
-		horizontalStrut.setMinimumSize(new Dimension(4, 0));
-		contentPane.add(horizontalStrut);
+		JButton button_2 = new JButton("Mostrar Jerarquia");
+		button_2.setName("");
+		button_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		button_2.setBounds(75, 288, 171, 49);
+		panel.add(button_2);
 		
-		JButton btnNewButton = new JButton("Gestionar Estructura");
-		btnNewButton.setBounds(31, 117, 169, 23);
-		contentPane.add(btnNewButton);
+		JButton button_3 = new JButton("Gestionar Categoria");
+		//vistaGestionarCategoria panelcat = new vistaGestionarCategoria();
+		button_3.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				vistaGestionarCategoria panelcat = new vistaGestionarCategoria();
+				panelcat.setVisible(true);
+				dispose();
+				
+			}
+		});
 		
-		Component horizontalStrut_6 = Box.createHorizontalStrut(20);
-		horizontalStrut_6.setSize(new Dimension(5, 5));
-		contentPane.add(horizontalStrut_6);
+		button_3.setName("");
+		button_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		button_3.setBounds(296, 216, 171, 49);
+		panel.add(button_3);
 		
-		JButton btnGestionarLlibres = new JButton("Gestionar Llibres");
-		btnGestionarLlibres.setBounds(241, 160, 169, 23);
-		contentPane.add(btnGestionarLlibres);
+		JButton button_4 = new JButton("Gestionar Llibres");
+		button_4.setName("");
+		button_4.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		button_4.setBounds(296, 288, 171, 49);
+		panel.add(button_4);
 		
-		Component horizontalStrut_1 = Box.createHorizontalStrut(20);
-		contentPane.add(horizontalStrut_1);
-		
-		Component verticalStrut_4 = Box.createVerticalStrut(20);
-		contentPane.add(verticalStrut_4);
-		
-		Component verticalStrut_7 = Box.createVerticalStrut(20);
-		contentPane.add(verticalStrut_7);
-		
-		Component verticalStrut_6 = Box.createVerticalStrut(20);
-		contentPane.add(verticalStrut_6);
-		
-		Component verticalStrut_5 = Box.createVerticalStrut(20);
-		contentPane.add(verticalStrut_5);
-		
-		Component verticalStrut_13 = Box.createVerticalStrut(20);
-		contentPane.add(verticalStrut_13);
-		
-		Component horizontalStrut_2 = Box.createHorizontalStrut(20);
-		horizontalStrut_2.setPreferredSize(new Dimension(10, 0));
-		contentPane.add(horizontalStrut_2);
+		JButton button_5 = new JButton("Gestionar Solucions");
+		button_5.setName("");
+		button_5.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		button_5.setBounds(75, 358, 171, 49);
+		panel.add(button_5);
 		
 		JButton btnCarregarexportarDades = new JButton("Carregar/Exportar Dades");
-		btnCarregarexportarDades.setBounds(241, 206, 169, 23);
-		contentPane.add(btnCarregarexportarDades);
-		
-		Component horizontalStrut_7 = Box.createHorizontalStrut(20);
-		contentPane.add(horizontalStrut_7);
-		
-		JButton btnGestionarSolucions = new JButton("Gestionar Solucions");
-		btnGestionarSolucions.setBounds(31, 206, 169, 23);
-		contentPane.add(btnGestionarSolucions);
-		
-		Component horizontalStrut_3 = Box.createHorizontalStrut(20);
-		contentPane.add(horizontalStrut_3);
-		
-		Component verticalStrut_8 = Box.createVerticalStrut(20);
-		contentPane.add(verticalStrut_8);
-		
-		Component verticalStrut_9 = Box.createVerticalStrut(20);
-		contentPane.add(verticalStrut_9);
-		
-		Component verticalStrut_10 = Box.createVerticalStrut(20);
-		contentPane.add(verticalStrut_10);
-		
-		Component verticalStrut_11 = Box.createVerticalStrut(20);
-		contentPane.add(verticalStrut_11);
-		
-		Component verticalStrut_14 = Box.createVerticalStrut(20);
-		contentPane.add(verticalStrut_14);
-		
-		Component horizontalStrut_4 = Box.createHorizontalStrut(20);
-		contentPane.add(horizontalStrut_4);
-		
-		JButton btnGestionarCategoria = new JButton("Gestionar Categoria");
-		btnGestionarCategoria.setBounds(241, 117, 169, 23);
-		contentPane.add(btnGestionarCategoria);
-		
-		Component horizontalStrut_8 = Box.createHorizontalStrut(20);
-		contentPane.add(horizontalStrut_8);
-		
-		JButton btnMostrarJerarquia = new JButton("Mostrar Jerarquia");
-		btnMostrarJerarquia.setBounds(31, 160, 169, 23);
-		contentPane.add(btnMostrarJerarquia);
-		
-		Component horizontalStrut_5 = Box.createHorizontalStrut(20);
-		contentPane.add(horizontalStrut_5);
+		btnCarregarexportarDades.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				vistaImportarExportar panimex = new vistaImportarExportar();
+				panimex.setVisible(true);
+			}
+		});
+		btnCarregarexportarDades.setName("");
+		btnCarregarexportarDades.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btnCarregarexportarDades.setBounds(296, 358, 171, 49);
+		panel.add(btnCarregarexportarDades);
 	}
 }
