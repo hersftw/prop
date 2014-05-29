@@ -92,9 +92,9 @@ public class vistaImportarExportar extends JFrame {
 		btnExportar.addActionListener(new ActionListener() { //boto exportar
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser jfile2 = new JFileChooser();
-				jfile2.showOpenDialog(null);
 				jfile2.setAcceptAllFileFilterUsed(false);
 				jfile2.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+				jfile2.showOpenDialog(null);
 				int value = 0;
 				value = JFileChooser.ERROR_OPTION;
 				System.out.println(value);
