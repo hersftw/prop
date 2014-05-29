@@ -23,7 +23,7 @@ import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class vistaMenuPrincipal extends JFrame implements ActionListener {
+public class vistaMenuPrincipal extends JFrame {
 
 	/**
 	 * Launch the application.
@@ -84,13 +84,19 @@ public class vistaMenuPrincipal extends JFrame implements ActionListener {
 		panel.add(lblAUnaBiblioteca);
 		
 		JButton button_2 = new JButton("Mostrar Jerarquia");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaMostrarJerarquia panmenu = new vistaMostrarJerarquia();
+				panmenu.setVisible(true);
+				dispose();
+			}
+		});
 		button_2.setName("");
 		button_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		button_2.setBounds(75, 288, 171, 49);
 		panel.add(button_2);
 		
 		JButton button_3 = new JButton("Gestionar Categoria");
-		//vistaGestionarCategoria panelcat = new vistaGestionarCategoria();
 		button_3.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
@@ -144,8 +150,6 @@ public class vistaMenuPrincipal extends JFrame implements ActionListener {
 		btnCarregarexportarDades.setBounds(296, 358, 171, 49);
 		panel.add(btnCarregarexportarDades);
 	}
-	 public void actionPerformed(ActionEvent e){
-		System.out.println("Button Pressed");
-		}
+
 		
 }
