@@ -85,7 +85,6 @@ public class vistaImportarExportar extends JFrame {
 				textField.setText(file.getAbsolutePath().toString());
 			}
 		});
-		btnImportar.setIcon(new ImageIcon(vistaImportarExportar.class.getResource("/com/sun/java/swing/plaf/gtk/icons/Directory.gif")));
 		btnImportar.setBounds(412, 170, 95, 25);
 		contentPane.add(btnImportar);
 		
@@ -96,11 +95,15 @@ public class vistaImportarExportar extends JFrame {
 				jfile2.showOpenDialog(null);
 				jfile2.setAcceptAllFileFilterUsed(false);
 				jfile2.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-				File file2 = jfile2.getCurrentDirectory();
-				textField_1.setText(file2.getAbsolutePath().toString());
+				int value = 0;
+				value = JFileChooser.ERROR_OPTION;
+				System.out.println(value);
+				if (value == 0) {
+					File file2 = jfile2.getCurrentDirectory();
+					textField_1.setText(file2.getAbsolutePath().toString());
+				}
 			}
 		});
-		btnExportar.setIcon(new ImageIcon(vistaImportarExportar.class.getResource("/com/sun/java/swing/plaf/gtk/icons/Directory.gif")));
 		btnExportar.setBounds(412, 217, 95, 25);
 		contentPane.add(btnExportar);
 		
