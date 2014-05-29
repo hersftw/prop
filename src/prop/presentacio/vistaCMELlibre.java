@@ -197,6 +197,13 @@ public class vistaCMELlibre extends JFrame {
 		contentPane.add(editorPane);
 		
 		button = new JButton("");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaGestionarLlibres panllibres = new vistaGestionarLlibres();
+				panllibres.setVisible(true);
+				dispose();
+			}
+		});
 		button.setIcon(new ImageIcon(vistaCMELlibre.class.getResource("/prop/icons/flecha.png")));
 		button.setBounds(10, 416, 65, 35);
 		contentPane.add(button);
