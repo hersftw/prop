@@ -85,6 +85,13 @@ public class vistaGestionarEstructura extends JFrame {
 		contentPane.add(button_1);
 		
 		JButton button_2 = new JButton("");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaMenuPrincipal panmenu = new vistaMenuPrincipal();
+				panmenu.setVisible(true);
+				dispose();
+			}
+		});
 		button_2.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/flecha.png")));
 		button_2.setBounds(10, 416, 65, 35);
 		contentPane.add(button_2);
