@@ -104,6 +104,7 @@ public class vistaGestionarEstructura extends JFrame {
 		contentPane.add(button);
 		
 		JButton button_3 = new JButton("");
+		button_3.setEnabled(false);
 		button_3.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/conicadef.png")));
 		button_3.setBounds(373, 90, 106, 112);
 		contentPane.add(button_3);
