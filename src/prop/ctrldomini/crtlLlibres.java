@@ -43,15 +43,23 @@ public class crtlLlibres {
 		else System.out.println("Error: llibre no trobat!");
 	}
 	
+	
 	/**@brief Afegir llibre.
     *
     * @param llibre a afegir.
     * \pre Cert.
     * \post El resultat es el crtlLlibres amb el llibre afegit.
     */
-	public void afegirLlibre(llibre llibre){
+	/*public void afegirLlibre(llibre llibre){
+		llibres.add(llibre);
+	}*/
+	
+	public void afegirLlibre(int isbn, String titol, String autor,  String editorial,
+			int any, String categoria) {
+		llibre llibre = new llibre(isbn, titol, autor, editorial, any, categoria);
 		llibres.add(llibre);
 	}
+	
 	
 	/**@brief Modificadora d'un llibre.
 	* 

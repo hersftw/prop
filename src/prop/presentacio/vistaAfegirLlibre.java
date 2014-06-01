@@ -74,9 +74,9 @@ public class vistaAfegirLlibre extends JFrame {
 		txtIsbn.setEditable(false);
 		txtIsbn.setText("ISBN:");
 		txtIsbn.setBounds(136, 110, 43, 20);
+		
 		contentPane.add(txtIsbn);
 		txtIsbn.setColumns(10);
-		
 		txtTtol = new JTextField();
 		txtTtol.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtTtol.setEditable(false);
@@ -131,6 +131,11 @@ public class vistaAfegirLlibre extends JFrame {
 		textField_1.setColumns(10);
 		textField_1.setBounds(204, 111, 259, 20);
 		contentPane.add(textField_1);
+		textField.addActionListener(new ActionListener(){
+			public void actionPerformed (ActionEvent e) {
+				String titol = textField.getText();
+			}
+		});
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
