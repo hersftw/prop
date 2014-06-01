@@ -57,23 +57,14 @@ public class vistaCrearCategoria extends JFrame implements TreeSelectionListener
 		arbre = new JTree(top);
 		arbre.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 		JScrollPane treeView = new JScrollPane(arbre);
-		treeView.setBounds(20, 20, 300, 200);
+		treeView.setBounds(10, 20, 610, 200);
 		add(treeView);
 		ctrl.omplirArbre(top);
 		
-		
 		JButton btnNewButton = new JButton("New button");
 		btnNewButton.addActionListener(new ActionListener() {
-			int x = 10;
-			int y = 10;
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(arbre.getTopLevelAncestor());
-				//JLabel label = new JLabel("pene");
-				//label.setBounds(x, y, 50, 50);
-				//getContentPane().add(label);
-				//getContentPane().repaint();
-				//System.out.println(getContentPane().getComponentCount());
-				//y+=20;
+				
 			}
 		});
 		btnNewButton.setBounds(123, 92, 400, 25);
