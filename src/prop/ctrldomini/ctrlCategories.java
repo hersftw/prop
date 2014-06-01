@@ -2,7 +2,8 @@ package prop.ctrldomini;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import prop.domini.*;
+
+import prop.domini.categoria;
 
 public class ctrlCategories {
 	private List<List<categoria>> categories;
@@ -223,4 +224,9 @@ public class ctrlCategories {
 			System.out.println();
 		}
 	}
+	
+	public List<List<categoria>> getCategories() {
+		return categories;
+	}
+	
 }
