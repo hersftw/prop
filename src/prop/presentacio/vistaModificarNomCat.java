@@ -6,10 +6,16 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreeSelectionModel;
+
 import java.awt.Dimension;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTree;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
@@ -20,6 +26,8 @@ public class vistaModificarNomCat extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
+	
+	public static JTree arbre;
 
 	/**
 	 * Launch the application.
@@ -59,6 +67,16 @@ public class vistaModificarNomCat extends JFrame {
 				dispose();
 			}
 		});
+		
+		CtrlPresentacio ctrl = new CtrlPresentacio();
+		DefaultMutableTreeNode top = new DefaultMutableTreeNode("Biblioteca");
+		arbre = new JTree(top);
+		arbre.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+		JScrollPane treeView = new JScrollPane(arbre);
+		treeView.setBounds(10, 20, 610, 200);
+		add(treeView);
+		ctrl.omplirArbre(top);
+		
 		button.setIcon(new ImageIcon(vistaModificarNomCat.class.getResource("/prop/icons/flecha.png")));
 		button.setBounds(10, 416, 65, 35);
 		contentPane.add(button);
