@@ -8,7 +8,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
-import java.awt.Window.Type;
 import javax.swing.JButton;
 import javax.swing.SpringLayout;
 import javax.swing.JSplitPane;
@@ -46,6 +45,7 @@ public class vistaMenuPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public vistaMenuPrincipal() {
+		setResizable(false);
 		setPreferredSize(new Dimension(800, 800));
 		setMaximizedBounds(new Rectangle(0, 0, 0, 0));
 		setTitle("Menu Principal");
@@ -84,13 +84,19 @@ public class vistaMenuPrincipal extends JFrame {
 		panel.add(lblAUnaBiblioteca);
 		
 		JButton button_2 = new JButton("Mostrar Jerarquia");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaMostrarJerarquia panmenu = new vistaMostrarJerarquia();
+				panmenu.setVisible(true);
+				dispose();
+			}
+		});
 		button_2.setName("");
 		button_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		button_2.setBounds(75, 288, 171, 49);
 		panel.add(button_2);
 		
 		JButton button_3 = new JButton("Gestionar Categoria");
-		//vistaGestionarCategoria panelcat = new vistaGestionarCategoria();
 		button_3.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
@@ -120,6 +126,13 @@ public class vistaMenuPrincipal extends JFrame {
 		panel.add(button_4);
 		
 		JButton button_5 = new JButton("Gestionar Solucions");
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				vistaGestionarSolucions pansolu = new vistaGestionarSolucions();
+				pansolu.setVisible(true);
+				dispose();
+			}
+		});
 		button_5.setName("");
 		button_5.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		button_5.setBounds(75, 358, 171, 49);
@@ -137,4 +150,6 @@ public class vistaMenuPrincipal extends JFrame {
 		btnCarregarexportarDades.setBounds(296, 358, 171, 49);
 		panel.add(btnCarregarexportarDades);
 	}
+
+		
 }
