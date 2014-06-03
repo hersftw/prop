@@ -24,7 +24,7 @@ public class crtlLlibres {
     * \pre Cert.
     * \post Retorna el llibre associat al isbn.
     */
-	public void consultarLlibre(int isbn){
+	public llibre consultarLlibre(int isbn){
 		boolean find = false;
 		llibre l = null;
 		Iterator<llibre> it = llibres.iterator();
@@ -33,14 +33,23 @@ public class crtlLlibres {
 			if (l.getId() == isbn) find = true;
 		}
 		if (find) {
-			System.out.println(l.getId());
+			String titol = l.getTitol();
+			String autor = l.getAutor();
+			String editorial = l.getEditorial();
+			int any = l.getAny();
+			String categoria = l.getCategoria();
+			llibre book = new llibre(isbn, titol, autor, editorial, any, categoria);
+			
+			/*System.out.println(l.getId());
 			System.out.println(l.getTitol());
 			System.out.println(l.getAutor());
 			System.out.println(l.getEditorial());
 			System.out.println(l.getAny());
-			System.out.println(l.getCategoria());
+			System.out.println(l.getCategoria());*/
+			return book;
 		}
 		else System.out.println("Error: llibre no trobat!");
+		return null;
 	}
 	
 	

@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Dimension;
 import javax.swing.JButton;
 import javax.swing.JEditorPane;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JTextPane;
@@ -39,6 +40,7 @@ public class vistaCMELlibre extends JFrame {
 	private JButton button;
 	private JButton button_1;
 	private JButton button_2;
+	private JFrame frame1;
 
 	/**
 	 * Launch the application.
@@ -86,7 +88,16 @@ public class vistaCMELlibre extends JFrame {
 			//@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				System.out.println(txtboxISBN.getText());
+				//System.out.println(txtboxISBN.getText());
+				int isbn = Integer.parseInt(txtboxISBN.getText());
+				//System.out.println(isbn);
+				//System.out.println(String.valueOf(isbn).length());
+				if(String.valueOf(isbn).length() > 9) {
+					JOptionPane.showMessageDialog(frame1,  "La mida màxima del ISBN és de 9 dígits");
+				}
+				/*else {
+					consultarLlibre(isbn);
+				}*/
 				
 			}
 		});
@@ -100,7 +111,7 @@ public class vistaCMELlibre extends JFrame {
 		       if (txtboxISBN.getText().equals(initialText)) {
 		    	   
 		    	  //txtFfrded.selectAll();
-		    	  txtboxISBN.setText(" ");
+		    	  txtboxISBN.setText("");
 		    	  txtboxISBN.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		    	  
 		       }
