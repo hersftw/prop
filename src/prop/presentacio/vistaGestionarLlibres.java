@@ -17,7 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.geom.FlatteningPathIterator;
 
 public class vistaGestionarLlibres extends JFrame {
-
+	private CtrlPresentacio cp;
 	private JPanel contentPane;
 
 	/**
@@ -36,10 +36,14 @@ public class vistaGestionarLlibres extends JFrame {
 		});
 	}
 
+	public vistaGestionarLlibres(CtrlPresentacio cpgeneral) {
+		cp = cpgeneral;
+		inicialitzarComponents();
+	}
 	/**
 	 * Create the frame.
 	 */
-	public vistaGestionarLlibres() {
+	public void inicialitzarComponents() {
 		setResizable(false);
 		setTitle("Gestionar Llibres\r\n");
 		setMinimumSize(new Dimension(650, 500));

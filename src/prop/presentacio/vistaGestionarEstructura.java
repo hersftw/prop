@@ -21,7 +21,7 @@ import java.awt.SystemColor;
 
 
 public class vistaGestionarEstructura extends JFrame {
-
+	private CtrlPresentacio cp;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -42,10 +42,14 @@ public class vistaGestionarEstructura extends JFrame {
 		});
 	}
 
+	public  vistaGestionarEstructura(CtrlPresentacio cpgeneral) {
+		cp = cpgeneral;
+		inicialitzarComponents();
+	}
 	/**
 	 * Create the frame.
 	 */
-	public vistaGestionarEstructura() {
+	public void inicialitzarComponents() {
 		setResizable(false);
 		setMinimumSize(new Dimension(650, 500));
 		setTitle("Gestionar Estructura");

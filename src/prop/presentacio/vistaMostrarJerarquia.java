@@ -18,7 +18,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class vistaMostrarJerarquia extends JFrame {
-
+	private CtrlPresentacio cp;
 	private JPanel contentPane;
 	private static JTree arbre;
 
@@ -37,11 +37,14 @@ public class vistaMostrarJerarquia extends JFrame {
 			}
 		});
 	}
-
+	public vistaMostrarJerarquia(CtrlPresentacio cpgeneral) {
+		cp = cpgeneral;
+		inicialitzarComponents();
+	}
 	/**
 	 * Create the frame.
 	 */
-	public vistaMostrarJerarquia() {
+	public void inicialitzarComponents() {
 		setTitle("Mostrar Jerarquia");
 		setResizable(false);
 		setMinimumSize(new Dimension(650, 500));

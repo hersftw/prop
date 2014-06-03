@@ -24,7 +24,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class vistaMenuPrincipal extends JFrame {
-
+	private CtrlPresentacio cp;
 	/**
 	 * Launch the application.
 	 */
@@ -40,11 +40,15 @@ public class vistaMenuPrincipal extends JFrame {
 			}
 		});
 	}
-
+	
+	public vistaMenuPrincipal(CtrlPresentacio cpgeneral) {
+		cp = cpgeneral;
+		inicialitzarComponents();
+	}
 	/**
 	 * Create the frame.
 	 */
-	public vistaMenuPrincipal() {
+	public void inicialitzarComponents() {
 		setResizable(false);
 		setPreferredSize(new Dimension(800, 800));
 		setMaximizedBounds(new Rectangle(0, 0, 0, 0));

@@ -21,7 +21,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 
 public class vistaCMELlibre extends JFrame {
-
+	private CtrlPresentacio cp;
 	private JPanel contentPane;
 	private JTextField textISBN1;
 	private JTextField txtboxISBN;
@@ -58,11 +58,14 @@ public class vistaCMELlibre extends JFrame {
 			}
 		});
 	}
-
+	public vistaCMELlibre(CtrlPresentacio cpgeneral) {
+		cp = cpgeneral;
+		inicialitzarComponents();
+	}
 	/**
 	 * Create the frame.
 	 */
-	public vistaCMELlibre() {
+	public void inicialitzarComponents() {
 		setResizable(false);
 		setTitle("Consulta/Modifica/Elimina Llibre");
 		setMinimumSize(new Dimension(650, 500));

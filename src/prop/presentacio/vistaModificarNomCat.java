@@ -21,7 +21,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class vistaModificarNomCat extends JFrame {
-
+	private CtrlPresentacio cp;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -43,11 +43,15 @@ public class vistaModificarNomCat extends JFrame {
 			}
 		});
 	}
+	public vistaModificarNomCat(CtrlPresentacio cpgeneral) {
+		cp = cpgeneral;
+		inicialitzarComponents();
+	}
 
 	/**
 	 * Create the frame.
 	 */
-	public vistaModificarNomCat() {
+	public void inicialitzarComponents() {
 		setResizable(false);
 		setTitle("Modificar Nom [Categoria]");
 		setMinimumSize(new Dimension(650, 500));
