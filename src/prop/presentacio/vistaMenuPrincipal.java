@@ -138,7 +138,7 @@ public class vistaMenuPrincipal extends JFrame {
 		button_5.setBounds(75, 358, 171, 49);
 		panel.add(button_5);
 		
-		JButton btnCarregarexportarDades = new JButton("Carregar/Exportar Dades");
+		JButton btnCarregarexportarDades = new JButton("Importar/Exportar Dades");
 		btnCarregarexportarDades.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				vistaImportarExportar panimex = new vistaImportarExportar();

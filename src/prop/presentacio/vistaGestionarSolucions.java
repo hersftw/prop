@@ -130,5 +130,9 @@ public class vistaGestionarSolucions extends JFrame {
 		btnNewButton_1.setIcon(new ImageIcon(vistaGestionarSolucions.class.getResource("/prop/icons/Flaticon_48352.png")));
 		btnNewButton_1.setBounds(440, 416, 50, 35);
 		contentPane.add(btnNewButton_1);
+		
+		JButton btnGenerarSoluci = new JButton("Generar Soluci\u00F3");
+		btnGenerarSoluci.setBounds(408, 53, 126, 54);
+		contentPane.add(btnGenerarSoluci);
 	}
 }
