@@ -1,5 +1,6 @@
 package prop.presentacio;
-
+import prop.ctrldomini.*;
+import prop.domini.llibre;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -20,7 +21,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 
 public class vistaCMELlibre extends JFrame {
-
+	private CtrlPresentacio cp;
 	private JPanel contentPane;
 	private JTextField textISBN1;
 	private JTextField txtboxISBN;
@@ -57,11 +58,14 @@ public class vistaCMELlibre extends JFrame {
 			}
 		});
 	}
-
+	public vistaCMELlibre(CtrlPresentacio cpgeneral) {
+		cp = cpgeneral;
+		inicialitzarComponents();
+	}
 	/**
 	 * Create the frame.
 	 */
-	public vistaCMELlibre() {
+	public void inicialitzarComponents() {
 		setResizable(false);
 		setTitle("Consulta/Modifica/Elimina Llibre");
 		setMinimumSize(new Dimension(650, 500));
@@ -95,9 +99,11 @@ public class vistaCMELlibre extends JFrame {
 				if(String.valueOf(isbn).length() > 9) {
 					JOptionPane.showMessageDialog(frame1,  "La mida màxima del ISBN és de 9 dígits");
 				}
-				/*else {
-					consultarLlibre(isbn);
-				}*/
+				else {
+					crtlLlibres jdj = new crtlLlibres();
+					llibre book = jdj.consultarLlibre(isbn);
+					textField_2.setText(book.getTitol());
+				}
 				
 			}
 		});

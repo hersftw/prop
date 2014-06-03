@@ -17,7 +17,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class vistaGestionarSolucions extends JFrame {
-
+	private CtrlPresentacio cp;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -42,11 +42,15 @@ public class vistaGestionarSolucions extends JFrame {
 			}
 		});
 	}
+	public vistaGestionarSolucions(CtrlPresentacio cpgeneral) {
+		cp = cpgeneral;
+		inicialitzarComponents();
+	}
 
 	/**
 	 * Create the frame.
 	 */
-	public vistaGestionarSolucions() {
+	public void inicialitzarComponents() {
 		setTitle("Gestionar Solucions\r\n");
 		setResizable(false);
 		setMinimumSize(new Dimension(650, 500));

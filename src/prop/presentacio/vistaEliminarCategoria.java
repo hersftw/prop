@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class vistaEliminarCategoria extends JFrame {
-
+	private CtrlPresentacio cp;
 	private JPanel contentPane;
 	private JTextField textField;
 
@@ -35,11 +35,14 @@ public class vistaEliminarCategoria extends JFrame {
 			}
 		});
 	}
-
+	public vistaEliminarCategoria(CtrlPresentacio cpgeneral) {
+		cp = cpgeneral;
+		inicialitzarComponents();
+	}
 	/**
 	 * Create the frame.
 	 */
-	public vistaEliminarCategoria() {
+	public void inicialitzarComponents() {
 		setTitle("Eliminar Categoria [Categoria]");
 		setMinimumSize(new Dimension(650, 500));
 		setResizable(false);

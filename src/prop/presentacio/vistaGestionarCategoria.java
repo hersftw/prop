@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class vistaGestionarCategoria extends JFrame {
-
+	private CtrlPresentacio cp;
 	private JPanel contentPane;
 
 	/**
@@ -33,10 +33,14 @@ public class vistaGestionarCategoria extends JFrame {
 		});
 	}
 
+	public vistaGestionarCategoria(CtrlPresentacio cpgeneral) {
+		cp = cpgeneral;
+		inicialitzarComponents();
+	}
 	/**
 	 * Create the frame.
 	 */
-	public vistaGestionarCategoria() {
+	public void inicialitzarComponents() {
 		setResizable(false);
 		setTitle("Gestionar Categoria");
 		setPreferredSize(new Dimension(650, 500));

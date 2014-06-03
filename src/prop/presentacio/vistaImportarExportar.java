@@ -19,7 +19,7 @@ import java.awt.event.ActionEvent;
 import java.io.File;
 
 public class vistaImportarExportar extends JFrame {
-
+	private CtrlPresentacio cp;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -40,10 +40,14 @@ public class vistaImportarExportar extends JFrame {
 		});
 	}
 
+	public vistaImportarExportar(CtrlPresentacio cpgeneral) {
+		cp = cpgeneral;
+		inicialitzarComponents();
+	}
 	/**
 	 * Create the frame.
 	 */
-	public vistaImportarExportar() {
+	public void inicialitzarComponents() {
 		setResizable(false);
 		setTitle("Importar/Exportar Dades\r\n");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

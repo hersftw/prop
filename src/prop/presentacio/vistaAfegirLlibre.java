@@ -1,4 +1,5 @@
 package prop.presentacio;
+import prop.ctrldomini.*;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -29,6 +30,7 @@ public class vistaAfegirLlibre extends JFrame {
 	private JTextField tautor;
 	private JTextField tany;
 	private JTextField tcategoria;
+	private crtlLlibres crll = new crtlLlibres();
 	
 	
 	
@@ -162,7 +164,8 @@ public class vistaAfegirLlibre extends JFrame {
 				String editorial = teditorial.getText();
 				int any = Integer.parseInt(tany.getText());
 				String categoria = tcategoria.getText();
-				
+				crll.afegirLlibre(isbn, titol, autor, editorial, any, categoria);
+			
 
 				
 			}

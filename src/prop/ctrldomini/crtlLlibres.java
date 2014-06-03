@@ -14,7 +14,7 @@ public class crtlLlibres {
     * \pre Cert.
     * \post El resultat es un crtlLlibres buit.
     */
-	public void inicialitzarLlibres(){
+	public crtlLlibres(){
 		llibres = new ArrayList<llibre>();
 	}
 	
