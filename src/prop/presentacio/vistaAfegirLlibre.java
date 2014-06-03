@@ -19,7 +19,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class vistaAfegirLlibre extends JFrame {
-
+	private CtrlPresentacio cp;
 	private JPanel contentPane;
 	private JTextField txtIsbn;
 	private JTextField txtTtol;
@@ -53,11 +53,14 @@ public class vistaAfegirLlibre extends JFrame {
 			}
 		});
 	}
-
+	public vistaAfegirLlibre(CtrlPresentacio cpgeneral) {
+		cp = cpgeneral;
+		inicialitzarComponents();
+	}
 	/**
 	 * Create the frame.
 	 */
-	public vistaAfegirLlibre() {
+	public void inicialitzarComponents() {
 		setTitle("Afegir Llibre\r\n");
 		setResizable(false);
 		setMinimumSize(new Dimension(650, 500));
