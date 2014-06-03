@@ -52,6 +52,7 @@ public class CtrlPresentacio {
 		vistaMenu = new vistaMenuPrincipal(this);
 		vistaModCat = new vistaModificarNomCat(this);
 		vistaJerar = new vistaMostrarJerarquia(this);
+		vistaMenu.
 	}
 	
 	public void omplirArbre(JTree arbre, DefaultTreeModel model) {
