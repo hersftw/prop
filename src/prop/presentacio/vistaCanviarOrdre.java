@@ -19,6 +19,7 @@ import java.awt.event.ActionEvent;
 
 public class vistaCanviarOrdre extends JFrame {
 
+	private CtrlPresentacio cp;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -44,7 +45,13 @@ public class vistaCanviarOrdre extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public vistaCanviarOrdre() {
+	
+	public vistaCanviarOrdre(CtrlPresentacio cpgeneral) {
+		cp = cpgeneral;
+		inicialitzarComponents();
+	}
+	
+	public void inicialitzarComponents() {
 		setTitle("Canviar Ordre [Categoria]\r\n");
 		setResizable(false);
 		setMinimumSize(new Dimension(650, 500));

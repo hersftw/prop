@@ -27,6 +27,7 @@ import java.awt.event.ActionEvent;
 
 public class vistaCrearCategoria extends JFrame implements TreeSelectionListener {
 
+	private CtrlPresentacio cp;
 	private static JTree arbre;
 	private DefaultTreeModel model;
 
@@ -50,7 +51,13 @@ public class vistaCrearCategoria extends JFrame implements TreeSelectionListener
 	/**
 	 * Create the frame.
 	 */
-	public vistaCrearCategoria() {
+	
+	public vistaCrearCategoria(CtrlPresentacio cpgeneral) {
+		cp = cpgeneral;
+		inicialitzarComponents();
+	}
+	
+	public void inicialitzarComponents() {
 		setMinimumSize(new Dimension(650, 500));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
