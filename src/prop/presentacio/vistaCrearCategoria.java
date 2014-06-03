@@ -16,6 +16,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
 
 import java.awt.Dimension;
@@ -27,6 +28,8 @@ import java.awt.event.ActionEvent;
 public class vistaCrearCategoria extends JFrame implements TreeSelectionListener {
 
 	private static JTree arbre;
+	private DefaultTreeModel model;
+
 	/**
 	 * Launch the application.
 	 */
@@ -52,14 +55,16 @@ public class vistaCrearCategoria extends JFrame implements TreeSelectionListener
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(null);
+		
 		CtrlPresentacio ctrl = new CtrlPresentacio();
 		DefaultMutableTreeNode top = new DefaultMutableTreeNode("Biblioteca");
-		arbre = new JTree(top);
+		model = new DefaultTreeModel(top);
+		arbre = new JTree(model);
 		arbre.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 		JScrollPane treeView = new JScrollPane(arbre);
 		treeView.setBounds(10, 20, 610, 200);
 		add(treeView);
-		ctrl.omplirArbre(top);
+		ctrl.omplirArbre(arbre, model);
 		
 		JButton btnNewButton = new JButton("New button");
 		btnNewButton.addActionListener(new ActionListener() {

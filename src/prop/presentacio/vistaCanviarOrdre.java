@@ -1,14 +1,11 @@
 package prop.presentacio;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.JFrame;import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTree;
 import javax.swing.border.EmptyBorder;
@@ -72,7 +69,6 @@ public class vistaCanviarOrdre extends JFrame {
 		JScrollPane treeView = new JScrollPane(arbre);
 		treeView.setBounds(10, 20, 610, 200);
 		add(treeView);
-		//ctrl.omplirArbre(top);
 		ctrl.omplirArbre(arbre, model);
 		
 		JButton button_1 = new JButton("");

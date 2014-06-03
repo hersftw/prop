@@ -1,18 +1,13 @@
 package prop.presentacio;
 
-import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.TreeMap;
 
 import javax.swing.JTree;
 import javax.swing.text.Position;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.MutableTreeNode;
-import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
 
 import prop.ctrldomini.*;
@@ -20,26 +15,58 @@ import prop.domini.categoria;
 
 public class CtrlPresentacio {
 	
-	ctrlCategories categ;
+	ctrlCategories ctrlCat;
+	crtlLlibres ctrlLlib;
+	ctrlDistribucions ctrlDist;
+	ctrlPersistencia ctrlPers;
+	
+	vistaAfegirLlibre vistaAfegirLlib;
+	vistaCanviarOrdre vistaCanviarOrd;
+	vistaCMELlibre vistaCMELlib;
+	vistaCrearCategoria vistaCrearCat;
+	vistaEliminarCategoria vistaElimCat;
+	vistaGestionarCategoria vistaGestCat;
+	vistaGestionarEstructura vistaGestEstr;
+	vistaGestionarLlibres vistaGestLlib;
+	vistaGestionarSolucions vistaGestSol;
+	vistaImportarExportar vistaImpExp;
+	vistaMenuPrincipal vistaMenu;
+	vistaModificarNomCat vistaModCat;
+	vistaMostrarJerarquia vistaJerar;
 	
 	public CtrlPresentacio() {
-		categ = new ctrlCategories();
-		categ.inicialitzarCategories();
+		ctrlCat = new ctrlCategories();
+		ctrlLlib = new crtlLlibres();
+		ctrlDist = new ctrlDistribucions();
+		ctrlPers = new ctrlPersistencia();
+		vistaAfegirLlib = new vistaAfegirLlibre(this);
+		vistaCanviarOrd = new vistaCanviarOrdre(this);
+		vistaCMELlib = new vistaCMELlibre(this);
+		vistaCrearCat = new vistaCrearCategoria(this);
+		vistaElimCat = new vistaEliminarCategoria(this);
+		vistaGestCat = new vistaGestionarCategoria(this);
+		vistaGestEstr = new vistaGestionarEstructura(this);
+		vistaGestLlib = new vistaGestionarLlibres(this);
+		vistaGestSol = new vistaGestionarSolucions(this);
+		vistaImpExp = new vistaImportarExportar(this);
+		vistaMenu = new vistaMenuPrincipal(this);
+		vistaModCat = new vistaModificarNomCat(this);
+		vistaJerar = new vistaMostrarJerarquia(this);
 	}
 	
 	public void omplirArbre(JTree arbre, DefaultTreeModel model) {
-		categ.afegirCategoria("Ciencies", "Biblioteca");
-		categ.afegirCategoria("Llengües", "Biblioteca");
-		categ.afegirCategoria("Art", "Biblioteca");
-		categ.afegirCategoria("Informatica", "Ciencies");
-		categ.afegirCategoria("Física", "Ciencies");
-		categ.afegirCategoria("Java", "Informatica");
-		categ.afegirCategoria("Java2", "Java");
-		categ.afegirCategoria("Pintura", "Art");
-		categ.afegirCategoria("Cubisme", "Pintura");
-		categ.afegirCategoria("Anglès", "Llengües");
-		Iterator<List<categoria>> it = categ.getCategories().iterator();
-		HashSet<String> hash = new HashSet<String>();	
+		ctrlCat.afegirCategoria("Ciencies", "Biblioteca");
+		ctrlCat.afegirCategoria("Llengües", "Biblioteca");
+		ctrlCat.afegirCategoria("Art", "Biblioteca");
+		ctrlCat.afegirCategoria("Informatica", "Ciencies");
+		ctrlCat.afegirCategoria("Física", "Ciencies");
+		ctrlCat.afegirCategoria("Java", "Informatica");
+		ctrlCat.afegirCategoria("Java2", "Java");
+		ctrlCat.afegirCategoria("Pintura", "Art");
+		ctrlCat.afegirCategoria("Cubisme", "Pintura");
+		ctrlCat.afegirCategoria("Anglès", "Llengües");
+		Iterator<List<categoria>> it = ctrlCat.getCategories().iterator();
+		HashSet<String> hash = new HashSet<String>();
 		it.next();
 		while(it.hasNext()) {
 			List<categoria> llista = it.next();
