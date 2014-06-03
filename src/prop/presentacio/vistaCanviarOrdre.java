@@ -7,8 +7,14 @@ import java.awt.EventQueue;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTree;
 import javax.swing.border.EmptyBorder;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeSelectionModel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
@@ -19,6 +25,8 @@ public class vistaCanviarOrdre extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
+	static private JTree arbre;
+	private DefaultTreeModel model;
 
 	/**
 	 * Launch the application.
@@ -56,7 +64,16 @@ public class vistaCanviarOrdre extends JFrame {
 		contentPane.setLayout(null);
 		
 		
-		
+		CtrlPresentacio ctrl = new CtrlPresentacio();
+		DefaultMutableTreeNode top = new DefaultMutableTreeNode("Biblioteca");
+		model = new DefaultTreeModel(top);
+		arbre = new JTree(model);
+		arbre.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+		JScrollPane treeView = new JScrollPane(arbre);
+		treeView.setBounds(10, 20, 610, 200);
+		add(treeView);
+		//ctrl.omplirArbre(top);
+		ctrl.omplirArbre(arbre, model);
 		
 		JButton button_1 = new JButton("");
 		button_1.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/tick.png")));
