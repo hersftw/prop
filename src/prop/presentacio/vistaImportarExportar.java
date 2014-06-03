@@ -45,6 +45,7 @@ public class vistaImportarExportar extends JFrame {
 	 */
 	public vistaImportarExportar() {
 		setResizable(false);
+		setTitle("Importar/Exportar Dades\r\n");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 650, 500);
 		contentPane = new JPanel();

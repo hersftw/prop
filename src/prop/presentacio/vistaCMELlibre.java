@@ -80,23 +80,29 @@ public class vistaCMELlibre extends JFrame {
 		contentPane.add(textISBN1);
 		
 		txtboxISBN = new JTextField();
+		txtboxISBN.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtboxISBN.addActionListener(new ActionListener() {
 			
-			@Override
+			//@Override
 			public void actionPerformed(ActionEvent e) {
+				
 				System.out.println(txtboxISBN.getText());
 				
 			}
 		});
 		txtboxISBN.setColumns(10);
 		txtboxISBN.setBounds(142, 66, 376, 20);
-		final String initialText = "introdueix l'ISBN i prem enter";
+		final String initialText = "Introdueix l'ISBN i prem enter";
+		txtboxISBN.setFont(new Font("Tahoma", Font.ITALIC, 10));
 		txtboxISBN.setText(initialText);
 		txtboxISBN.addFocusListener(new java.awt.event.FocusAdapter() {
 		    public void focusGained(java.awt.event.FocusEvent evt) {
 		       if (txtboxISBN.getText().equals(initialText)) {
+		    	   
 		    	  //txtFfrded.selectAll();
 		    	  txtboxISBN.setText(" ");
+		    	  txtboxISBN.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		    	  
 		       }
 		    }
 		});
