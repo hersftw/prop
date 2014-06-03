@@ -1,5 +1,6 @@
 package prop.presentacio;
 import prop.ctrldomini.*;
+import prop.domini.llibre;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -9,9 +10,11 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -164,12 +167,27 @@ public class vistaAfegirLlibre extends JFrame {
 				String editorial = teditorial.getText();
 				int any = Integer.parseInt(tany.getText());
 				String categoria = tcategoria.getText();
-				crll.afegirLlibre(isbn, titol, autor, editorial, any, categoria);
-			
-
-				
+				System.out.println(crll.existeix(isbn));
+				if (!crll.existeix(isbn)){
+					crll.afegirLlibre(isbn, titol, autor, editorial, any, categoria);
+					llibre ll = crll.consultarLlibre(isbn);
+					System.out.println(ll.getTitol());
+					JPanel panel = new JPanel();
+					JOptionPane.showMessageDialog(panel, "Llibre afegit correctament");
+				}
+				else {
+					JPanel panel = new JPanel();
+					JOptionPane.showMessageDialog(panel, "Llibre ja existent");
+				}
+				tISBN.setText("");
+				ttitol.setText("");
+				tautor.setText("");
+				teditorial.setText("");
+				tany.setText("");
+				tcategoria.setText("");				
 			}
 		});
+		
 		button_1.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/tick.png")));
 		button_1.setBounds(559, 416, 65, 35);
 		contentPane.add(button_1);
