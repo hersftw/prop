@@ -35,8 +35,8 @@ public class CtrlPresentacio {
 	vistaMostrarJerarquia vistaJerar;
 	
 	public CtrlPresentacio() {
-		/*ctrlCat = new ctrlCategories();
-		ctrlLlib = new crtlLlibres();
+		ctrlCat = new ctrlCategories();
+		/*ctrlLlib = new crtlLlibres();
 		ctrlDist = new ctrlDistribucions();
 		ctrlPers = new ctrlPersistencia();
 		vistaAfegirLlib = new vistaAfegirLlibre(this);
@@ -52,6 +52,7 @@ public class CtrlPresentacio {
 		vistaModCat = new vistaModificarNomCat(this);
 		vistaJerar = new vistaMostrarJerarquia(this);*/
 		vistaMenu = new vistaMenuPrincipal(this);
+		ctrlCat.inicialitzarCategories();
 	}
 	
 	public void iniciarPresentacio() {
@@ -59,16 +60,8 @@ public class CtrlPresentacio {
 	}
 	
 	public void omplirArbre(JTree arbre, DefaultTreeModel model) {
-		ctrlCat.afegirCategoria("Ciencies", "Biblioteca");
-		ctrlCat.afegirCategoria("Llengües", "Biblioteca");
-		ctrlCat.afegirCategoria("Art", "Biblioteca");
-		ctrlCat.afegirCategoria("Informatica", "Ciencies");
-		ctrlCat.afegirCategoria("Física", "Ciencies");
-		ctrlCat.afegirCategoria("Java", "Informatica");
-		ctrlCat.afegirCategoria("Java2", "Java");
-		ctrlCat.afegirCategoria("Pintura", "Art");
-		ctrlCat.afegirCategoria("Cubisme", "Pintura");
-		ctrlCat.afegirCategoria("Anglès", "Llengües");
+		arbre.removeAll();
+		model.reload();
 		Iterator<List<categoria>> it = ctrlCat.getCategories().iterator();
 		HashSet<String> hash = new HashSet<String>();
 		it.next();
@@ -99,4 +92,9 @@ public class CtrlPresentacio {
 			}
 		}
 	}
+	
+	public void afegirCategoria(String nom, String pare) {
+		ctrlCat.afegirCategoria(nom, pare);
+	}
+	
 }
