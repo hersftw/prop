@@ -96,7 +96,7 @@ public class vistaCMELlibre extends JFrame {
 			
 			//@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				crtlLlibres jdj = new crtlLlibres();
 				//System.out.println(txtboxISBN.getText());
 				int isbn = Integer.parseInt(txtboxISBN.getText());
 				//System.out.println(isbn);
@@ -105,10 +105,17 @@ public class vistaCMELlibre extends JFrame {
 					JOptionPane.showMessageDialog(frame1,  "La mida màxima del ISBN és de 9 dígits");
 				}
 				else {
-					crtlLlibres jdj = new crtlLlibres();
-					llibre book = jdj.consultarLlibre(isbn);
-					textField_2.setText(book.getTitol());
+					if (!jdj.existeix(isbn)){
+						JPanel panel = new JPanel();
+						JOptionPane.showMessageDialog(panel, "El llibre no existeix en el sistema");
+					}
+					else {
+						
+						llibre book = jdj.consultarLlibre(isbn);
+						textField_2.setText(book.getTitol());
+					}
 				}
+				
 				
 			}
 		});
