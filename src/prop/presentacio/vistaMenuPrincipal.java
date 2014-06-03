@@ -25,10 +25,11 @@ import java.awt.event.ActionEvent;
 
 public class vistaMenuPrincipal extends JFrame {
 	private CtrlPresentacio cp;
+	JFrame frame = new JFrame("Menú Principal");
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -39,6 +40,10 @@ public class vistaMenuPrincipal extends JFrame {
 				}
 			}
 		});
+	}*/
+	
+	public void mostrarVista() {
+		this.setVisible(true);
 	}
 	
 	public vistaMenuPrincipal(CtrlPresentacio cpgeneral) {
@@ -67,7 +72,7 @@ public class vistaMenuPrincipal extends JFrame {
 		JButton button = new JButton("Gestionar Estructura");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				vistaGestionarEstructura panelest = new vistaGestionarEstructura(); 
+				vistaGestionarEstructura panelest = new vistaGestionarEstructura(cp); 
 		        panelest.setVisible(true);
 		        dispose(); 
 			}
@@ -90,7 +95,7 @@ public class vistaMenuPrincipal extends JFrame {
 		JButton button_2 = new JButton("Mostrar Jerarquia");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaMostrarJerarquia panmenu = new vistaMostrarJerarquia();
+				vistaMostrarJerarquia panmenu = new vistaMostrarJerarquia(cp);
 				panmenu.setVisible(true);
 				dispose();
 			}
@@ -104,7 +109,7 @@ public class vistaMenuPrincipal extends JFrame {
 		button_3.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
-				vistaGestionarCategoria panelcat = new vistaGestionarCategoria();
+				vistaGestionarCategoria panelcat = new vistaGestionarCategoria(cp);
 				panelcat.setVisible(true);
 				dispose();
 				
@@ -119,7 +124,7 @@ public class vistaMenuPrincipal extends JFrame {
 		JButton button_4 = new JButton("Gestionar Llibres");
 		button_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaGestionarLlibres panmenu = new vistaGestionarLlibres();
+				vistaGestionarLlibres panmenu = new vistaGestionarLlibres(cp);
 				panmenu.setVisible(true);
 				dispose();
 			}
@@ -132,7 +137,7 @@ public class vistaMenuPrincipal extends JFrame {
 		JButton button_5 = new JButton("Gestionar Solucions");
 		button_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaGestionarSolucions pansolu = new vistaGestionarSolucions();
+				vistaGestionarSolucions pansolu = new vistaGestionarSolucions(cp);
 				pansolu.setVisible(true);
 				dispose();
 			}
@@ -145,7 +150,7 @@ public class vistaMenuPrincipal extends JFrame {
 		JButton btnCarregarexportarDades = new JButton("Importar/Exportar Dades");
 		btnCarregarexportarDades.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				vistaImportarExportar panimex = new vistaImportarExportar();
+				vistaImportarExportar panimex = new vistaImportarExportar(cp);
 				panimex.setVisible(true);
 			}
 		});

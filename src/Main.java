@@ -1,5 +1,4 @@
-import prop.ctrldomini.*;
-
+import prop.presentacio.CtrlPresentacio;
 
 public class Main {
 
@@ -8,6 +7,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		CtrlPresentacio ctrl = new CtrlPresentacio();
+		ctrl.iniciarPresentacio();
 	}
-
 }

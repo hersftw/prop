@@ -35,7 +35,7 @@ public class CtrlPresentacio {
 	vistaMostrarJerarquia vistaJerar;
 	
 	public CtrlPresentacio() {
-		ctrlCat = new ctrlCategories();
+		/*ctrlCat = new ctrlCategories();
 		ctrlLlib = new crtlLlibres();
 		ctrlDist = new ctrlDistribucions();
 		ctrlPers = new ctrlPersistencia();
@@ -49,10 +49,13 @@ public class CtrlPresentacio {
 		vistaGestLlib = new vistaGestionarLlibres(this);
 		vistaGestSol = new vistaGestionarSolucions(this);
 		vistaImpExp = new vistaImportarExportar(this);
-		vistaMenu = new vistaMenuPrincipal(this);
 		vistaModCat = new vistaModificarNomCat(this);
-		vistaJerar = new vistaMostrarJerarquia(this);
-		vistaMenu.
+		vistaJerar = new vistaMostrarJerarquia(this);*/
+		vistaMenu = new vistaMenuPrincipal(this);
+	}
+	
+	public void iniciarPresentacio() {
+		vistaMenu.mostrarVista();
 	}
 	
 	public void omplirArbre(JTree arbre, DefaultTreeModel model) {

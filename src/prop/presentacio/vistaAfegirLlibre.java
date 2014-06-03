@@ -41,7 +41,7 @@ public class vistaAfegirLlibre extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -52,7 +52,12 @@ public class vistaAfegirLlibre extends JFrame {
 				}
 			}
 		});
+	}*/
+	
+	public void mostrarVista() {
+		this.setVisible(true);
 	}
+	
 	public vistaAfegirLlibre(CtrlPresentacio cpgeneral) {
 		cp = cpgeneral;
 		inicialitzarComponents();

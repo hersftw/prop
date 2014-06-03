@@ -29,7 +29,7 @@ public class vistaCanviarOrdre extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -40,6 +40,10 @@ public class vistaCanviarOrdre extends JFrame {
 				}
 			}
 		});
+	}*/
+	
+	public void mostrarVista() {
+		this.setVisible(true);
 	}
 
 	/**
@@ -99,11 +103,11 @@ public class vistaCanviarOrdre extends JFrame {
 		lblNewLabel.setBounds(71, 274, 46, 14);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Nom antic:");
+		JLabel lblNewLabel_1 = new JLabel("Categoria 1:");
 		lblNewLabel_1.setBounds(167, 312, 65, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel label = new JLabel("Nom nou:");
+		JLabel label = new JLabel("Categoria 2:");
 		label.setBounds(167, 360, 65, 14);
 		contentPane.add(label);
 		

@@ -31,7 +31,7 @@ public class vistaModificarNomCat extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -42,7 +42,12 @@ public class vistaModificarNomCat extends JFrame {
 				}
 			}
 		});
+	}*/
+	
+	public void mostrarVista() {
+		this.setVisible(true);
 	}
+	
 	public vistaModificarNomCat(CtrlPresentacio cpgeneral) {
 		cp = cpgeneral;
 		inicialitzarComponents();

@@ -34,7 +34,7 @@ public class vistaCrearCategoria extends JFrame implements TreeSelectionListener
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -46,6 +46,10 @@ public class vistaCrearCategoria extends JFrame implements TreeSelectionListener
 				}
 			}
 		});
+	}*/
+	
+	public void mostrarVista() {
+		this.setVisible(true);
 	}
 
 	/**
