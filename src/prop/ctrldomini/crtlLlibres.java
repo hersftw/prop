@@ -65,10 +65,22 @@ public class crtlLlibres {
 	
 	public void afegirLlibre(int isbn, String titol, String autor,  String editorial,
 			int any, String categoria) {
+		
 		llibre llibre = new llibre(isbn, titol, autor, editorial, any, categoria);
 		llibres.add(llibre);
 	}
 	
+	
+	public boolean existeix (int isbn){
+		boolean find = false;
+		llibre l = null;
+		Iterator<llibre> it = llibres.iterator();
+		while(!find & it.hasNext()){
+			l = it.next();
+			if (l.getId() == isbn) find = true;
+		}
+		return find;
+	}
 	
 	/**@brief Modificadora d'un llibre.
 	* 
