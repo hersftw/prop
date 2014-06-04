@@ -260,19 +260,31 @@ public class vistaCMELlibre extends JFrame {
 		button_1 = new JButton("");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-						int isbn2 = Integer.parseInt(tISBN.getText());
-						String titol = ttitol.getText();
-						String autor = tautor.getText();
-						String editorial = teditorial.getText();
-						int any = Integer.parseInt(tany.getText());
-						String categoria = tcategoria.getText();
-						jdj.modificarLlibre(isbn, isbn2, titol, autor, editorial, any, categoria);
-						tISBN.setText("");
-						ttitol.setText("");
-						tautor.setText("");
-						teditorial.setText("");
-						tany.setText("");
-						tcategoria.setText("");		
+				if (tISBN.getText().equals("") || ttitol.getText().equals("") || tautor.getText().equals("") || teditorial.getText().equals("") || tany.getText().equals("") || tcategoria.getText().equals("")) {
+					JPanel panel = new JPanel();
+					JOptionPane.showMessageDialog(panel, "Camps incorrectes");
+				}
+				else {		
+					int isbn2 = Integer.parseInt(tISBN.getText());
+					String titol = ttitol.getText();
+					String autor = tautor.getText();
+					String editorial = teditorial.getText();
+					int any = Integer.parseInt(tany.getText());
+					String categoria = tcategoria.getText();
+					jdj.modificarLlibre(isbn, isbn2, titol, autor, editorial, any, categoria);
+					JPanel panel = new JPanel();
+					JOptionPane.showMessageDialog(panel, "Llibre modificat correctament");
+					tISBN.setText("");
+					ttitol.setText("");
+					tautor.setText("");
+					teditorial.setText("");
+					tany.setText("");
+					tcategoria.setText("");
+					final String initialText = "Introdueix l'ISBN i prem enter";
+					txtboxISBN.setFont(new Font("Tahoma", Font.ITALIC, 10));
+					txtboxISBN.setText(initialText);
+					
+				}	
 						
 			}
 		});
@@ -284,12 +296,17 @@ public class vistaCMELlibre extends JFrame {
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jdj.eliminarLlibre(isbn);
+				JPanel panel = new JPanel();
+				JOptionPane.showMessageDialog(panel, "Llibre eliminat correctament");
 				tISBN.setText("");
 				ttitol.setText("");
 				tautor.setText("");
 				teditorial.setText("");
 				tany.setText("");
 				tcategoria.setText("");	
+				final String initialText = "Introdueix l'ISBN i prem enter";
+				txtboxISBN.setFont(new Font("Tahoma", Font.ITALIC, 10));
+				txtboxISBN.setText(initialText);
 			}
 		});
 		button_2.setIcon(new ImageIcon(vistaCMELlibre.class.getResource("/prop/icons/Flaticon_48352.png")));
@@ -487,12 +504,28 @@ public class vistaCMELlibre extends JFrame {
 		button_1 = new JButton("");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int isbn2 = Integer.parseInt(tISBN.getText());
-				String titol = ttitol.getText();
-				String autor = tautor.getText();
-				String editorial = teditorial.getText();
-				int any = Integer.parseInt(tany.getText());
-				String categoria = tcategoria.getText();
+				if (tISBN.getText().equals("") || ttitol.getText().equals("") || tautor.getText().equals("") || teditorial.getText().equals("") || tany.getText().equals("") || tcategoria.getText().equals("")) {
+					JPanel panel = new JPanel();
+					JOptionPane.showMessageDialog(panel, "Camps incorrectes");
+				}
+				else {		
+					int isbn2 = Integer.parseInt(tISBN.getText());
+					String titol = ttitol.getText();
+					String autor = tautor.getText();
+					String editorial = teditorial.getText();
+					int any = Integer.parseInt(tany.getText());
+					String categoria = tcategoria.getText();
+					//cp.modificarLlibre(isbn, isbn2, titol, autor, editorial, any, categoria);
+					JPanel panel = new JPanel();
+					JOptionPane.showMessageDialog(panel, "Llibre modificat correctament");
+					tISBN.setText("");
+					ttitol.setText("");
+					tautor.setText("");
+					teditorial.setText("");
+					tany.setText("");
+					tcategoria.setText("");
+					
+				}	
 				//cp.modificarLlibre(isbn, isbn2, titol, autor, editorial, any, categoria);
 			}
 		});
@@ -504,12 +537,17 @@ public class vistaCMELlibre extends JFrame {
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//cp.eliminarLlibre(isbn);
+				JPanel panel = new JPanel();
+				JOptionPane.showMessageDialog(panel, "Llibre eliminat correctament");
 				tISBN.setText("");
 				ttitol.setText("");
 				tautor.setText("");
 				teditorial.setText("");
 				tany.setText("");
 				tcategoria.setText("");	
+				final String initialText = "Introdueix l'ISBN i prem enter";
+				txtboxISBN.setFont(new Font("Tahoma", Font.ITALIC, 10));
+				txtboxISBN.setText(initialText);
 			}
 		});
 		button_2.setIcon(new ImageIcon(vistaCMELlibre.class.getResource("/prop/icons/Flaticon_48352.png")));
