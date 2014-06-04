@@ -155,4 +155,8 @@ public class CtrlPresentacio {
 	public void canviarCategories(String cat1, String cat2) {
 		ctrlCat.canviarCategories(cat1, cat2);
 	}
+	
+	public void eliminarCategoria(String nom) {
+		ctrlCat.eliminarCategoria(nom);
+	}
 }

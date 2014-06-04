@@ -78,7 +78,9 @@ public class vistaEliminarCategoria extends JFrame {
 		cp = new CtrlPresentacio();
 		cp.ctrlCat.inicialitzarCategories();
 		cp.afegirCategoria("Hola", "Biblioteca");
-		cp.omplirArbre(arbre, model);
+		cp.afegirCategoria("Hola2", "Biblioteca");
+		cp.afegirCategoria("Hola3", "Hola2");
+		cp.omplirArbre2(arbre, model);
 		
 		JButton button = new JButton();
 		button.addActionListener(new ActionListener() {
@@ -113,7 +115,9 @@ public class vistaEliminarCategoria extends JFrame {
 				String nom = textField.getText();
 				cp.eliminarCategoria(nom);
 				System.out.println(nom);
-				cp.omplirArbre(arbre, model);
+				DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
+				root.removeAllChildren();
+				cp.omplirArbre2(arbre, model);
 			}
 		});
 		button_1.setIcon(new ImageIcon(vistaEliminarCategoria.class.getResource("/prop/icons/tick.png")));
