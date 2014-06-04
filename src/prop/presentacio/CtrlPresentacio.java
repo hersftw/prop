@@ -34,6 +34,8 @@ public class CtrlPresentacio {
 	vistaModificarNomCat vistaModCat;
 	vistaMostrarJerarquia vistaJerar;
 	
+	HashSet<String> hash;
+	
 	public CtrlPresentacio() {
 		ctrlCat = new ctrlCategories();
 		/*ctrlLlib = new crtlLlibres();
@@ -53,6 +55,7 @@ public class CtrlPresentacio {
 		vistaJerar = new vistaMostrarJerarquia(this);*/
 		vistaMenu = new vistaMenuPrincipal(this);
 		ctrlCat.inicialitzarCategories();
+		hash = new HashSet<String>();
 	}
 	
 	public void iniciarPresentacio() {
@@ -60,21 +63,21 @@ public class CtrlPresentacio {
 	}
 	
 	public void omplirArbre(JTree arbre, DefaultTreeModel model) {
-		arbre.removeAll();
-		model.reload();
+		DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
 		Iterator<List<categoria>> it = ctrlCat.getCategories().iterator();
-		HashSet<String> hash = new HashSet<String>();
 		it.next();
 		while(it.hasNext()) {
 			List<categoria> llista = it.next();
+			System.out.println("Afegim "+llista.get(0).getNom()+" a "+llista.get(0).getPare());
 			TreePath path = arbre.getNextMatch(llista.get(0).getPare(), 0, Position.Bias.Forward);
+			System.out.println("Path: "+path);
 			DefaultMutableTreeNode pare = (DefaultMutableTreeNode) path.getLastPathComponent();
 			DefaultMutableTreeNode fill = new DefaultMutableTreeNode(llista.get(0).getNom());
 			if (!hash.contains(fill.toString())) {
 				model.insertNodeInto(fill, pare, pare.getChildCount());
 				hash.add(fill.toString());
 			}
-			model.reload();
+			//model.reload();
 			arbre.expandPath(path);
 			Iterator<categoria> it2 = llista.iterator();
 			it2.next();
@@ -87,14 +90,19 @@ public class CtrlPresentacio {
 					model.insertNodeInto(fill, pare, pare.getChildCount());
 					hash.add(fill.toString());
 				}
-				model.reload();
-				arbre.expandPath(path);
+				//model.reload();
+				//arbre.expandPath(path);
 			}
 		}
+		//model.reload();
+		//System.out.println(hash.size());
 	}
 	
 	public void afegirCategoria(String nom, String pare) {
 		ctrlCat.afegirCategoria(nom, pare);
 	}
 	
+	public void canviarCategories(String cat1, String cat2) {
+		ctrlCat.canviarCategories(cat1, cat2);
+	}
 }

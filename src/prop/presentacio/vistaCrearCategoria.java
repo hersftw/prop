@@ -36,6 +36,7 @@ public class vistaCrearCategoria extends JFrame implements TreeSelectionListener
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
+	DefaultMutableTreeNode top;
 
 	/**
 	 * Launch the application.
@@ -79,11 +80,11 @@ public class vistaCrearCategoria extends JFrame implements TreeSelectionListener
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		DefaultMutableTreeNode top = new DefaultMutableTreeNode("Biblioteca");
+		top = new DefaultMutableTreeNode("Biblioteca");
 		model = new DefaultTreeModel(top);
 		arbre = new JTree(model);
 		arbre.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
-		JScrollPane treeView = new JScrollPane(arbre);
+		final JScrollPane treeView = new JScrollPane(arbre);
 		treeView.setBounds(10, 20, 610, 200);
 		getContentPane().add(treeView);
 		cp.omplirArbre(arbre, model);
@@ -104,13 +105,24 @@ public class vistaCrearCategoria extends JFrame implements TreeSelectionListener
 		JButton button_1 = new JButton("");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				cp = new CtrlPresentacio();
-				cp.ctrlCat.inicialitzarCategories();
+				//cp = new CtrlPresentacio();
+				//cp.ctrlCat.inicialitzarCategories();
+				/*cp.ctrlCat.afegirCategoria("Hola", "Biblioteca");
+				cp.ctrlCat.afegirCategoria("Hola2", "Hola");
+				cp.ctrlCat.afegirCategoria("Hola3", "Hola2");
+				cp.ctrlCat.afegirCategoria("Hola4", "Hola3");*/
 				String pare= textField.getText();
-				System.out.println(pare);
 				String nom = textField_1.getText();
-				System.out.println(nom);
+				cp.ctrlCat.mostrarCategories();
 				cp.afegirCategoria(nom, pare);
+				cp.ctrlCat.mostrarCategories();
+				//top = new DefaultMutableTreeNode("Biblioteca");
+				//model = new DefaultTreeModel(top);
+				//arbre = new JTree(model);
+				//arbre.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+				//final JScrollPane treeView = new JScrollPane(arbre);
+				//treeView.setBounds(10, 20, 610, 200);
+				//getContentPane().add(treeView);
 				cp.omplirArbre(arbre, model);
 			}
 		});
