@@ -116,9 +116,15 @@ public class ctrlCategories {
 		while (it.hasNext() & !trobat) {
 			List<categoria> llista = it.next();
 			if (llista.get(0).getNom().equals(vell)) {
-				llista.get(0).setNom(nou);
+				llista.get(0).setNom(nou); //guai
 				pare = llista.get(0).getPare();
 				categories.set(i, llista);
+				Iterator<categoria> it3 = llista.iterator();
+				it3.next();
+				while (it3.hasNext()) {
+					categoria cat2 = it3.next();
+					cat2.setPare(nou);
+				}
 				trobat = true;
 			}
 			++i;
@@ -219,7 +225,9 @@ public class ctrlCategories {
 		while (it.hasNext()) {
 			Iterator<categoria> it2 = it.next().iterator();
 			while(it2.hasNext()) {
-				System.out.print(it2.next().getNom()+" ");
+				//System.out.print(it2.next().getNom()+" ");
+				categoria cat = it2.next();
+				System.out.print("("+cat.getNom()+"-"+cat.getPare()+ ") ");
 			}
 			System.out.println();
 		}

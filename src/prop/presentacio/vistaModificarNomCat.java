@@ -91,7 +91,8 @@ public class vistaModificarNomCat extends JFrame {
 		cp.afegirCategoria("Hola", "Biblioteca");
 		cp.afegirCategoria("Hola2", "Biblioteca");
 		cp.afegirCategoria("Hola3", "Hola2");
-		cp.ModificarCategories("Hola", "Hola5");
+		cp.afegirCategoria("Hola4", "Hola3");
+
 		cp.ctrlCat.mostrarCategories();
 		cp.omplirArbre2(arbre, model);
 		//ctrl.omplirArbre(top);
@@ -110,6 +111,7 @@ public class vistaModificarNomCat extends JFrame {
 				DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
 				root.removeAllChildren();
 				cp.omplirArbre2(arbre, model);
+				cp.ctrlCat.mostrarCategories();
 			}
 		});
 		button_1.setIcon(new ImageIcon(vistaModificarNomCat.class.getResource("/prop/icons/tick.png")));

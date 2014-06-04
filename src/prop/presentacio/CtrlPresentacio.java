@@ -63,7 +63,6 @@ public class CtrlPresentacio {
 	}
 	
 	public void omplirArbre(JTree arbre, DefaultTreeModel model) {
-		 
 		//arbre.removeAll();
 		//model.reload();
 		//HashSet<String> hash;
@@ -106,7 +105,7 @@ public class CtrlPresentacio {
 	}
 	
 	public void omplirArbre2(JTree arbre, DefaultTreeModel model) {
-		 
+		ctrlCat.mostrarCategories();
 		arbre.removeAll();
 		model.reload();
 		HashSet<String> hashCanviarOrdre;
@@ -133,6 +132,8 @@ public class CtrlPresentacio {
 			while(it2.hasNext()) {
 				categoria cat = it2.next();
 				path = arbre.getNextMatch(cat.getPare(), 0, Position.Bias.Forward);
+				System.out.println("Volem inserir "+cat.getNom());
+				System.out.println("Path de "+cat.getPare()+": "+path);
 				pare = (DefaultMutableTreeNode) path.getLastPathComponent();
 				fill = new DefaultMutableTreeNode(cat.getNom());
 				if (!hashCanviarOrdre.contains(fill.toString())) {
