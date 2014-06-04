@@ -159,4 +159,8 @@ public class CtrlPresentacio {
 	public void eliminarCategoria(String nom) {
 		ctrlCat.eliminarCategoria(nom);
 	}
+	
+	public void ModificarCategories(String vell, String nou) {
+		ctrlCat.modificarCategories(vell, nou);
+	}
 }

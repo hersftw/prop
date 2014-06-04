@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
 
 import java.awt.Dimension;
@@ -27,6 +28,7 @@ public class vistaModificarNomCat extends JFrame {
 	private JTextField textField_1;
 	
 	public static JTree arbre;
+	private DefaultTreeModel model;
 
 	/**
 	 * Launch the application.
@@ -77,13 +79,21 @@ public class vistaModificarNomCat extends JFrame {
 			}
 		});
 		
-		CtrlPresentacio ctrl = new CtrlPresentacio();
 		DefaultMutableTreeNode top = new DefaultMutableTreeNode("Biblioteca");
-		arbre = new JTree(top);
+		model = new DefaultTreeModel(top);
+		arbre = new JTree(model);
 		arbre.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 		JScrollPane treeView = new JScrollPane(arbre);
 		treeView.setBounds(10, 20, 610, 200);
-		add(treeView);
+		getContentPane().add(treeView);
+		cp = new CtrlPresentacio();
+		cp.ctrlCat.inicialitzarCategories();
+		cp.afegirCategoria("Hola", "Biblioteca");
+		cp.afegirCategoria("Hola2", "Biblioteca");
+		cp.afegirCategoria("Hola3", "Hola2");
+		cp.ModificarCategories("Hola", "Hola5");
+		cp.ctrlCat.mostrarCategories();
+		cp.omplirArbre2(arbre, model);
 		//ctrl.omplirArbre(top);
 		
 		button.setIcon(new ImageIcon(vistaModificarNomCat.class.getResource("/prop/icons/flecha.png")));
@@ -91,6 +101,17 @@ public class vistaModificarNomCat extends JFrame {
 		contentPane.add(button);
 		
 		JButton button_1 = new JButton("");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String vell = textField.getText();
+				String nou = textField_1.getText();
+				cp.ModificarCategories(vell, nou);
+				cp.ctrlCat.mostrarCategories();
+				DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
+				root.removeAllChildren();
+				cp.omplirArbre2(arbre, model);
+			}
+		});
 		button_1.setIcon(new ImageIcon(vistaModificarNomCat.class.getResource("/prop/icons/tick.png")));
 		button_1.setBounds(559, 416, 65, 35);
 		contentPane.add(button_1);
@@ -147,7 +168,7 @@ public class vistaModificarNomCat extends JFrame {
 		arbre.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 		JScrollPane treeView = new JScrollPane(arbre);
 		treeView.setBounds(10, 20, 610, 200);
-		add(treeView);
+		getContentPane().add(treeView);
 		//ctrl.omplirArbre(top);
 		
 		button.setIcon(new ImageIcon(vistaModificarNomCat.class.getResource("/prop/icons/flecha.png")));
