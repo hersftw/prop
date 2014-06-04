@@ -77,9 +77,16 @@ public class vistaEliminarCategoria extends JFrame {
 		getContentPane().add(treeView);
 		cp = new CtrlPresentacio();
 		cp.ctrlCat.inicialitzarCategories();
-		cp.afegirCategoria("Hola", "Biblioteca");
-		cp.afegirCategoria("Hola2", "Biblioteca");
-		cp.afegirCategoria("Hola3", "Hola2");
+		cp.ctrlCat.afegirCategoria("Ciencies", "Biblioteca");
+		cp.ctrlCat.afegirCategoria("Informatica", "Ciencies");
+		cp.ctrlCat.afegirCategoria("Java", "Informatica");
+		cp.ctrlCat.afegirCategoria("Informatica", "Ciencies");
+		cp.ctrlCat.afegirCategoria("C++", "Informatica");
+		cp.ctrlCat.afegirCategoria("Arquitectura Computadors", "Informatica");
+		cp.ctrlCat.afegirCategoria("Tecnologia", "Ciencies");
+		cp.ctrlCat.afegirCategoria("Computadors", "Tecnologia");
+		cp.ctrlCat.afegirCategoria("Art", "Biblioteca");
+		cp.ctrlCat.afegirCategoria("Gastronomia", "Biblioteca");
 		cp.omplirArbre2(arbre, model);
 		
 		JButton button = new JButton();

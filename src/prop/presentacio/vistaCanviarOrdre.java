@@ -72,10 +72,19 @@ public class vistaCanviarOrdre extends JFrame {
 		contentPane.setLayout(null);
 		cp = new CtrlPresentacio();
 		cp.ctrlCat.inicialitzarCategories();
-		cp.ctrlCat.afegirCategoria("Hola", "Biblioteca");
-		cp.ctrlCat.afegirCategoria("Hola2", "Biblioteca");
-		cp.ctrlCat.afegirCategoria("Hola1", "Hola");
-		cp.ctrlCat.afegirCategoria("Hola3", "Hola1");
+		cp.ctrlCat.afegirCategoria("Ciencies", "Biblioteca");
+		
+		cp.ctrlCat.afegirCategoria("Informatica", "Ciencies");
+		cp.ctrlCat.afegirCategoria("Java", "Informatica");
+		cp.ctrlCat.afegirCategoria("Informatica", "Ciencies");
+		cp.ctrlCat.afegirCategoria("C++", "Informatica");
+		cp.ctrlCat.afegirCategoria("Arquitectura Computadors", "Informatica");
+		cp.ctrlCat.afegirCategoria("Tecnologia", "Ciencies");
+		cp.ctrlCat.afegirCategoria("Computadors", "Tecnologia");
+		cp.ctrlCat.afegirCategoria("Art", "Biblioteca");
+		cp.ctrlCat.afegirCategoria("Gastronomia", "Biblioteca");
+		
+		
 
 		
 		DefaultMutableTreeNode top = new DefaultMutableTreeNode("Biblioteca");
@@ -126,11 +135,11 @@ public class vistaCanviarOrdre extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Categoria 1:");
-		lblNewLabel_1.setBounds(167, 312, 65, 14);
+		lblNewLabel_1.setBounds(152, 312, 80, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel label = new JLabel("Categoria 2:");
-		label.setBounds(167, 360, 65, 14);
+		label.setBounds(152, 360, 80, 14);
 		contentPane.add(label);
 		
 		textField = new JTextField();
