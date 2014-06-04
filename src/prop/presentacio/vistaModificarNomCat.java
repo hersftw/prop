@@ -91,8 +91,7 @@ public class vistaModificarNomCat extends JFrame {
 		cp.afegirCategoria("Hola", "Biblioteca");
 		cp.afegirCategoria("Hola2", "Biblioteca");
 		cp.afegirCategoria("Hola3", "Hola2");
-		cp.afegirCategoria("Hola4", "Hola3");
-
+		
 		cp.ctrlCat.mostrarCategories();
 		cp.omplirArbre2(arbre, model);
 		//ctrl.omplirArbre(top);

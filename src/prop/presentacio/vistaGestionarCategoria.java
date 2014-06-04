@@ -36,6 +36,19 @@ public class vistaGestionarCategoria extends JFrame {
 	public void mostrarVista() {
 		this.setVisible(true);
 	}
+	
+	public void amagarVista() {
+		this.setVisible(false);
+	}
+	
+	public void activar() {
+		this.setEnabled(true);
+		this.setVisible(true);
+	}
+	
+	public void desactivar() {
+		this.setEnabled(false);
+	}
 
 	public vistaGestionarCategoria(CtrlPresentacio cpgeneral) {
 		cp = cpgeneral;
@@ -60,8 +73,9 @@ public class vistaGestionarCategoria extends JFrame {
 		JButton btnCrearCategoria = new JButton("Crear Categoria");
 		btnCrearCategoria.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaCrearCategoria panelcrea = new vistaCrearCategoria();
-				panelcrea.setVisible(true);
+				//vistaCrearCategoria panelcrea = new vistaCrearCategoria();
+				//panelcrea.setVisible(true);
+				cp.mostraCrearCategoria(contentPane);
 			}
 		});
 		btnCrearCategoria.setName("");
@@ -111,9 +125,9 @@ public class vistaGestionarCategoria extends JFrame {
 		JButton button = new JButton("");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaMenuPrincipal panmenu = new vistaMenuPrincipal();
-				panmenu.setVisible(true);
-				dispose();
+				//vistaMenuPrincipal panmenu = new vistaMenuPrincipal();
+				//panmenu.setVisible(true);
+				//dispose();
 			}
 		});
 		button.setIcon(new ImageIcon(vistaGestionarCategoria.class.getResource("/prop/icons/flecha.png")));
