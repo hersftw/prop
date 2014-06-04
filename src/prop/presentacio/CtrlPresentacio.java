@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JTree;
 import javax.swing.text.Position;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -12,6 +14,7 @@ import javax.swing.tree.TreePath;
 
 import prop.ctrldomini.*;
 import prop.domini.categoria;
+import prop.domini.llibre;
 
 public class CtrlPresentacio {
 	
@@ -38,28 +41,17 @@ public class CtrlPresentacio {
 	
 	public CtrlPresentacio() {
 		ctrlCat = new ctrlCategories();
-		/*ctrlLlib = new crtlLlibres();
+		ctrlLlib = new crtlLlibres();
 		ctrlDist = new ctrlDistribucions();
-		ctrlPers = new ctrlPersistencia();
-		vistaAfegirLlib = new vistaAfegirLlibre(this);
-		vistaCanviarOrd = new vistaCanviarOrdre(this);
-		vistaCMELlib = new vistaCMELlibre(this);
-		vistaCrearCat = new vistaCrearCategoria(this);
-		vistaElimCat = new vistaEliminarCategoria(this);
+		
 		vistaGestCat = new vistaGestionarCategoria(this);
-		vistaGestEstr = new vistaGestionarEstructura(this);
-		vistaGestLlib = new vistaGestionarLlibres(this);
-		vistaGestSol = new vistaGestionarSolucions(this);
-		vistaImpExp = new vistaImportarExportar(this);
-		vistaModCat = new vistaModificarNomCat(this);
-		vistaJerar = new vistaMostrarJerarquia(this);*/
-		vistaMenu = new vistaMenuPrincipal(this);
 		ctrlCat.inicialitzarCategories();
 		hash = new HashSet<String>();
 	}
 	
 	public void iniciarPresentacio() {
-		vistaMenu.mostrarVista();
+		//vistaMenu.mostrarVista();
+		vistaGestCat.mostrarVista();
 	}
 	
 	public void omplirArbre(JTree arbre, DefaultTreeModel model) {
@@ -73,9 +65,7 @@ public class CtrlPresentacio {
 		it.next();
 		while(it.hasNext()) {
 			List<categoria> llista = it.next();
-			System.out.println("Afegim "+llista.get(0).getNom()+" a "+llista.get(0).getPare());
 			TreePath path = arbre.getNextMatch(llista.get(0).getPare(), 0, Position.Bias.Forward);
-			System.out.println("Path: "+path);
 			DefaultMutableTreeNode pare = (DefaultMutableTreeNode) path.getLastPathComponent();
 			DefaultMutableTreeNode fill = new DefaultMutableTreeNode(llista.get(0).getNom());
 			if (!hash.contains(fill.toString())) {
@@ -116,9 +106,7 @@ public class CtrlPresentacio {
 		it.next();
 		while(it.hasNext()) {
 			List<categoria> llista = it.next();
-			System.out.println("Afegim "+llista.get(0).getNom()+" a "+llista.get(0).getPare());
 			TreePath path = arbre.getNextMatch(llista.get(0).getPare(), 0, Position.Bias.Forward);
-			System.out.println("Path: "+path);
 			DefaultMutableTreeNode pare = (DefaultMutableTreeNode) path.getLastPathComponent();
 			DefaultMutableTreeNode fill = new DefaultMutableTreeNode(llista.get(0).getNom());
 			if (!hashCanviarOrdre.contains(fill.toString())) {
@@ -132,8 +120,6 @@ public class CtrlPresentacio {
 			while(it2.hasNext()) {
 				categoria cat = it2.next();
 				path = arbre.getNextMatch(cat.getPare(), 0, Position.Bias.Forward);
-				System.out.println("Volem inserir "+cat.getNom());
-				System.out.println("Path de "+cat.getPare()+": "+path);
 				pare = (DefaultMutableTreeNode) path.getLastPathComponent();
 				fill = new DefaultMutableTreeNode(cat.getNom());
 				if (!hashCanviarOrdre.contains(fill.toString())) {
@@ -148,6 +134,8 @@ public class CtrlPresentacio {
 		//model.reload();
 		//System.out.println(hash.size());
 	}
+	
+	// Categories
 	
 	public void afegirCategoria(String nom, String pare) {
 		ctrlCat.afegirCategoria(nom, pare);
@@ -164,4 +152,41 @@ public class CtrlPresentacio {
 	public void ModificarCategories(String vell, String nou) {
 		ctrlCat.modificarCategories(vell, nou);
 	}
+	
+	// Llibres
+	
+	public void afegirLlibre(int isbn, String titol, String autor, String editorial, int any, String categoria) {
+		ctrlLlib.afegirLlibre(isbn, titol, autor, editorial, any, categoria);
+	}
+	
+	public void consultarLlibre(int isbn) {
+		llibre ll = ctrlLlib.consultarLlibre(isbn);
+		
+	}
+	
+	public void modificarLlibre(int isbn1, int isbn2, String titol, String autor,  String editorial, int any, String categoria ){
+		ctrlLlib.modificarLlibre(isbn1, isbn2, titol, autor, editorial, any, categoria);
+	}
+	
+	public void eliminarLlibre(int isbn){
+		ctrlLlib.eliminarLlibre(isbn);
+	}
+	
+	// Vistes
+	
+	public void mostraGestioCategories(JPanel vista) {
+		vistaCrearCat.amagarVista();
+		vistaGestCat.activar();
+	}
+	
+	public void mostraCrearCategoria(JPanel vista) {
+		vistaGestCat.desactivar();
+		if (vistaCrearCat == null) vistaCrearCat = new vistaCrearCategoria(this);
+		vistaCrearCat.mostrarVista();
+	}
+	
+	
+
+	
+	
 }

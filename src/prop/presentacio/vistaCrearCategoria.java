@@ -41,7 +41,7 @@ public class vistaCrearCategoria extends JFrame implements TreeSelectionListener
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -53,10 +53,14 @@ public class vistaCrearCategoria extends JFrame implements TreeSelectionListener
 				}
 			}
 		});
-	}
+	}*/
 	
 	public void mostrarVista() {
 		this.setVisible(true);
+	}
+	
+	public void amagarVista() {
+		this.setVisible(false);
 	}
 
 	/**
@@ -68,8 +72,8 @@ public class vistaCrearCategoria extends JFrame implements TreeSelectionListener
 		inicialitzarComponents();
 	}
 	
-	public vistaCrearCategoria() {
-		cp = new CtrlPresentacio();
+	public void inicialitzarComponents() {
+		//cp = new CtrlPresentacio();
 		setResizable(false);
 		setTitle("Crear Categoria [Categoria]");
 		setMinimumSize(new Dimension(650, 500));
@@ -92,9 +96,7 @@ public class vistaCrearCategoria extends JFrame implements TreeSelectionListener
 		JButton button = new JButton();
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaGestionarCategoria pancat = new vistaGestionarCategoria(cp);
-				pancat.setVisible(true);
-				dispose();
+				cp.mostraGestioCategories(contentPane);
 			}
 		});
 		
@@ -105,24 +107,11 @@ public class vistaCrearCategoria extends JFrame implements TreeSelectionListener
 		JButton button_1 = new JButton("");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//cp = new CtrlPresentacio();
-				//cp.ctrlCat.inicialitzarCategories();
-				/*cp.ctrlCat.afegirCategoria("Hola", "Biblioteca");
-				cp.ctrlCat.afegirCategoria("Hola2", "Hola");
-				cp.ctrlCat.afegirCategoria("Hola3", "Hola2");
-				cp.ctrlCat.afegirCategoria("Hola4", "Hola3");*/
 				String pare= textField.getText();
 				String nom = textField_1.getText();
 				cp.ctrlCat.mostrarCategories();
 				cp.afegirCategoria(nom, pare);
 				cp.ctrlCat.mostrarCategories();
-				//top = new DefaultMutableTreeNode("Biblioteca");
-				//model = new DefaultTreeModel(top);
-				//arbre = new JTree(model);
-				//arbre.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
-				//final JScrollPane treeView = new JScrollPane(arbre);
-				//treeView.setBounds(10, 20, 610, 200);
-				//getContentPane().add(treeView);
 				cp.omplirArbre(arbre, model);
 			}
 		});
@@ -156,7 +145,7 @@ public class vistaCrearCategoria extends JFrame implements TreeSelectionListener
 		contentPane.add(textField_1);
 	}
 	
-	public void inicialitzarComponents() {
+	public void inicialitzarComponents_old() {
 		setMinimumSize(new Dimension(650, 500));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
