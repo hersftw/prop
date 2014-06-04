@@ -1,6 +1,5 @@
 package prop.presentacio;
-import prop.ctrldomini.*;
-import prop.domini.llibre;
+
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -33,7 +32,7 @@ public class vistaAfegirLlibre extends JFrame {
 	private JTextField tautor;
 	private JTextField tany;
 	private JTextField tcategoria;
-	private crtlLlibres crll = new crtlLlibres();
+	
 	
 	
 	
@@ -175,11 +174,8 @@ public class vistaAfegirLlibre extends JFrame {
 				String editorial = teditorial.getText();
 				int any = Integer.parseInt(tany.getText());
 				String categoria = tcategoria.getText();
-				System.out.println(crll.existeix(isbn));
-				if (!crll.existeix(isbn)){
-					crll.afegirLlibre(isbn, titol, autor, editorial, any, categoria);
-					llibre ll = crll.consultarLlibre(isbn);
-					System.out.println(ll.getTitol());
+				if (!cp.existeix(isbn)){
+					cp.afegirLlibre(isbn, titol, autor, editorial, any, categoria);
 					JPanel panel = new JPanel();
 					JOptionPane.showMessageDialog(panel, "Llibre afegit correctament");
 				}
