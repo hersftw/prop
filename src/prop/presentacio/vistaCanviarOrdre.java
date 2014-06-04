@@ -75,6 +75,7 @@ public class vistaCanviarOrdre extends JFrame {
 		cp.ctrlCat.afegirCategoria("Hola", "Biblioteca");
 		cp.ctrlCat.afegirCategoria("Hola2", "Biblioteca");
 		cp.ctrlCat.afegirCategoria("Hola1", "Hola");
+		cp.ctrlCat.afegirCategoria("Hola3", "Hola1");
 
 		
 		DefaultMutableTreeNode top = new DefaultMutableTreeNode("Biblioteca");
@@ -84,7 +85,8 @@ public class vistaCanviarOrdre extends JFrame {
 		JScrollPane treeView = new JScrollPane(arbre);
 		treeView.setBounds(10, 20, 610, 200);
 		getContentPane().add(treeView);
-		cp.omplirArbre(arbre, model);
+		cp.omplirArbre2(arbre, model);
+		//cp.ctrlCat.mostrarCategories();
 		
 		JButton button_1 = new JButton("");
 		button_1.addActionListener(new ActionListener() {
@@ -94,7 +96,13 @@ public class vistaCanviarOrdre extends JFrame {
 				String cat1 = textField.getText();
 				String cat2 = textField_1.getText();
 				cp.canviarCategories(cat1, cat2);
-				cp.omplirArbre(arbre, model);
+				DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
+			
+				root.removeAllChildren();
+				cp.omplirArbre2(arbre, model);
+				cp.ctrlCat.mostrarCategories();
+				
+				
 			}
 		});
 		button_1.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/tick.png")));

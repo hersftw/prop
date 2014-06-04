@@ -63,7 +63,13 @@ public class CtrlPresentacio {
 	}
 	
 	public void omplirArbre(JTree arbre, DefaultTreeModel model) {
+		 
+		//arbre.removeAll();
+		//model.reload();
+		//HashSet<String> hash;
+		//hash = new HashSet<String>();
 		DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
+		//root.removeAllChildren();
 		Iterator<List<categoria>> it = ctrlCat.getCategories().iterator();
 		it.next();
 		while(it.hasNext()) {
@@ -91,8 +97,52 @@ public class CtrlPresentacio {
 					hash.add(fill.toString());
 				}
 				//model.reload();
-				//arbre.expandPath(path);
+				arbre.expandPath(path);
 			}
+			
+		}
+		//model.reload();
+		//System.out.println(hash.size());
+	}
+	
+	public void omplirArbre2(JTree arbre, DefaultTreeModel model) {
+		 
+		arbre.removeAll();
+		model.reload();
+		HashSet<String> hashCanviarOrdre;
+		hashCanviarOrdre = new HashSet<String>();
+		DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
+		//root.removeAllChildren();
+		Iterator<List<categoria>> it = ctrlCat.getCategories().iterator();
+		it.next();
+		while(it.hasNext()) {
+			List<categoria> llista = it.next();
+			System.out.println("Afegim "+llista.get(0).getNom()+" a "+llista.get(0).getPare());
+			TreePath path = arbre.getNextMatch(llista.get(0).getPare(), 0, Position.Bias.Forward);
+			System.out.println("Path: "+path);
+			DefaultMutableTreeNode pare = (DefaultMutableTreeNode) path.getLastPathComponent();
+			DefaultMutableTreeNode fill = new DefaultMutableTreeNode(llista.get(0).getNom());
+			if (!hashCanviarOrdre.contains(fill.toString())) {
+				model.insertNodeInto(fill, pare, pare.getChildCount());
+				hashCanviarOrdre.add(fill.toString());
+			}
+			//model.reload();
+			arbre.expandPath(path);
+			Iterator<categoria> it2 = llista.iterator();
+			it2.next();
+			while(it2.hasNext()) {
+				categoria cat = it2.next();
+				path = arbre.getNextMatch(cat.getPare(), 0, Position.Bias.Forward);
+				pare = (DefaultMutableTreeNode) path.getLastPathComponent();
+				fill = new DefaultMutableTreeNode(cat.getNom());
+				if (!hashCanviarOrdre.contains(fill.toString())) {
+					model.insertNodeInto(fill, pare, pare.getChildCount());
+					hashCanviarOrdre.add(fill.toString());
+				}
+				//model.reload();
+				arbre.expandPath(path);
+			}
+			
 		}
 		//model.reload();
 		//System.out.println(hash.size());
