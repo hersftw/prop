@@ -75,6 +75,9 @@ public class vistaEliminarCategoria extends JFrame {
 		JScrollPane treeView = new JScrollPane(arbre);
 		treeView.setBounds(10, 20, 610, 200);
 		getContentPane().add(treeView);
+		cp = new CtrlPresentacio();
+		cp.ctrlCat.inicialitzarCategories();
+		cp.afegirCategoria("Hola", "Biblioteca");
 		cp.omplirArbre(arbre, model);
 		
 		JButton button = new JButton();
@@ -105,6 +108,14 @@ public class vistaEliminarCategoria extends JFrame {
 		contentPane.add(textField);
 		
 		JButton button_1 = new JButton("");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String nom = textField.getText();
+				cp.eliminarCategoria(nom);
+				System.out.println(nom);
+				cp.omplirArbre(arbre, model);
+			}
+		});
 		button_1.setIcon(new ImageIcon(vistaEliminarCategoria.class.getResource("/prop/icons/tick.png")));
 		button_1.setBounds(569, 426, 65, 35);
 		contentPane.add(button_1);
