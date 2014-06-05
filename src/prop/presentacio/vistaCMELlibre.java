@@ -101,7 +101,13 @@ public class vistaCMELlibre extends JFrame {
 			//@Override
 			public void actionPerformed(ActionEvent e) {
 				//System.out.println(txtboxISBN.getText());
-				isbn = Integer.parseInt(txtboxISBN.getText());
+				 try {
+						isbn = Integer.parseInt(txtboxISBN.getText());
+					}
+					catch(NumberFormatException nFE) {
+						JPanel panel = new JPanel();
+						JOptionPane.showMessageDialog(panel, "Llibre modificat correctament");
+					}
 				//System.out.println(isbn);
 				//System.out.println(String.valueOf(isbn).length());
 				if(String.valueOf(isbn).length() > 9) {
@@ -111,6 +117,12 @@ public class vistaCMELlibre extends JFrame {
 					if (!jdj.existeix(isbn)){
 						JPanel panel = new JPanel();
 						JOptionPane.showMessageDialog(panel, "El llibre no existeix en el sistema");
+						tISBN.setText("");
+						ttitol.setText("");
+						tautor.setText("");
+						teditorial.setText("");
+						tany.setText("");
+						tcategoria.setText("");
 					}
 					else {
 						
@@ -138,11 +150,7 @@ public class vistaCMELlibre extends JFrame {
 		    	   
 		    	  //txtFfrded.selectAll();
 		    	  txtboxISBN.setText("");
-		    	  txtboxISBN.setFont(new Font("Tahoma", Font.PLAIN, 14));
-
-		    	  
-		    	  
-		    	  
+		    	  txtboxISBN.setFont(new Font("Tahoma", Font.PLAIN, 14));   	  
 		    	  
 		       }
 		    }
@@ -264,16 +272,22 @@ public class vistaCMELlibre extends JFrame {
 					JPanel panel = new JPanel();
 					JOptionPane.showMessageDialog(panel, "Camps incorrectes");
 				}
-				else {		
-					int isbn2 = Integer.parseInt(tISBN.getText());
-					String titol = ttitol.getText();
-					String autor = tautor.getText();
-					String editorial = teditorial.getText();
-					int any = Integer.parseInt(tany.getText());
-					String categoria = tcategoria.getText();
-					jdj.modificarLlibre(isbn, isbn2, titol, autor, editorial, any, categoria);
-					JPanel panel = new JPanel();
-					JOptionPane.showMessageDialog(panel, "Llibre modificat correctament");
+				else {							
+					 try {
+							int isbn2 = Integer.parseInt(tISBN.getText());
+							String titol = ttitol.getText();
+							String autor = tautor.getText();
+							String editorial = teditorial.getText();
+							int any = Integer.parseInt(tany.getText());
+							String categoria = tcategoria.getText();
+							jdj.modificarLlibre(isbn, isbn2, titol, autor, editorial, any, categoria);
+							JPanel panel = new JPanel();
+							JOptionPane.showMessageDialog(panel, "Llibre modificat correctament");
+						}
+						catch(NumberFormatException nFE) {
+						    JPanel panel = new JPanel();
+							JOptionPane.showMessageDialog(panel, "Error");
+						}
 					tISBN.setText("");
 					ttitol.setText("");
 					tautor.setText("");
@@ -336,33 +350,47 @@ public class vistaCMELlibre extends JFrame {
 		
 		txtboxISBN = new JTextField();
 		txtboxISBN.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		txtboxISBN.addActionListener(new ActionListener() {
-			
+		/*txtboxISBN.addActionListener(new ActionListener() {
+		
 			//@Override
 			public void actionPerformed(ActionEvent e) {
-				crtlLlibres jdj = new crtlLlibres();
-				//System.out.println(txtboxISBN.getText());
-				isbn = Integer.parseInt(txtboxISBN.getText());
-				//System.out.println(isbn);
-				//System.out.println(String.valueOf(isbn).length());
-				if(String.valueOf(isbn).length() > 9) {
-					JOptionPane.showMessageDialog(frame1,  "La mida màxima del ISBN és de 9 dígits");
-				}
-				else {
-					if (!jdj.existeix(isbn)){
-						JPanel panel = new JPanel();
-						JOptionPane.showMessageDialog(panel, "El llibre no existeix en el sistema");
-					}
+				try {
+					isbn = Integer.parseInt(txtboxISBN.getText());
+					if(String.valueOf(isbn).length() > 9) 
+						JOptionPane.showMessageDialog(frame1,  "La mida màxima del ISBN és de 9 dígits");
+					
 					else {
-						
-						llibre book = jdj.consultarLlibre(isbn);
-						ttitol.setText(book.getTitol());
+						if (!cp.existeix(isbn)){
+							JPanel panel = new JPanel();
+							JOptionPane.showMessageDialog(panel, "El llibre no existeix en el sistema");
+							tISBN.setText("");
+							ttitol.setText("");
+							tautor.setText("");
+							teditorial.setText("");
+							tany.setText("");
+							tcategoria.setText("");
+						}
+						else {
+							int[] any = {2};
+				    		StringBuilder titol, autor, editorial, categoria;
+							cp.consultarllibre(titol, autor, editorial, any, categoria);
+							tISBN.setText(String.valueOf(isbn));
+							ttitol.setText(titol.toString());
+							tautor.setText(autor.toString());
+							teditorial.setText(editorial.toString());
+							tany.setText(String.valueOf(any[0]));
+							tcategoria.setText(categoria.toString());
+						}
 					}
 				}
-				
-				
+				catch(NumberFormatException nFE) {
+					JPanel panel = new JPanel();
+					JOptionPane.showMessageDialog(panel, "Error");
+				}
 			}
-		});
+					
+		});*/
+
 		txtboxISBN.setColumns(10);
 		txtboxISBN.setBounds(142, 66, 376, 20);
 		final String initialText = "Introdueix l'ISBN i prem enter";
@@ -371,21 +399,8 @@ public class vistaCMELlibre extends JFrame {
 		txtboxISBN.addFocusListener(new java.awt.event.FocusAdapter() {
 		    public void focusGained(java.awt.event.FocusEvent evt) {
 		       if (txtboxISBN.getText().equals(initialText)) {
-		    	   
-		    	  //txtFfrded.selectAll();
-		    	 /* txtboxISBN.setText("");
+		    	  txtboxISBN.setText("");
 		    	  txtboxISBN.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		    		int[] any = {2};
-		    		StringBuilder titol, autor, editorial, categoria;
-			    	//cp.consultarllibre(titol, autor, editorial, any, categoria);
-			    	tISBN.setText(String.valueOf(isbn));
-			    	ttitol.setText(titol.toString());
-			    	tautor.setText(autor.toString());
-			    	teditorial.setText(editorial.toString());
-			    	tany.setText(String.valueOf(any[0]));
-			    	tcategoria.setText(categoria.toString());*/
-		    	  
-		    	  
 		    	  
 		    	  
 		       }
@@ -525,9 +540,7 @@ public class vistaCMELlibre extends JFrame {
 					tany.setText("");
 					tcategoria.setText("");
 					
-				}	
-				//cp.modificarLlibre(isbn, isbn2, titol, autor, editorial, any, categoria);
-			}
+				}				}
 		});
 		button_1.setIcon(new ImageIcon(vistaCMELlibre.class.getResource("/prop/icons/tick.png")));
 		button_1.setBounds(559, 416, 65, 35);
