@@ -199,9 +199,10 @@ public class vistaAfegirLlibre extends JFrame {
 		JButton btnNewButton_2 = new JButton();
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaGestionarLlibres llibreria = new vistaGestionarLlibres();
-				llibreria.setVisible(true);
-				dispose();
+				//vistaGestionarLlibres llibreria = new vistaGestionarLlibres();
+				//llibreria.setVisible(true);
+				//dispose();
+				cp.mostraGestioLlibres();
 			}
 		});
 		btnNewButton_2.setIcon(new ImageIcon(vistaGestionarLlibres.class.getResource("/prop/icons/flecha.png")));

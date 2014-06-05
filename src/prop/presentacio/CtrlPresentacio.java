@@ -179,6 +179,8 @@ public class CtrlPresentacio {
 		if (vistaGestEstr != null) vistaGestEstr.setVisible(false);
 		if (vistaGestLlib != null) vistaGestLlib.setVisible(false);
 		if (vistaGestSol != null) vistaGestSol.setVisible(false);
+		if (vistaJerar != null) vistaJerar.setVisible(false);
+		if (vistaImpExp != null) vistaImpExp.setVisible(false);
 		vistaMenu = new vistaMenuPrincipal(this);
 		vistaMenu.setVisible(true);
 	}
@@ -202,6 +204,7 @@ public class CtrlPresentacio {
 	}
 	
 	public void mostraJerarquia() {
+		hash.clear();
 		vistaMenu.setVisible(false);
 		vistaJerar = new vistaMostrarJerarquia(this);
 		vistaJerar.setVisible(true);
@@ -250,6 +253,20 @@ public class CtrlPresentacio {
 		vistaGestCat.setVisible(false);
 		vistaCanviarOrd = new vistaCanviarOrdre(this);
 		vistaCanviarOrd.setVisible(true);
+	}
+	
+	// Vistes - Llibres
+	
+	public void mostraAfegirLlibre() {
+		vistaGestLlib.setVisible(false);
+		vistaAfegirLlib = new vistaAfegirLlibre(this);
+		vistaAfegirLlib.setVisible(true);
+	}
+	
+	public void mostraCMELlibre() {
+		vistaGestLlib.setVisible(false);
+		vistaCMELlib = new vistaCMELlibre(this);
+		vistaCMELlib.setVisible(true);
 	}
 
 	

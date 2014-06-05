@@ -48,7 +48,7 @@ public class vistaCMELlibre extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -59,7 +59,7 @@ public class vistaCMELlibre extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 	
 	public void mostrarVista() {
 		this.setVisible(true);
@@ -73,7 +73,7 @@ public class vistaCMELlibre extends JFrame {
 	 * Create the frame.
 	 */
 	
-	public vistaCMELlibre() {
+	public void inicialitzarComponents() {
 		jdj.afegirLlibre(123, "abc","abc" ,"abc", 123, "abc");
 		setResizable(false);
 		setTitle("Consulta/Modifica/Elimina Llibre");
@@ -256,9 +256,10 @@ public class vistaCMELlibre extends JFrame {
 		button = new JButton("");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaGestionarLlibres panllibres = new vistaGestionarLlibres(cp);
-				panllibres.setVisible(true);
-				dispose();
+				//vistaGestionarLlibres panllibres = new vistaGestionarLlibres(cp);
+				//panllibres.setVisible(true);
+				//dispose();
+				cp.mostraGestioLlibres();
 			}
 		});
 		button.setIcon(new ImageIcon(vistaCMELlibre.class.getResource("/prop/icons/flecha.png")));
@@ -328,7 +329,7 @@ public class vistaCMELlibre extends JFrame {
 		contentPane.add(button_2);
 	}
 	
-	public void inicialitzarComponents() {
+	public void inicialitzarComponents_old() {
 		setResizable(false);
 		setTitle("Consulta/Modifica/Elimina Llibre");
 		setMinimumSize(new Dimension(650, 500));
