@@ -99,7 +99,7 @@ public class vistaGestionarSolucions extends JFrame {
 		txtLlibre_1.setBounds(155, 186, 50, 20);
 		contentPane.add(txtLlibre_1);
 		
-		Vector<String> solus[] = new Vector<String>();
+		String[] solus = new String[cd.size()];
 		for (int i= 0; i < cd.size(); i++){
 			String s = "Solucio ";
 			String is = String.valueOf(i);
