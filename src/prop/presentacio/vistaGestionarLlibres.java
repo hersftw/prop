@@ -66,10 +66,10 @@ public class vistaGestionarLlibres extends JFrame {
 		JButton btnNewButton = new JButton("Afegir llibre");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaAfegirLlibre llibre = new vistaAfegirLlibre();
-				llibre.setVisible(true);
-				dispose();
-				
+				//vistaAfegirLlibre llibre = new vistaAfegirLlibre();
+				//llibre.setVisible(true);
+				//dispose();
+				cp.mostraAfegirLlibre();
 			}
 		});
 		btnNewButton.setBounds(233, 129, 185, 49);
@@ -78,10 +78,10 @@ public class vistaGestionarLlibres extends JFrame {
 		JButton btnNewButton_1 = new JButton("Consulta/Modifica/Elimina");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaCMELlibre cme = new vistaCMELlibre();
-				cme.setVisible(true);
-				dispose();
-				//cp.mostraPrincipal();
+				//vistaCMELlibre cme = new vistaCMELlibre();
+				//cme.setVisible(true);
+				//dispose();
+				cp.mostraCMELlibre();
 			}
 		});
 		btnNewButton_1.setBounds(233, 248, 185, 49);

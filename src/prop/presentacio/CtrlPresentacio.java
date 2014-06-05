@@ -254,8 +254,22 @@ public class CtrlPresentacio {
 		vistaCanviarOrd = new vistaCanviarOrdre(this);
 		vistaCanviarOrd.setVisible(true);
 	}
-
+	
 	// Vistes - Llibres
+	
+	public void mostraAfegirLlibre() {
+		vistaGestLlib.setVisible(false);
+		vistaAfegirLlib = new vistaAfegirLlibre(this);
+		vistaAfegirLlib.setVisible(true);
+	}
+	
+	public void mostraCMELlibre() {
+		vistaGestLlib.setVisible(false);
+		vistaCMELlib = new vistaCMELlibre(this);
+		vistaCMELlib.setVisible(true);
+	}
+
+	
 	
 	
 }
