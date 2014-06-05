@@ -90,11 +90,12 @@ public class ctrlDistribucions {
 				throw new IllegalArgumentException("Error: Assignacio no trobada");
 			}
 			dis.editarAssignacions(as1, as2);
-			
-		
-		
+					
 	}
 	
+	public int size (){
+		return distrib.size();
+	}
 	
 	
 }
