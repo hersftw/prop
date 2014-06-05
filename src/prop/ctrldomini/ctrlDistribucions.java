@@ -13,7 +13,7 @@ public class ctrlDistribucions {
 	/**Constructora per defecte
 
     */
-	public void inicialitzarDistribucions(){
+	public void ctrlDistribucions(){
 		distrib = new ArrayList<distribucio>(); 
 	}
 	
