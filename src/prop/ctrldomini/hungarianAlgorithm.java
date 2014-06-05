@@ -14,12 +14,8 @@ public class hungarianAlgorithm{
     public double computeAssignments(double[][] matrix) {
 
     	//codi afegit
-    	double[][] mMatOrig = new double[matrix.length][matrix[0].length];
-    	for(int f=0;f<matrix.length;f++) {
-    		for(int c=0;c<matrix[0].length;c++) {
-    			mMatOrig[f][c] = matrix[f][c];
-    		}
-    	}
+    	double[][] cop = new double[matrix.length][matrix[0].length];
+    	for(int i = 0; i < matrix.length; i++) for(int j = 0; j < matrix[0].length; j++) cop[i][j] = matrix[i][j];
     	
         // subtract minumum value from rows and columns to create lots of zeroes
         reduceMatrix(matrix);
@@ -77,15 +73,15 @@ public class hungarianAlgorithm{
         //for (int i = 0; i < retval.length; ++i) for (int j = 0; j < retval[i].length; ++j) System.out.println(retval[i][j]);
 
         //codi afegit
-        double resultat = 0;		
-        for(int f=0;f<mMatOrig.length;f++) {
-          int haf = (int) retval[f][0];
-          int hac = (int) retval[f][1];
-          double suma = mMatOrig[haf][hac];
-          resultat = resultat + suma;
+        double sum = 0;		
+        for(int i = 0; i < cop.length; i++) {
+          int mati = (int) retval[i][0];
+          int matj = (int) retval[i][1];
+          double aux = cop[mati][matj];
+          sum = sum + aux;
         }
         
-        return resultat;
+        return sum;
 
     }
 
