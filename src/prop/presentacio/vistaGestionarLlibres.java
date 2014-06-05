@@ -81,6 +81,7 @@ public class vistaGestionarLlibres extends JFrame {
 				vistaCMELlibre cme = new vistaCMELlibre();
 				cme.setVisible(true);
 				dispose();
+				//cp.mostraPrincipal();
 			}
 		});
 		btnNewButton_1.setBounds(233, 248, 185, 49);
@@ -89,9 +90,10 @@ public class vistaGestionarLlibres extends JFrame {
 		JButton btnNewButton_2 = new JButton();
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaMenuPrincipal panmenu = new vistaMenuPrincipal();
-				panmenu.setVisible(true);
-				dispose();
+				//vistaMenuPrincipal panmenu = new vistaMenuPrincipal();
+				//panmenu.setVisible(true);
+				//dispose();
+				cp.mostraPrincipal();
 			}
 		});		
 		btnNewButton_2.setIcon(new ImageIcon(vistaGestionarLlibres.class.getResource("/prop/icons/flecha.png")));

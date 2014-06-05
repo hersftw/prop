@@ -114,9 +114,10 @@ public class vistaGestionarSolucions extends JFrame {
 		JButton btnNewButton_2 = new JButton();
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaMenuPrincipal panmenu = new vistaMenuPrincipal();
-				panmenu.setVisible(true);
-				dispose();
+				//vistaMenuPrincipal panmenu = new vistaMenuPrincipal();
+				//panmenu.setVisible(true);
+				//dispose();
+				cp.mostraPrincipal();
 			}
 		});
 		btnNewButton_2.setIcon(new ImageIcon(vistaGestionarLlibres.class.getResource("/prop/icons/flecha.png")));
@@ -126,9 +127,10 @@ public class vistaGestionarSolucions extends JFrame {
 		btnNewButton = new JButton("");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				vistaMenuPrincipal panmenu = new vistaMenuPrincipal();
-				panmenu.setVisible(true);
-				dispose();
+				//vistaMenuPrincipal panmenu = new vistaMenuPrincipal();
+				//panmenu.setVisible(true);
+				//dispose();
+				cp.mostraPrincipal();
 			}
 		});
 		btnNewButton.setIcon(new ImageIcon(vistaGestionarSolucions.class.getResource("/prop/icons/floppy.png")));

@@ -88,9 +88,10 @@ public class vistaImportarExportar extends JFrame {
 		JButton button = new JButton();
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaMenuPrincipal pancat = new vistaMenuPrincipal();
-				pancat.setVisible(true);
-				dispose();
+				//vistaMenuPrincipal pancat = new vistaMenuPrincipal();
+				//pancat.setVisible(true);
+				//dispose();
+				cp.mostraPrincipal();
 			}
 		});
 		button.setIcon(new ImageIcon(vistaModificarNomCat.class.getResource("/prop/icons/flecha.png")));
