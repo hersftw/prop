@@ -174,15 +174,27 @@ public class CtrlPresentacio {
 	
 	// Vistes
 	
-	public void mostraGestioCategories(JPanel vista) {
-		vistaCrearCat.amagarVista();
-		vistaGestCat.activar();
+	public void mostraGestioCategories() {
+		if (vistaCrearCat != null) vistaCrearCat.setVisible(false);
+		if (vistaModCat != null) vistaModCat.setVisible(false);
+		if (vistaCanviarOrd != null) vistaCanviarOrd.setVisible(false);
+		if (vistaElimCat != null) vistaElimCat.setVisible(false);
+		if (vistaMenu != null) vistaMenu.setVisible(false);
+		vistaGestCat.mostrarVista();
 	}
 	
-	public void mostraCrearCategoria(JPanel vista) {
-		vistaGestCat.desactivar();
-		if (vistaCrearCat == null) vistaCrearCat = new vistaCrearCategoria(this);
+	public void mostraCrearCategoria() {
+		vistaGestCat.setVisible(false);
+		//if (vistaCrearCat == null) vistaCrearCat = new vistaCrearCategoria(this);
+		vistaCrearCat = new vistaCrearCategoria(this);
 		vistaCrearCat.mostrarVista();
+	}
+	
+	public void mostraModifCat() {
+		vistaGestCat.setVisible(false);
+		//if (vistaModCat == null) vistaModCat = new vistaModificarNomCat(this);
+		vistaModCat = new vistaModificarNomCat(this);
+		vistaModCat.mostrarVista();
 	}
 	
 	

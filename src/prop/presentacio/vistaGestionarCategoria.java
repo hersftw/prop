@@ -75,7 +75,7 @@ public class vistaGestionarCategoria extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//vistaCrearCategoria panelcrea = new vistaCrearCategoria();
 				//panelcrea.setVisible(true);
-				cp.mostraCrearCategoria(contentPane);
+				cp.mostraCrearCategoria();
 			}
 		});
 		btnCrearCategoria.setName("");
@@ -86,9 +86,10 @@ public class vistaGestionarCategoria extends JFrame {
 		JButton btnModificarNom = new JButton("Modificar Nom");
 		btnModificarNom.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaModificarNomCat panmodif = new vistaModificarNomCat();
-				panmodif.setVisible(true);
-				dispose();
+				//vistaModificarNomCat panmodif = new vistaModificarNomCat();
+				//panmodif.setVisible(true);
+				//dispose();
+				cp.mostraModifCat();
 			}
 		});
 		btnModificarNom.setName("");
