@@ -75,7 +75,7 @@ public class vistaGestionarCategoria extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//vistaCrearCategoria panelcrea = new vistaCrearCategoria();
 				//panelcrea.setVisible(true);
-				cp.mostraCrearCategoria(contentPane);
+				cp.mostraCrearCategoria();
 			}
 		});
 		btnCrearCategoria.setName("");
@@ -86,9 +86,10 @@ public class vistaGestionarCategoria extends JFrame {
 		JButton btnModificarNom = new JButton("Modificar Nom");
 		btnModificarNom.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaModificarNomCat panmodif = new vistaModificarNomCat();
-				panmodif.setVisible(true);
-				dispose();
+				//vistaModificarNomCat panmodif = new vistaModificarNomCat();
+				//panmodif.setVisible(true);
+				//dispose();
+				cp.mostraModifCat();
 			}
 		});
 		btnModificarNom.setName("");
@@ -99,9 +100,10 @@ public class vistaGestionarCategoria extends JFrame {
 		JButton btnCanviarOrdre = new JButton("Canviar Ordre");
 		btnCanviarOrdre.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaCanviarOrdre panordre = new vistaCanviarOrdre();
-				panordre.setVisible(true);
-				dispose();
+				//vistaCanviarOrdre panordre = new vistaCanviarOrdre();
+				//panordre.setVisible(true);
+				//dispose();
+				cp.mostraCanviarOrdre();
 			}
 		});
 		btnCanviarOrdre.setName("");
@@ -112,9 +114,10 @@ public class vistaGestionarCategoria extends JFrame {
 		JButton btnEliminarCategoria = new JButton("Eliminar Categoria");
 		btnEliminarCategoria.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaEliminarCategoria panelim = new vistaEliminarCategoria();
-				panelim.setVisible(true);
-				dispose();
+				//vistaEliminarCategoria panelim = new vistaEliminarCategoria();
+				//panelim.setVisible(true);
+				//dispose();
+				cp.mostraElimCat();
 			}
 		});
 		btnEliminarCategoria.setName("");
@@ -128,6 +131,7 @@ public class vistaGestionarCategoria extends JFrame {
 				//vistaMenuPrincipal panmenu = new vistaMenuPrincipal();
 				//panmenu.setVisible(true);
 				//dispose();
+				cp.mostraPrincipal();
 			}
 		});
 		button.setIcon(new ImageIcon(vistaGestionarCategoria.class.getResource("/prop/icons/flecha.png")));

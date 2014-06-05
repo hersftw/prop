@@ -33,7 +33,7 @@ public class vistaModificarNomCat extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -44,7 +44,7 @@ public class vistaModificarNomCat extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 	
 	public void mostrarVista() {
 		this.setVisible(true);
@@ -73,9 +73,10 @@ public class vistaModificarNomCat extends JFrame {
 		JButton button = new JButton();
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaGestionarCategoria pancat = new vistaGestionarCategoria(cp);
-				pancat.setVisible(true);
-				dispose();
+				//vistaGestionarCategoria pancat = new vistaGestionarCategoria(cp);
+				//pancat.setVisible(true);
+				//dispose();
+				cp.mostraGestioCategories();
 			}
 		});
 		
@@ -86,13 +87,8 @@ public class vistaModificarNomCat extends JFrame {
 		JScrollPane treeView = new JScrollPane(arbre);
 		treeView.setBounds(10, 20, 610, 200);
 		getContentPane().add(treeView);
-		cp = new CtrlPresentacio();
-		cp.ctrlCat.inicialitzarCategories();
-		cp.afegirCategoria("Hola", "Biblioteca");
-		cp.afegirCategoria("Hola2", "Biblioteca");
-		cp.afegirCategoria("Hola3", "Hola2");
-		
-		cp.ctrlCat.mostrarCategories();
+		//cp = new CtrlPresentacio();
+		//cp.ctrlCat.inicialitzarCategories();
 		cp.omplirArbre2(arbre, model);
 		//ctrl.omplirArbre(top);
 		
@@ -106,11 +102,11 @@ public class vistaModificarNomCat extends JFrame {
 				String vell = textField.getText();
 				String nou = textField_1.getText();
 				cp.ModificarCategories(vell, nou);
-				cp.ctrlCat.mostrarCategories();
+				//cp.ctrlCat.mostrarCategories();
 				DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
 				root.removeAllChildren();
 				cp.omplirArbre2(arbre, model);
-				cp.ctrlCat.mostrarCategories();
+				//cp.ctrlCat.mostrarCategories();
 			}
 		});
 		button_1.setIcon(new ImageIcon(vistaModificarNomCat.class.getResource("/prop/icons/tick.png")));
@@ -157,19 +153,23 @@ public class vistaModificarNomCat extends JFrame {
 		JButton button = new JButton();
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaGestionarCategoria pancat = new vistaGestionarCategoria(cp);
-				pancat.setVisible(true);
-				dispose();
+				//vistaGestionarCategoria pancat = new vistaGestionarCategoria(cp);
+				//pancat.setVisible(true);
+				//dispose();
+				cp.mostraGestioCategories();
 			}
 		});
 		
-		CtrlPresentacio ctrl = new CtrlPresentacio();
 		DefaultMutableTreeNode top = new DefaultMutableTreeNode("Biblioteca");
-		arbre = new JTree(top);
+		model = new DefaultTreeModel(top);
+		arbre = new JTree(model);
 		arbre.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 		JScrollPane treeView = new JScrollPane(arbre);
 		treeView.setBounds(10, 20, 610, 200);
 		getContentPane().add(treeView);
+		//cp = new CtrlPresentacio();
+		//cp.ctrlCat.inicialitzarCategories();
+		cp.omplirArbre2(arbre, model);
 		//ctrl.omplirArbre(top);
 		
 		button.setIcon(new ImageIcon(vistaModificarNomCat.class.getResource("/prop/icons/flecha.png")));
@@ -177,6 +177,18 @@ public class vistaModificarNomCat extends JFrame {
 		contentPane.add(button);
 		
 		JButton button_1 = new JButton("");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String vell = textField.getText();
+				String nou = textField_1.getText();
+				cp.ModificarCategories(vell, nou);
+				//cp.ctrlCat.mostrarCategories();
+				DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
+				root.removeAllChildren();
+				cp.omplirArbre2(arbre, model);
+				//cp.ctrlCat.mostrarCategories();
+			}
+		});
 		button_1.setIcon(new ImageIcon(vistaModificarNomCat.class.getResource("/prop/icons/tick.png")));
 		button_1.setBounds(559, 416, 65, 35);
 		contentPane.add(button_1);

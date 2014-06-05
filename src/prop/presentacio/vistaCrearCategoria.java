@@ -96,7 +96,7 @@ public class vistaCrearCategoria extends JFrame implements TreeSelectionListener
 		JButton button = new JButton();
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				cp.mostraGestioCategories(contentPane);
+				cp.mostraGestioCategories();
 			}
 		});
 		
