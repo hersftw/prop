@@ -233,6 +233,15 @@ public class ctrlCategories {
 		}
 	}
 	
+	public categoria getCategoria(String s) {
+		Iterator<List<categoria>> it = categories.iterator();
+		while(it.hasNext()) {
+			List<categoria> llista = it.next();
+			if (llista.get(0).getNom().equals(s)) return llista.get(0);
+		}
+		return null;
+	}
+	
 	public List<List<categoria>> getCategories() {
 		return categories;
 	}

@@ -43,7 +43,7 @@ public class vistaCMELlibre extends JFrame {
 	private JButton button_2;
 	private JFrame frame1;
 	private int isbn;
-	private crtlLlibres jdj = new crtlLlibres();
+	//private crtlLlibres jdj = new crtlLlibres();
 
 	/**
 	 * Launch the application.
@@ -74,7 +74,7 @@ public class vistaCMELlibre extends JFrame {
 	 */
 	
 	public void inicialitzarComponents() {
-		jdj.afegirLlibre(123, "abc","abc" ,"abc", 123, "abc");
+		//jdj.afegirLlibre(123, "abc","abc" ,"abc", 123, "abc");
 		setResizable(false);
 		setTitle("Consulta/Modifica/Elimina Llibre");
 		setMinimumSize(new Dimension(650, 500));
@@ -508,9 +508,10 @@ public class vistaCMELlibre extends JFrame {
 		button = new JButton("");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaGestionarLlibres panllibres = new vistaGestionarLlibres(cp);
-				panllibres.setVisible(true);
-				dispose();
+				//vistaGestionarLlibres panllibres = new vistaGestionarLlibres(cp);
+				//panllibres.setVisible(true);
+				//dispose();
+				cp.mostraGestioLlibres();
 			}
 		});
 		button.setIcon(new ImageIcon(vistaCMELlibre.class.getResource("/prop/icons/flecha.png")));

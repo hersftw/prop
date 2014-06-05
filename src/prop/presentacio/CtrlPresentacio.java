@@ -172,6 +172,10 @@ public class CtrlPresentacio {
 		ctrlLlib.eliminarLlibre(isbn);
 	}
 	
+	public boolean existeix (int isbn) {
+		return ctrlLlib.existeix(isbn);
+	}
+	
 	// Vistes
 	
 	public void mostraPrincipal() {
