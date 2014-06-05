@@ -72,9 +72,10 @@ public class vistaMenuPrincipal extends JFrame {
 		JButton button = new JButton("Gestionar Estructura");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				vistaGestionarEstructura panelest = new vistaGestionarEstructura(cp); 
-		        panelest.setVisible(true);
-		        dispose(); 
+				//vistaGestionarEstructura panelest = new vistaGestionarEstructura(cp); 
+		        //panelest.setVisible(true);
+		        //dispose();
+				cp.mostraGestioEstructura();
 			}
 		});
 		button.setFont(new Font("Tahoma", Font.PLAIN, 11));
@@ -95,9 +96,10 @@ public class vistaMenuPrincipal extends JFrame {
 		JButton button_2 = new JButton("Mostrar Jerarquia");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaMostrarJerarquia panmenu = new vistaMostrarJerarquia(cp);
-				panmenu.setVisible(true);
-				dispose();
+				//vistaMostrarJerarquia panmenu = new vistaMostrarJerarquia(cp);
+				//panmenu.setVisible(true);
+				//dispose();
+				cp.mostraJerarquia();
 			}
 		});
 		button_2.setName("");
@@ -109,9 +111,10 @@ public class vistaMenuPrincipal extends JFrame {
 		button_3.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent arg0) {
-				vistaGestionarCategoria panelcat = new vistaGestionarCategoria(cp);
-				panelcat.setVisible(true);
-				dispose();
+				//vistaGestionarCategoria panelcat = new vistaGestionarCategoria(cp);
+				//panelcat.setVisible(true);
+				//dispose();
+				cp.mostraGestioCategories();
 				
 			}
 		});
@@ -124,9 +127,10 @@ public class vistaMenuPrincipal extends JFrame {
 		JButton button_4 = new JButton("Gestionar Llibres");
 		button_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaGestionarLlibres panmenu = new vistaGestionarLlibres(cp);
-				panmenu.setVisible(true);
-				dispose();
+				//vistaGestionarLlibres panmenu = new vistaGestionarLlibres(cp);
+				//panmenu.setVisible(true);
+				//dispose();
+				cp.mostraGestioLlibres();
 			}
 		});
 		button_4.setName("");
@@ -137,9 +141,10 @@ public class vistaMenuPrincipal extends JFrame {
 		JButton button_5 = new JButton("Gestionar Solucions");
 		button_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaGestionarSolucions pansolu = new vistaGestionarSolucions(cp);
-				pansolu.setVisible(true);
-				dispose();
+				//vistaGestionarSolucions pansolu = new vistaGestionarSolucions(cp);
+				//pansolu.setVisible(true);
+				//dispose();
+				cp.mostraGestioSolucions();
 			}
 		});
 		button_5.setName("");
@@ -150,8 +155,9 @@ public class vistaMenuPrincipal extends JFrame {
 		JButton btnCarregarexportarDades = new JButton("Importar/Exportar Dades");
 		btnCarregarexportarDades.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				vistaImportarExportar panimex = new vistaImportarExportar(cp);
-				panimex.setVisible(true);
+				//vistaImportarExportar panimex = new vistaImportarExportar(cp);
+				//panimex.setVisible(true);
+				cp.mostraImportar();
 			}
 		});
 		btnCarregarexportarDades.setName("");

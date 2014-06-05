@@ -44,14 +44,14 @@ public class CtrlPresentacio {
 		ctrlLlib = new crtlLlibres();
 		ctrlDist = new ctrlDistribucions();
 		
-		vistaGestCat = new vistaGestionarCategoria(this);
+		vistaMenu = new vistaMenuPrincipal(this);
 		ctrlCat.inicialitzarCategories();
 		hash = new HashSet<String>();
 	}
 	
 	public void iniciarPresentacio() {
 		//vistaMenu.mostrarVista();
-		vistaGestCat.mostrarVista();
+		vistaMenu.mostrarVista();
 	}
 	
 	public void omplirArbre(JTree arbre, DefaultTreeModel model) {
@@ -174,31 +174,85 @@ public class CtrlPresentacio {
 	
 	// Vistes
 	
+	public void mostraPrincipal() {
+		if (vistaGestCat != null) vistaGestCat.setVisible(false);
+		if (vistaGestEstr != null) vistaGestEstr.setVisible(false);
+		if (vistaGestLlib != null) vistaGestLlib.setVisible(false);
+		if (vistaGestSol != null) vistaGestSol.setVisible(false);
+		vistaMenu = new vistaMenuPrincipal(this);
+		vistaMenu.setVisible(true);
+	}
+	
+	// Vistes - Gestió
+	
 	public void mostraGestioCategories() {
 		if (vistaCrearCat != null) vistaCrearCat.setVisible(false);
 		if (vistaModCat != null) vistaModCat.setVisible(false);
 		if (vistaCanviarOrd != null) vistaCanviarOrd.setVisible(false);
 		if (vistaElimCat != null) vistaElimCat.setVisible(false);
 		if (vistaMenu != null) vistaMenu.setVisible(false);
+		vistaGestCat = new vistaGestionarCategoria(this);
 		vistaGestCat.mostrarVista();
 	}
 	
+	public void mostraGestioEstructura() {
+		vistaMenu.setVisible(false);
+		vistaGestEstr = new vistaGestionarEstructura(this);
+		vistaGestEstr.setVisible(true);
+	}
+	
+	public void mostraJerarquia() {
+		vistaMenu.setVisible(false);
+		vistaJerar = new vistaMostrarJerarquia(this);
+		vistaJerar.setVisible(true);
+	}
+	
+	public void mostraGestioLlibres() {
+		vistaMenu.setVisible(false);
+		vistaGestLlib = new vistaGestionarLlibres(this);
+		vistaGestLlib.setVisible(true);
+	}
+	
+	public void mostraGestioSolucions() {
+		vistaMenu.setVisible(false);
+		vistaGestSol = new vistaGestionarSolucions(this);
+		vistaGestSol.setVisible(true);
+	}
+
+	public void mostraImportar() {
+		vistaMenu.setVisible(false);
+		vistaImpExp = new vistaImportarExportar(this);
+		vistaImpExp.setVisible(true);
+	}
+	
+	// Vistes - Categories
+	
 	public void mostraCrearCategoria() {
+		hash.clear();
 		vistaGestCat.setVisible(false);
-		//if (vistaCrearCat == null) vistaCrearCat = new vistaCrearCategoria(this);
 		vistaCrearCat = new vistaCrearCategoria(this);
 		vistaCrearCat.mostrarVista();
 	}
 	
 	public void mostraModifCat() {
 		vistaGestCat.setVisible(false);
-		//if (vistaModCat == null) vistaModCat = new vistaModificarNomCat(this);
 		vistaModCat = new vistaModificarNomCat(this);
 		vistaModCat.mostrarVista();
 	}
 	
+	public void mostraElimCat() {
+		vistaGestCat.setVisible(false);
+		vistaElimCat = new vistaEliminarCategoria(this);
+		vistaElimCat.setVisible(true);
+	}
 	
+	public void mostraCanviarOrdre() {
+		vistaGestCat.setVisible(false);
+		vistaCanviarOrd = new vistaCanviarOrdre(this);
+		vistaCanviarOrd.setVisible(true);
+	}
 
+	
 	
 	
 }

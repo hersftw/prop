@@ -29,7 +29,7 @@ public class vistaCanviarOrdre extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -40,7 +40,7 @@ public class vistaCanviarOrdre extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 	
 	public void mostrarVista() {
 		this.setVisible(true);
@@ -55,7 +55,7 @@ public class vistaCanviarOrdre extends JFrame {
 		inicialitzarComponents();
 	}
 	
-	public vistaCanviarOrdre() {
+	public void inicialitzarComponents_old() {
 		setTitle("Canviar Ordre [Categoria]\r\n");
 		setResizable(false);
 		setMinimumSize(new Dimension(650, 500));
@@ -171,8 +171,6 @@ public class vistaCanviarOrdre extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		
-		CtrlPresentacio ctrl = new CtrlPresentacio();
 		DefaultMutableTreeNode top = new DefaultMutableTreeNode("Biblioteca");
 		model = new DefaultTreeModel(top);
 		arbre = new JTree(model);
@@ -180,9 +178,26 @@ public class vistaCanviarOrdre extends JFrame {
 		JScrollPane treeView = new JScrollPane(arbre);
 		treeView.setBounds(10, 20, 610, 200);
 		getContentPane().add(treeView);
-		ctrl.omplirArbre(arbre, model);
+		cp.omplirArbre2(arbre, model);
+		//cp.ctrlCat.mostrarCategories();
 		
 		JButton button_1 = new JButton("");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				arbre.removeAll();
+				model.reload();
+				String cat1 = textField.getText();
+				String cat2 = textField_1.getText();
+				cp.canviarCategories(cat1, cat2);
+				DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
+			
+				root.removeAllChildren();
+				cp.omplirArbre2(arbre, model);
+				//cp.ctrlCat.mostrarCategories();
+				
+				
+			}
+		});
 		button_1.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/tick.png")));
 		button_1.setBounds(559, 416, 65, 35);
 		contentPane.add(button_1);
@@ -190,9 +205,10 @@ public class vistaCanviarOrdre extends JFrame {
 		JButton btnNewButton_2 = new JButton();
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				vistaGestionarCategoria gestcat = new vistaGestionarCategoria(cp);
-				gestcat.setVisible(true);
-				dispose();
+				//vistaGestionarCategoria gestcat = new vistaGestionarCategoria(cp);
+				//gestcat.setVisible(true);
+				//dispose();
+				cp.mostraGestioCategories();
 			}
 		});
 		btnNewButton_2.setIcon(new ImageIcon(vistaGestionarLlibres.class.getResource("/prop/icons/flecha.png")));
@@ -204,11 +220,11 @@ public class vistaCanviarOrdre extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Categoria 1:");
-		lblNewLabel_1.setBounds(167, 312, 65, 14);
+		lblNewLabel_1.setBounds(152, 312, 80, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel label = new JLabel("Categoria 2:");
-		label.setBounds(167, 360, 65, 14);
+		label.setBounds(152, 360, 80, 14);
 		contentPane.add(label);
 		
 		textField = new JTextField();
