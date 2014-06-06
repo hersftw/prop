@@ -1,5 +1,7 @@
 package prop.domini;
 
+import java.util.List;
+
 public class llibreria extends conjuntoNodos {
 	protected int prestatges;
 	protected int ubicacions;
@@ -53,6 +55,10 @@ public class llibreria extends conjuntoNodos {
 
 	public void setUbicacions(int ubicacions){
 		this.ubicacions = ubicacions;
+	}
+	
+	public List<nodo> getNodes() {
+		return super.c;
 	}
 	
 }
