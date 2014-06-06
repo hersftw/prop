@@ -73,7 +73,7 @@ public class vistaCMELlibre extends JFrame {
 	 * Create the frame.
 	 */
 	
-	public void inicialitzarComponents() {
+	/*public void inicialitzarComponents() {
 		//jdj.afegirLlibre(123, "abc","abc" ,"abc", 123, "abc");
 		setResizable(false);
 		setTitle("Consulta/Modifica/Elimina Llibre");
@@ -328,8 +328,8 @@ public class vistaCMELlibre extends JFrame {
 		button_2.setBounds(507, 416, 43, 35);
 		contentPane.add(button_2);
 	}
-	
-	public void inicialitzarComponents_old() {
+	*/
+	public void inicialitzarComponents() {
 		setResizable(false);
 		setTitle("Consulta/Modifica/Elimina Llibre");
 		setMinimumSize(new Dimension(650, 500));
@@ -351,7 +351,7 @@ public class vistaCMELlibre extends JFrame {
 		
 		txtboxISBN = new JTextField();
 		txtboxISBN.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		/*txtboxISBN.addActionListener(new ActionListener() {
+		txtboxISBN.addActionListener(new ActionListener() {
 		
 			//@Override
 			public void actionPerformed(ActionEvent e) {
@@ -374,7 +374,7 @@ public class vistaCMELlibre extends JFrame {
 						else {
 							int[] any = {2};
 				    		StringBuilder titol, autor, editorial, categoria;
-							cp.consultarllibre(titol, autor, editorial, any, categoria);
+							cp.consultarLlibre(titol, autor, editorial, any, categoria);
 							tISBN.setText(String.valueOf(isbn));
 							ttitol.setText(titol.toString());
 							tautor.setText(autor.toString());
@@ -390,7 +390,7 @@ public class vistaCMELlibre extends JFrame {
 				}
 			}
 					
-		});*/
+		});
 
 		txtboxISBN.setColumns(10);
 		txtboxISBN.setBounds(142, 66, 376, 20);
@@ -532,7 +532,7 @@ public class vistaCMELlibre extends JFrame {
 					String editorial = teditorial.getText();
 					int any = Integer.parseInt(tany.getText());
 					String categoria = tcategoria.getText();
-					//cp.modificarLlibre(isbn, isbn2, titol, autor, editorial, any, categoria);
+					cp.modificarLlibre(isbn, isbn2, titol, autor, editorial, any, categoria);
 					JPanel panel = new JPanel();
 					JOptionPane.showMessageDialog(panel, "Llibre modificat correctament");
 					tISBN.setText("");
@@ -551,7 +551,7 @@ public class vistaCMELlibre extends JFrame {
 		button_2 = new JButton("");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//cp.eliminarLlibre(isbn);
+				cp.eliminarLlibre(isbn);
 				JPanel panel = new JPanel();
 				JOptionPane.showMessageDialog(panel, "Llibre eliminat correctament");
 				tISBN.setText("");

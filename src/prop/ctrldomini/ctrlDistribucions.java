@@ -13,7 +13,7 @@ public class ctrlDistribucions {
 	/**Constructora per defecte
 
     */
-	public void ctrlDistribucions(){
+	public ctrlDistribucions(){
 		distrib = new ArrayList<distribucio>(); 
 	}
 	
@@ -82,8 +82,7 @@ public class ctrlDistribucions {
 		catch (Exception e){
 			System.out.println("Error:No s'ha trobat la distribucio");
 		}
-		
-		
+			
 			assignacio as1 = dis.consultarAssignacio(isbn1);
 			assignacio as2 = dis.consultarAssignacio(isbn2);
 			if(as1 == null || as2 == null) {
@@ -93,8 +92,9 @@ public class ctrlDistribucions {
 					
 	}
 	
-	public int size (){
-		return distrib.size();
+	public int sizeList (){
+		if (!distrib.isEmpty()) return 0;
+		else return distrib.size();
 	}
 	
 	
