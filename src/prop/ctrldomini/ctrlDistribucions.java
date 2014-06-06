@@ -39,15 +39,16 @@ public class ctrlDistribucions {
 
 	    */
 	
-	public void consultarDistribucio(int num){
+	public boolean consultarDistribucio(int num){
 		distribucio dis = null;
 		try{
 			dis = distrib.get(num);
 			dis.mostrarDistribucio();
+			return true;
 		
 		}
 		catch (Exception e){
-			System.out.println("Error:No s'ha trobat la distribucio");
+			return false;
 		}
 	}
 	
@@ -57,15 +58,17 @@ public class ctrlDistribucions {
 
 	    */
 	
-	public void deleteDistribucio(int num){
+	public boolean deleteDistribucio(int num){
 		distribucio dis = null;
 		try{
 			dis = distrib.get(num);
 			distrib.remove(dis);
+			return true;
 		
 		}
 		catch (Exception e){
 			System.out.println("Error:No s'ha trobat la distribucio");
+			return false;
 		}
 		
 	}
@@ -76,7 +79,7 @@ public class ctrlDistribucions {
 	 * @param isbn1 identificador del llibre 1 que es vol intercanviar.
 	 * @param isbn2 identificador del llibre 2 que es vol intercanviar.
 	    */
-	public void modificarDistribucio(int num, int isbn1, int isbn2) {
+	public boolean modificarDistribucio(int num, int isbn1, int isbn2) {
 		
 		
 		distribucio dis = null;
@@ -85,7 +88,7 @@ public class ctrlDistribucions {
 		
 		}
 		catch (Exception e){
-			System.out.println("Error:No s'ha trobat la distribucio");
+			return false;
 		}
 			
 			assignacio as1 = dis.consultarAssignacio(isbn1);
@@ -94,6 +97,7 @@ public class ctrlDistribucions {
 				throw new IllegalArgumentException("Error: Assignacio no trobada");
 			}
 			dis.editarAssignacions(as1, as2);
+			return true;
 					
 	}
 	

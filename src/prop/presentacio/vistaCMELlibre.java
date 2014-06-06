@@ -390,7 +390,7 @@ public class vistaCMELlibre extends JFrame {
 				}
 				catch(NumberFormatException nFE) {
 					JPanel panel = new JPanel();
-					JOptionPane.showMessageDialog(panel, "Error");
+					JOptionPane.showMessageDialog(panel, "Els camps no tenen el format correcte");
 				}
 			}
 					

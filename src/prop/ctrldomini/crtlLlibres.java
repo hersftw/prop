@@ -7,6 +7,7 @@ import prop.domini.llibre;
 
 public class crtlLlibres {
 	private List<llibre> llibres;
+	private int nmax;
 	
 	/**@brief Constructora per defecte.
     *
@@ -143,6 +144,17 @@ public class crtlLlibres {
 		else System.out.println("Error: llibre no trobat!");
 	}
 	
+	public void  setN (int n){
+		nmax = n;
+	}
+	
+	public int  getN (){
+		return nmax;
+	}
+	
+	public int numLlibres() {
+		return llibres.size();
+	}
 	public List<llibre> getLlibres() {
 		return llibres;
 	}

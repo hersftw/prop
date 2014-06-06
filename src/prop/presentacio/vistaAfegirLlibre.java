@@ -168,27 +168,45 @@ public class vistaAfegirLlibre extends JFrame {
 		JButton button_1 = new JButton("");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int isbn = Integer.parseInt(tISBN.getText());
-				String titol = ttitol.getText();
-				String autor = tautor.getText();
-				String editorial = teditorial.getText();
-				int any = Integer.parseInt(tany.getText());
-				String categoria = tcategoria.getText();
-				if (!cp.existeix(isbn)){
-					cp.afegirLlibre(isbn, titol, autor, editorial, any, categoria);
-					JPanel panel = new JPanel();
-					JOptionPane.showMessageDialog(panel, "Llibre afegit correctament");
+				try {
+					if (!cp.estaPle()){
+					int isbn = Integer.parseInt(tISBN.getText());
+					String titol = ttitol.getText();
+					String autor = tautor.getText();
+					String editorial = teditorial.getText();
+					int any = Integer.parseInt(tany.getText());
+					String categoria = tcategoria.getText();
+					if (cp.existeixCat(categoria)){
+						JPanel panel = new JPanel();
+						JOptionPane.showMessageDialog(panel, "No existeix la categoria");
+						return;
+					}
+					if (!cp.existeix(isbn)){
+						cp.afegirLlibre(isbn, titol, autor, editorial, any, categoria);
+						JPanel panel = new JPanel();
+						JOptionPane.showMessageDialog(panel, "Llibre afegit correctament");
+					}
+					else {
+						JPanel panel = new JPanel();
+						JOptionPane.showMessageDialog(panel, "Llibre ja existent");
+					}
+					tISBN.setText("");
+					ttitol.setText("");
+					tautor.setText("");
+					teditorial.setText("");
+					tany.setText("");
+					tcategoria.setText("");		
+					}
+					else{
+						JPanel panel = new JPanel();
+						JOptionPane.showMessageDialog(panel, "Biblioteca a màxima capacitat");
+					}
 				}
-				else {
+				catch(NumberFormatException nFE) {
 					JPanel panel = new JPanel();
-					JOptionPane.showMessageDialog(panel, "Llibre ja existent");
+					JOptionPane.showMessageDialog(panel, "Els camps no tenen el format correcte");
 				}
-				tISBN.setText("");
-				ttitol.setText("");
-				tautor.setText("");
-				teditorial.setText("");
-				tany.setText("");
-				tcategoria.setText("");				
+		
 			}
 		});
 		
