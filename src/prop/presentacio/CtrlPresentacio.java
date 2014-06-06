@@ -15,6 +15,7 @@ import javax.swing.tree.TreePath;
 import prop.ctrldomini.*;
 import prop.domini.categoria;
 import prop.domini.llibre;
+import prop.domini.llibreria;
 
 public class CtrlPresentacio {
 	
@@ -23,6 +24,7 @@ public class CtrlPresentacio {
 	ctrlDistribucions ctrlDist;
 	ctrlPersistencia ctrlPers;
 	ctrlMatrius ctrlMats;
+	llibreria lib;
 	
 	vistaAfegirLlibre vistaAfegirLlib;
 	vistaCanviarOrdre vistaCanviarOrd;
@@ -180,6 +182,7 @@ public class CtrlPresentacio {
 	public void afegirDistribucio(int n, int np) {
 		ctrlDist.afegirDistribucio(n, np);
 		ctrlLlib.setN(n);
+		lib = new llibreria(np, n);
 	}
 	
 	public boolean estaPle(){
@@ -192,7 +195,7 @@ public class CtrlPresentacio {
 	}
 	
 	public void generarSolucio() {
-		QAP sol = new QAP(ctrlLlib.getLlibres(), 
+		QAP sol = new QAP(ctrlLlib.getLlibres(), lib, ctrlMats);
 	}
 	
 	// Vistes

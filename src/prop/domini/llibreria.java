@@ -16,7 +16,13 @@ public class llibreria extends conjuntoNodos {
 		super();
 		this.prestatges = prestatges;
 		this.ubicacions = ubicacions;
-		
+		int cols = ubicacions/prestatges;
+		for (int i = 0; i < prestatges; ++i) {
+			for (int j = 0; j < cols; ++i) {
+				nodo node = new nodo(i, j);
+				super.addNodo(node);
+			}
+		}
 	}
 	
 	 /**Consultora del parametre prestatges.

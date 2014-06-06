@@ -1,13 +1,19 @@
 package prop.ctrldomini;
 
+import java.util.List;
+
+import prop.domini.llibre;
+import prop.domini.llibreria;
+
 public class QAP {
 	
 	int[][] afinitats;
 	double[][] distancies;
 	
-	public QAP(List<llibre> llibres,) {
+	public QAP(List<llibre> llibres, llibreria lib, ctrlMatrius mats) {
 		this.afinitats = afinitats;
 		this.distancies = distancies;
+		
 	}
 	
 	public void executarAlgorisme() {
