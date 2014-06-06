@@ -43,10 +43,22 @@ public class calculAfinitats {
 		afinidad afi = new afinidad(llibres.size());
 		afi = omplirMatriuAfi(llibres);
 		
-		nodo a = new nodo(0, 0);
-		nodo b = new nodo(4, 1);
+		//nodo a = new nodo(0, 0);
+		//nodo b = new nodo(1, 1);
+			
 		llibreria lib = new llibreria(2, 10);
-		System.out.println(calcularDistancia(a, b));
+		lib.addNodo(new nodo(0, 0));
+		lib.addNodo(new nodo(0, 1));
+		lib.addNodo(new nodo(0, 2));
+		lib.addNodo(new nodo(0, 3));
+		lib.addNodo(new nodo(0, 4));
+		lib.addNodo(new nodo(1, 0));
+		lib.addNodo(new nodo(1, 1));
+		lib.addNodo(new nodo(1, 2));
+		lib.addNodo(new nodo(1, 3));
+		lib.addNodo(new nodo(1, 4));
+		omplirMatriuDist(lib);
+		
 		
 	}
 	
@@ -95,8 +107,8 @@ public class calculAfinitats {
 	
 	public static double calcularDistancia(nodo a, nodo b) {
 		double x = Math.pow(a.getX()-b.getX(),2);
-		double y = Math.pow(a.getX()-b.getY(), 2);
-		System.out.println(Math.sqrt(x+y));
+		double y = Math.pow(a.getY()-b.getY(), 2);
+		//System.out.println("Distancia de "+a.getX()+","+a.getY()+" i "+b.getX()+","+b.getY()+" = "+Math.sqrt(x+y));
 		return Math.sqrt(x+y);
 	}
 	
@@ -104,11 +116,13 @@ public class calculAfinitats {
 		//int cols = lib.getUbicacions()/lib.getPrestatges();
 		List<nodo> llista = lib.getNodes();
 		distancia mat = new distancia(lib.getUbicacions());
+		System.out.println();
 		for(int i = 0; i < lib.getUbicacions(); ++i) {
 			for (int j = 0; j < lib.getUbicacions(); ++j) {
-				mat.setDistancia(i, i, calcularDistancia(llista.get(i),llista.get(j)));
-				
+				mat.setDistancia(i, j, calcularDistancia(llista.get(i),llista.get(j)));
+				System.out.print(mat.getDistancia(i, j)+" ");
 			}
+			System.out.println();
 		}
 		return mat;
 	}

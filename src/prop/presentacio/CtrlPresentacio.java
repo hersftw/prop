@@ -161,7 +161,6 @@ public class CtrlPresentacio {
 	
 	public void consultarLlibre(int isbn, StringBuilder titol, StringBuilder autor, StringBuilder editorial, int[] any, StringBuilder categoria) {
 		ctrlLlib.consultarLlibre(isbn, titol, autor, editorial, any, categoria);
-		
 	}
 	
 	public void modificarLlibre(int isbn1, int isbn2, String titol, String autor,  String editorial, int any, String categoria ){
@@ -178,6 +177,10 @@ public class CtrlPresentacio {
 	
 	public void afegirDistribucio(int n, int np) {
 		ctrlDist.afegirDistribucio(n, np);
+	}
+	
+	public void generarSolucio() {
+		
 	}
 	
 	// Vistes

@@ -11,5 +11,7 @@ public class distancia extends distanciaCluster {
 		matriuDistancia[i][j] = dis;
 	}
 	
-	public double 
+	public double getDistancia(int i, int j) {
+		return matriuDistancia[i][j];
+	}
 }
