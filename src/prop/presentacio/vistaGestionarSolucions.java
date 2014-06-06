@@ -23,8 +23,8 @@ import java.util.Vector;
 public class vistaGestionarSolucions extends JFrame {
 	private CtrlPresentacio cp;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField tISBN1;
+	private JTextField tISBN2;
 	private JTextField txtLlibre;
 	private JTextField txtLlibre_1;
 	private JTable table;
@@ -80,15 +80,15 @@ public class vistaGestionarSolucions extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		textField = new JTextField();
-		textField.setBounds(226, 148, 250, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		tISBN1 = new JTextField();
+		tISBN1.setBounds(226, 148, 250, 20);
+		contentPane.add(tISBN1);
+		tISBN1.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(226, 186, 250, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		tISBN2 = new JTextField();
+		tISBN2.setBounds(226, 186, 250, 20);
+		contentPane.add(tISBN2);
+		tISBN2.setColumns(10);
 		
 		txtLlibre = new JTextField();
 		txtLlibre.setBorder(null);
@@ -113,8 +113,7 @@ public class vistaGestionarSolucions extends JFrame {
 			
 			public void actionPerformed(ActionEvent e) {
 				String s = (String) comboBox.getSelectedItem();
-				ele = (int) s.charAt(s.length()-1) - 48;
-				System.out.println(ele);
+				ele = Integer.parseInt(s.split(" ")[1]);
 				
 			}
 		});
@@ -136,7 +135,7 @@ public class vistaGestionarSolucions extends JFrame {
 		JButton button_1 = new JButton("");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				cd.modificarDistribucio(ele, Integer.parseInt(tISBN1.getText()),Integer.parseInt(tISBN2.getText()));
 			}
 		});
 		button_1.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/tick.png")));
@@ -202,15 +201,15 @@ public class vistaGestionarSolucions extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		textField = new JTextField();
-		textField.setBounds(226, 148, 250, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		tISBN1 = new JTextField();
+		tISBN1.setBounds(226, 148, 250, 20);
+		contentPane.add(tISBN1);
+		tISBN1.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(226, 186, 250, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		tISBN2 = new JTextField();
+		tISBN2.setBounds(226, 186, 250, 20);
+		contentPane.add(tISBN2);
+		tISBN2.setColumns(10);
 		
 		txtLlibre = new JTextField();
 		txtLlibre.setBorder(null);
