@@ -48,6 +48,7 @@ public class gestorDades {
             n = in.nextInt();
             numPres = in.nextInt();
             cp.afegirDistribucio(n, numPres);
+            cp.crearLlibreria(n, numPres);
             
             int num = in.nextInt();
             in.nextLine();

@@ -304,7 +304,7 @@ public class CtrlPresentacio {
 	
 	public void importar(String path){
 		gestorDades gd = new gestorDades(this);
-		gd.leerJuegoDePrueba(path);		
+		gd.leerJuegoDePrueba(path);
 	}
 	
 	public void crearLlibreria(int n, int np) {

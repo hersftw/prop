@@ -28,7 +28,7 @@ public class QAP {
             System.out.print(bb.mejorSolucion.teclasAssignadas[i] + " ");
         }
 		System.out.println("Cost: "+bb.mejorCost);
-		int[] res = {0};
+		int[] res = new int[bb.mejorSolucion.teclasAssignadas.length];
 		for (int i = 0; i < bb.mejorSolucion.teclasAssignadas.length; ++i) {
 			res[i] = llibres.get(bb.mejorSolucion.teclasAssignadas[i]).getId();
 		}
