@@ -159,8 +159,8 @@ public class CtrlPresentacio {
 		ctrlLlib.afegirLlibre(isbn, titol, autor, editorial, any, categoria);
 	}
 	
-	public void consultarLlibre(int isbn) {
-		llibre ll = ctrlLlib.consultarLlibre(isbn);
+	public void consultarLlibre(int isbn, StringBuilder titol, StringBuilder autor, StringBuilder editorial, int[] any, StringBuilder categoria) {
+		ctrlLlib.consultarLlibre(isbn, titol, autor, editorial, any, categoria);
 		
 	}
 	

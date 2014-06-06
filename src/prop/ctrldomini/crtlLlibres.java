@@ -52,6 +52,15 @@ public class crtlLlibres {
 		return null;
 	}
 	
+	public void consultarLlibre(int isbn, StringBuilder titol, StringBuilder autor, StringBuilder editorial, int[] any, StringBuilder categoria) {
+		llibre llib = consultarLlibre(isbn);
+		titol.append(llib.getTitol());
+		autor.append(llib.getAutor());
+		editorial.append(llib.getEditorial());
+		any[0] = llib.getAny();
+		categoria.append(llib.getCategoria());
+	}
+	
 	
 	/**@brief Afegir llibre.
     *

@@ -374,6 +374,10 @@ public class vistaCMELlibre extends JFrame {
 						else {
 							int[] any = {2};
 				    		StringBuilder titol, autor, editorial, categoria;
+				    		titol = new StringBuilder("");
+				    		autor = new StringBuilder("");
+				    		editorial = new StringBuilder("");
+				    		categoria = new StringBuilder("");
 							cp.consultarLlibre(isbn, titol, autor, editorial, any, categoria);
 							tISBN.setText(String.valueOf(isbn));
 							ttitol.setText(titol.toString());
@@ -525,22 +529,28 @@ public class vistaCMELlibre extends JFrame {
 					JPanel panel = new JPanel();
 					JOptionPane.showMessageDialog(panel, "Camps incorrectes");
 				}
-				else {		
-					int isbn2 = Integer.parseInt(tISBN.getText());
-					String titol = ttitol.getText();
-					String autor = tautor.getText();
-					String editorial = teditorial.getText();
-					int any = Integer.parseInt(tany.getText());
-					String categoria = tcategoria.getText();
-					cp.modificarLlibre(isbn, isbn2, titol, autor, editorial, any, categoria);
-					JPanel panel = new JPanel();
-					JOptionPane.showMessageDialog(panel, "Llibre modificat correctament");
-					tISBN.setText("");
-					ttitol.setText("");
-					tautor.setText("");
-					teditorial.setText("");
-					tany.setText("");
-					tcategoria.setText("");
+				else {
+					try {
+						int isbn2 = Integer.parseInt(tISBN.getText());
+						String titol = ttitol.getText();
+						String autor = tautor.getText();
+						String editorial = teditorial.getText();
+						int any = Integer.parseInt(tany.getText());
+						String categoria = tcategoria.getText();
+						cp.modificarLlibre(isbn, isbn2, titol, autor, editorial, any, categoria);
+						JPanel panel = new JPanel();
+						JOptionPane.showMessageDialog(panel, "Llibre modificat correctament");
+						tISBN.setText("");
+						ttitol.setText("");
+						tautor.setText("");
+						teditorial.setText("");
+						tany.setText("");
+						tcategoria.setText("");
+					}
+					catch(NumberFormatException nFE) {
+					    JPanel panel = new JPanel();
+						JOptionPane.showMessageDialog(panel, "Els camps no tenen el format correcte");
+					}
 					
 				}				}
 		});
