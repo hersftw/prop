@@ -99,6 +99,11 @@ public class vistaImportarExportar extends JFrame {
 		contentPane.add(button);
 		
 		JButton button_1 = new JButton("");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		button_1.setIcon(new ImageIcon(vistaModificarNomCat.class.getResource("/prop/icons/tick.png")));
 		button_1.setBounds(559, 416, 65, 35);
 		contentPane.add(button_1);

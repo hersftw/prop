@@ -1,6 +1,8 @@
 package prop.ctrldomini;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 import com.sun.xml.internal.ws.api.pipe.NextAction;
@@ -89,5 +91,18 @@ public class gestorDades {
             System.exit(0);
         }
     }
-
+ /*   public void guardarResultado(int[] res, String ruta) {
+        ruta += "Solucio.out";     
+        FileWriter ficher;
+        PrintWriter pw;
+        try {
+            ficher = new FileWriter(ruta);
+            pw = new PrintWriter(ficher);
+            for (int i = 0; i < res.length; ++i) pw.print(res[i] + " ");
+            ficher.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }*/
 }
+
