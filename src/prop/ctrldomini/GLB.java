@@ -8,7 +8,7 @@ import prop.ctrldomini.hungarianAlgorithm;
 
 public class GLB {
 
-	//Gilmoar madafakas
+	
 	public static double[][] sol;
 	public static double f;
 	private static hungarianAlgorithm hungar = new hungarianAlgorithm();
