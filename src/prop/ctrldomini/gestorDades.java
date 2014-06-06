@@ -50,32 +50,34 @@ public class gestorDades {
             
             int num = in.nextInt();
             in.nextLine();
-            String [] cats;
             
-           for (int i = 0; i <= num; i++) {
-               cats = in.nextLine().split(" ");
+            
+           for (int i = 0; i < num; i++) {
+               String[] cats = in.nextLine().split(" ");
                cp.afegirCategoria(cats[0],cats[1]);
             }
             
-           num = in.nextInt();
-	   		int id = in.nextInt();
-	   		in.nextLine();
-	   		String titol = in.nextLine();
-	   		String autor = in.nextLine();
-	   		String edi = in.nextLine();
-	   		int any = in.nextInt();
-	   		in.nextLine();
-	   		String cat = in.nextLine();
-           for(int i = 0; i <= num; i++){
-        	   cp.afegirLlibre(id, titol, autor, edi, any, cat);
+	   		
+           for(int i = 0; i < n; i++){
+   	   		int id = in.nextInt();
+   	   		in.nextLine();
+   	   		String titol = in.nextLine();
+   	   		String autor = in.nextLine();
+   	   		String edi = in.nextLine();
+   	   		int any = in.nextInt();
+   	   		in.nextLine();
+   	   		String cat = in.nextLine();
+        	cp.afegirLlibre(id, titol, autor, edi, any, cat);
            }
            
            int next = in.nextInt();
            if (next == 1){
                afin = new int[n][n];
-               for (int i = 0; i < n; ++i) 
-                   for (int j = 0; j < n; ++j) 
+               for (int i = 0; i < n; ++i) {
+                   for (int j = 0; j < n; ++j) {
                        afin[i][j] = in.nextInt();
+                   }
+               }
            }
            
            next = in.nextInt();
