@@ -11,13 +11,13 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 import java.util.Vector;
 
 public class vistaGestionarSolucions extends JFrame {
@@ -30,7 +30,7 @@ public class vistaGestionarSolucions extends JFrame {
 	private JTable table;
 	private JButton btnNewButton;
 	private JButton btnNewButton_1;
-	private int ele;
+	private int disactual;
 	
 	private ctrlDistribucions cd;
 
@@ -113,7 +113,7 @@ public class vistaGestionarSolucions extends JFrame {
 			
 			public void actionPerformed(ActionEvent e) {
 				String s = (String) comboBox.getSelectedItem();
-				ele = Integer.parseInt(s.split(" ")[1]);
+				disactual = Integer.parseInt(s.split(" ")[1]);
 				
 			}
 		});
@@ -135,7 +135,14 @@ public class vistaGestionarSolucions extends JFrame {
 		JButton button_1 = new JButton("");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				cd.modificarDistribucio(ele, Integer.parseInt(tISBN1.getText()),Integer.parseInt(tISBN2.getText()));
+				if (cd.modificarDistribucio(disactual, Integer.parseInt(tISBN1.getText()),Integer.parseInt(tISBN2.getText()))) {
+					JPanel panel = new JPanel();
+					JOptionPane.showMessageDialog(panel, "Distribucio modificada correctament");
+				}
+				else {
+					JPanel panel = new JPanel();
+					JOptionPane.showMessageDialog(panel, "Distribucio no trobada");
+				}
 			}
 		});
 		button_1.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/tick.png")));
@@ -157,9 +164,7 @@ public class vistaGestionarSolucions extends JFrame {
 		btnNewButton = new JButton("");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				vistaMenuPrincipal panmenu = new vistaMenuPrincipal(cp);
-				panmenu.setVisible(true);
-				dispose();
+				
 			}
 		});
 		btnNewButton.setIcon(new ImageIcon(vistaGestionarSolucions.class.getResource("/prop/icons/floppy.png")));
@@ -167,6 +172,18 @@ public class vistaGestionarSolucions extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		btnNewButton_1 = new JButton("");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (cd.deleteDistribucio(disactual)) {
+					JPanel panel = new JPanel();
+					JOptionPane.showMessageDialog(panel, "Distribucio eliminada correctament");
+				}
+				else {
+					JPanel panel = new JPanel();
+					JOptionPane.showMessageDialog(panel, "Distrubució no trobada");
+				}
+			}
+		});
 		btnNewButton_1.setIcon(new ImageIcon(vistaGestionarSolucions.class.getResource("/prop/icons/Flaticon_48352.png")));
 		btnNewButton_1.setBounds(440, 416, 50, 35);
 		contentPane.add(btnNewButton_1);
