@@ -101,7 +101,7 @@ public class vistaModificarNomCat extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				String vell = textField.getText();
 				String nou = textField_1.getText();
-				cp.ModificarCategories(vell, nou);
+				cp.modificarCategories(vell, nou);
 				//cp.ctrlCat.mostrarCategories();
 				DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
 				root.removeAllChildren();
@@ -181,7 +181,7 @@ public class vistaModificarNomCat extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				String vell = textField.getText();
 				String nou = textField_1.getText();
-				cp.ModificarCategories(vell, nou);
+				cp.modificarCategories(vell, nou);
 				//cp.ctrlCat.mostrarCategories();
 				DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getRoot();
 				root.removeAllChildren();
