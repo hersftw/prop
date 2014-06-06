@@ -149,7 +149,7 @@ public class CtrlPresentacio {
 		ctrlCat.eliminarCategoria(nom);
 	}
 	
-	public void ModificarCategories(String vell, String nou) {
+	public void modificarCategories(String vell, String nou) {
 		ctrlCat.modificarCategories(vell, nou);
 	}
 	
@@ -216,6 +216,8 @@ public class CtrlPresentacio {
 	
 	public void mostraGestioLlibres() {
 		vistaMenu.setVisible(false);
+		if (vistaAfegirLlib != null) vistaAfegirLlib.setVisible(false);
+		if (vistaCMELlib != null) vistaCMELlib.setVisible(false);
 		vistaGestLlib = new vistaGestionarLlibres(this);
 		vistaGestLlib.setVisible(true);
 	}

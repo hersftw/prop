@@ -133,4 +133,8 @@ public class crtlLlibres {
 		}
 		else System.out.println("Error: llibre no trobat!");
 	}
+	
+	public List<llibre> getLlibres() {
+		return llibres;
+	}
 }
