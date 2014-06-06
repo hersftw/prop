@@ -28,6 +28,11 @@ public class ctrlDistribucions {
 		distrib.add(distribucio);
 	}
 	
+	public void afegirDistribucio(int n, int np) {
+		distribucio dis = new distribucio(distrib.size(), n, np);
+		afegirDistribucio(dis);
+	}
+	
 	/**Consulta una distribucio i la mostra
 	 * 
 	 * @param num numero de la distribucio a consultar. 

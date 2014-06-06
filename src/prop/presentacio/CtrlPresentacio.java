@@ -176,6 +176,10 @@ public class CtrlPresentacio {
 		return ctrlLlib.existeix(isbn);
 	}
 	
+	public void afegirDistribucio(int n, int np) {
+		ctrlDist.afegirDistribucio(n, np);
+	}
+	
 	// Vistes
 	
 	public void mostraPrincipal() {
