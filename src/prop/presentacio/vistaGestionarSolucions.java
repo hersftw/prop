@@ -27,18 +27,18 @@ public class vistaGestionarSolucions extends JFrame {
 	private JTextField tISBN2;
 	private JTextField txtLlibre;
 	private JTextField txtLlibre_1;
-	private JTable table;
 	private JButton btnNewButton;
 	private JButton btnNewButton_1;
 	private int disactual;
 	
 	private ctrlDistribucions cd;
+	private JTextField textField;
 
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -49,7 +49,7 @@ public class vistaGestionarSolucions extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 	
 	public void mostrarVista() {
 		this.setVisible(true);
@@ -61,7 +61,7 @@ public class vistaGestionarSolucions extends JFrame {
 	}
 
 	
-	public vistaGestionarSolucions(){
+	/*public vistaGestionarSolucions(){
 
 		cd = new ctrlDistribucions();
 		
@@ -192,12 +192,14 @@ public class vistaGestionarSolucions extends JFrame {
 		btnGenerarSoluci.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//FER LA Distribcio
+				//Pos no, fer l'algorisme
+				cp.generarSolucio();
 			}
 		});
 		btnGenerarSoluci.setBounds(408, 53, 126, 54);
 		contentPane.add(btnGenerarSoluci);
 	
-	}
+	}*/
 
 	/**
 	 * Create the frame.
@@ -249,10 +251,6 @@ public class vistaGestionarSolucions extends JFrame {
 		comboBox.setBounds(155, 70, 190, 20);
 		contentPane.add(comboBox);
 		
-		table = new JTable();
-		table.setBounds(128, 250, 362, 138);
-		contentPane.add(table);
-		
 		JButton button_1 = new JButton("");
 		button_1.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/tick.png")));
 		button_1.setBounds(559, 416, 65, 35);
@@ -290,7 +288,18 @@ public class vistaGestionarSolucions extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnGenerarSoluci = new JButton("Generar Soluci\u00F3");
+		btnGenerarSoluci.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int[] sol = cp.generarSolucio();
+				for(int i = 0; i < sol.length; ++i) textField.setText(textField.getText()+sol[i]+ " | ");
+			}
+		});
 		btnGenerarSoluci.setBounds(408, 53, 126, 54);
 		contentPane.add(btnGenerarSoluci);
+		
+		textField = new JTextField();
+		textField.setBounds(155, 236, 321, 138);
+		contentPane.add(textField);
+		textField.setColumns(10);
 	}
 }

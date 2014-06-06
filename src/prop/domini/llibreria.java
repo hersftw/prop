@@ -18,9 +18,10 @@ public class llibreria extends conjuntoNodos {
 		this.ubicacions = ubicacions;
 		int cols = ubicacions/prestatges;
 		for (int i = 0; i < prestatges; ++i) {
-			for (int j = 0; j < cols; ++i) {
+			for (int j = 0; j < cols; ++j) {
 				nodo node = new nodo(i, j);
 				super.addNodo(node);
+				System.out.println(i+","+j);
 			}
 		}
 	}

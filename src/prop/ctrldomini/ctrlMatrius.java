@@ -15,11 +15,16 @@ public class ctrlMatrius {
 	public static ctrlCategories ctrl;
 	public static crtlLlibres ctrll;
 	
-	public static void main(String[] args) {
+	public ctrlMatrius(ctrlCategories ctrl, crtlLlibres ctrll) {
+		this.ctrl = ctrl;
+		this.ctrll = ctrll;
+	}
+	
+	/*public static void main(String[] args) {
 		ctrl = new ctrlCategories();
 		ctrll = new crtlLlibres();
 		ctrl.inicialitzarCategories();
-		ctrl.afegirCategoria("Ciencies", "Biblioteca");
+		/*ctrl.afegirCategoria("Ciencies", "Biblioteca");
 		ctrl.afegirCategoria("Informatica", "Ciencies");
 		ctrl.afegirCategoria("Fisica", "Ciencies");
 		ctrl.afegirCategoria("Forces", "Fisica");
@@ -60,11 +65,12 @@ public class ctrlMatrius {
 		omplirMatriuDist(lib);
 		
 		
-	}
+	}*/
 	
 	public static int calcularAfinitat(String a, String b) {
 		//double afi = 0;
 		int afi = 0;
+		System.out.println(a);
 		categoria c1 = ctrl.getCategoria(a);
 		categoria c2 = ctrl.getCategoria(b);
 		List<String> llista1 = new ArrayList<String>();
