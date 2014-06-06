@@ -178,6 +178,16 @@ public class CtrlPresentacio {
 	
 	public void afegirDistribucio(int n, int np) {
 		ctrlDist.afegirDistribucio(n, np);
+		ctrlLlib.setN(n);
+	}
+	
+	public boolean estaPle(){
+		return ctrlLlib.getN() == ctrlLlib.numLlibres();
+		
+	}
+	
+	public boolean existeixCat(String categoria) {
+		//PER FER
 	}
 	
 	// Vistes
@@ -279,7 +289,7 @@ public class CtrlPresentacio {
 		vistaCMELlib.setVisible(true);
 	}
 
-	
+
 	
 	
 	
