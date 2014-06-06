@@ -19,7 +19,7 @@ public class branchBoundCota {
     
     private PriorityQueue<node> nodes; //Cua de prioritat ordenada de forma ascendent
     private int mida;                 // mida de la solucio
-    private int[][] estadistica;      // matriu de flux
+    private double[][] estadistica;      // matriu de flux
     private double[][] distancia;        // matriu de distancia
     public  node mejorSolucion;       // Node amb la millor solucio 
     double  mejorCost;                // Millor cost fins al moment
@@ -45,7 +45,7 @@ public class branchBoundCota {
      * @param estadistica Matriu de fluxe o de similitud 
      * @param distancia Matriu de distancia 
      */
-    public branchBoundCota(int[][] estadistica, double[][] distancia) {
+    public branchBoundCota(double[][] estadistica, double[][] distancia) {
         this.mida = estadistica.length;
         this.distancia = distancia;
         this.estadistica = estadistica;
