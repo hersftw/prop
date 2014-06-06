@@ -303,9 +303,12 @@ public class CtrlPresentacio {
 	//Importar/Exportar
 	
 	public void importar(String path){
-		//gestorDades gd = new gestorDades(this);
-		//gd.leerJuegoDePrueba(path);
-		
+		gestorDades gd = new gestorDades(this);
+		gd.leerJuegoDePrueba(path);		
+	}
+	
+	public void crearLlibreria(int n, int np) {
+		lib = new llibreria(np, n);
 	}
 	
 	
