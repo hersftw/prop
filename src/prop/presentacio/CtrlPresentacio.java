@@ -46,7 +46,7 @@ public class CtrlPresentacio {
 		ctrlCat = new ctrlCategories();
 		ctrlLlib = new crtlLlibres();
 		ctrlDist = new ctrlDistribucions();
-		ctrlMats = new ctrlMatrius();
+		//ctrlMats = new ctrlMatrius();
 		
 		vistaMenu = new vistaMenuPrincipal(this);
 		ctrlCat.inicialitzarCategories();
@@ -194,8 +194,11 @@ public class CtrlPresentacio {
 		return ctrlCat.existeix(categoria);
 	}
 	
-	public void generarSolucio() {
+	public int[] generarSolucio() {
+		ctrlMats = new ctrlMatrius(ctrlCat, ctrlLlib);
 		QAP sol = new QAP(ctrlLlib.getLlibres(), lib, ctrlMats);
+		int[] vec = sol.executarAlgorisme();
+		return vec;
 	}
 	
 	// Vistes
@@ -300,8 +303,8 @@ public class CtrlPresentacio {
 	//Importar/Exportar
 	
 	public void importar(String path){
-		gestorDades gd = new gestorDades(this);
-		gd.leerJuegoDePrueba(path);
+		//gestorDades gd = new gestorDades(this);
+		//gd.leerJuegoDePrueba(path);
 		
 	}
 	
