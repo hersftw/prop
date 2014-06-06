@@ -11,7 +11,7 @@ import prop.domini.categoria;
 import prop.domini.llibreria;
 import prop.domini.nodo;
 
-public class calculAfinitats {
+public class ctrlMatrius {
 	public static ctrlCategories ctrl;
 	public static crtlLlibres ctrll;
 	
