@@ -67,7 +67,7 @@ public class ctrlDistribucions {
 		
 		}
 		catch (Exception e){
-			System.out.println("Error:No s'ha trobat la distribucio");
+			System.out.println("Error: No s'ha trobat la distribucio");
 			return false;
 		}
 		

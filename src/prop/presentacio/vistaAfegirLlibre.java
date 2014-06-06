@@ -176,7 +176,7 @@ public class vistaAfegirLlibre extends JFrame {
 					String editorial = teditorial.getText();
 					int any = Integer.parseInt(tany.getText());
 					String categoria = tcategoria.getText();
-					if (cp.existeixCat(categoria)){
+					if (!cp.existeixCat(categoria)){
 						JPanel panel = new JPanel();
 						JOptionPane.showMessageDialog(panel, "No existeix la categoria");
 						return;

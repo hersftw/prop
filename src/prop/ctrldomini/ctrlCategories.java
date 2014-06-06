@@ -242,6 +242,16 @@ public class ctrlCategories {
 		return null;
 	}
 	
+	public boolean existeix(String s) {
+		boolean trobat = false;
+		Iterator<List<categoria>> it = categories.iterator();
+		while(it.hasNext() & trobat == false) {
+			List<categoria> llista = it.next();
+			if (llista.get(0).getNom().equals(s)) trobat = true;
+		}
+		return trobat;
+	}
+	
 	public List<List<categoria>> getCategories() {
 		return categories;
 	}

@@ -5,7 +5,7 @@ public class QAP {
 	int[][] afinitats;
 	double[][] distancies;
 	
-	public QAP(int[][] afinitats, double[][] distancies) {
+	public QAP(List<llibre> llibres,) {
 		this.afinitats = afinitats;
 		this.distancies = distancies;
 	}

@@ -22,6 +22,7 @@ public class CtrlPresentacio {
 	crtlLlibres ctrlLlib;
 	ctrlDistribucions ctrlDist;
 	ctrlPersistencia ctrlPers;
+	ctrlMatrius ctrlMats;
 	
 	vistaAfegirLlibre vistaAfegirLlib;
 	vistaCanviarOrdre vistaCanviarOrd;
@@ -43,6 +44,7 @@ public class CtrlPresentacio {
 		ctrlCat = new ctrlCategories();
 		ctrlLlib = new crtlLlibres();
 		ctrlDist = new ctrlDistribucions();
+		ctrlMats = new ctrlMatrius();
 		
 		vistaMenu = new vistaMenuPrincipal(this);
 		ctrlCat.inicialitzarCategories();
@@ -186,11 +188,11 @@ public class CtrlPresentacio {
 	}
 	
 	public boolean existeixCat(String categoria) {
-		//PER FER
+		return ctrlCat.existeix(categoria);
 	}
 	
 	public void generarSolucio() {
-		
+		QAP sol = new QAP(ctrlLlib.getLlibres(), 
 	}
 	
 	// Vistes
