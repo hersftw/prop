@@ -80,6 +80,7 @@ public class vistaGestionarEstructura extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
+		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
 		textField_1.setBounds(251, 318, 256, 20);
@@ -90,6 +91,18 @@ public class vistaGestionarEstructura extends JFrame {
 		contentPane.add(lblEscullLaForma);
 		
 		JButton button_1 = new JButton("");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int ubicacions = Integer.parseInt(textField.getText());
+				int prestatges = Integer.parseInt(textField_1.getText());
+				cp.afegirDistribucio(ubicacions, prestatges);
+				/*if(String.valueOf(isbn).length() > 9) 
+					JOptionPane.showMessageDialog(frame1,  "La mida màxima del ISBN és de 9 dígits");
+				*/
+			}
+		});
+		
+
 		button_1.setIcon(new ImageIcon(vistaGestionarEstructura.class.getResource("/prop/icons/tick.png")));
 		button_1.setBounds(559, 416, 65, 35);
 		contentPane.add(button_1);

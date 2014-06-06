@@ -374,7 +374,7 @@ public class vistaCMELlibre extends JFrame {
 						else {
 							int[] any = {2};
 				    		StringBuilder titol, autor, editorial, categoria;
-							cp.consultarLlibre(titol, autor, editorial, any, categoria);
+							cp.consultarLlibre(isbn, titol, autor, editorial, any, categoria);
 							tISBN.setText(String.valueOf(isbn));
 							ttitol.setText(titol.toString());
 							tautor.setText(autor.toString());
