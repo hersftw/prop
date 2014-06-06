@@ -297,7 +297,13 @@ public class CtrlPresentacio {
 		vistaCMELlib.setVisible(true);
 	}
 
-
+	//Importar/Exportar
+	
+	public void importar(String path){
+		gestorDades gd = new gestorDades(this);
+		gd.leerJuegoDePrueba(path);
+		
+	}
 	
 	
 	
