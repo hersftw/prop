@@ -1,6 +1,6 @@
 package prop.drivers;
 
-import prop.domini.distancia;
+import prop.domini.distanciaCluster;
 
 import java.util.*;
 
@@ -26,7 +26,7 @@ public class driverDistancia {
 		System.out.println("Driver Distancia");
 		System.out.println("Introdueix un Numero de files (int), un numero de columnes (int) i un numero de posicions (int)");
 		Scanner in = new Scanner(System.in);
-		distancia dist = new distancia(in.nextInt(), in.nextInt(), in.nextInt());
+		distanciaCluster dist = new distanciaCluster(in.nextInt(), in.nextInt(), in.nextInt());
 		boolean sortir = false;
 		
 		while(!sortir){
