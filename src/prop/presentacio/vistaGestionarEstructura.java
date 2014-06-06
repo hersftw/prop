@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
@@ -25,6 +26,8 @@ public class vistaGestionarEstructura extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JFrame frame1;
+	
 
 	/**
 	 * Launch the application.
@@ -54,6 +57,7 @@ public class vistaGestionarEstructura extends JFrame {
 	 * Create the frame.
 	 */
 	public void inicialitzarComponents() {
+		
 		setResizable(false);
 		setMinimumSize(new Dimension(650, 500));
 		setTitle("Gestionar Estructura");
@@ -96,9 +100,10 @@ public class vistaGestionarEstructura extends JFrame {
 				int ubicacions = Integer.parseInt(textField.getText());
 				int prestatges = Integer.parseInt(textField_1.getText());
 				cp.afegirDistribucio(ubicacions, prestatges);
-				/*if(String.valueOf(isbn).length() > 9) 
-					JOptionPane.showMessageDialog(frame1,  "La mida màxima del ISBN és de 9 dígits");
-				*/
+				
+				if(ubicacions < prestatges ) {
+					JOptionPane.showMessageDialog(frame1,  "El número de prestages no pot ser més gran que el número d'ubicacions ");
+				}
 			}
 		});
 		

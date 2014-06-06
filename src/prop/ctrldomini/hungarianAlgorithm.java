@@ -1,12 +1,7 @@
 package prop.ctrldomini;
 import java.util.*;
 
-/**
- * An implementation of the classic hungarian algorithm for the assignment problem.
- *
- * Copyright 2007 Gary Baker (GPL v3)
- * @author gbaker
- */
+
 public class hungarianAlgorithm{
 
 
